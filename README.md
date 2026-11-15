@@ -15,6 +15,8 @@ Các file nghe chưa được đối chiếu với mã nghe trong sách. PDF đ�
 
 ## GitHub Pages
 
-Workflow `.github/workflows/pages.yml` xuất bản thư mục `dist`. Trong repository riêng, mở Settings → Pages → Source → GitHub Actions, rồi chạy workflow hoặc đẩy thay đổi vào `main`. Không dùng `.openai` để xuất bản trên GitHub.
+Workflow `.github/workflows/pages.yml` kiểm tra bản web khi có thay đổi trên `main`. Khi tài khoản và kho đủ điều kiện dùng Pages, mở Settings → Pages → Source → GitHub Actions; sau đó vào Actions → Publish learning website → Run workflow để xuất bản thư mục `dist`. Không dùng `.openai` để xuất bản trên GitHub.
+
+Tại thời điểm thiết lập, GitHub hiển thị yêu cầu nâng cấp hoặc chuyển kho sang công khai để bật Pages. Kho được giữ riêng tư; chưa có website trực tuyến. Việc chuyển công khai cần người dùng quyết định vì mã nguồn và âm thanh trong kho sẽ có thể được xem hoặc tải về.
 
 Trước khi bật website công khai, bảo đảm quyền sử dụng nội dung và âm thanh. Website tĩnh không có cơ chế bảo vệ các file nghe bằng đăng nhập. Không đưa PDF nguyên bản vào bản công khai nếu chưa có quyền phân phối.
