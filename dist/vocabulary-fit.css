@@ -1,0 +1,155 @@
+/* A vocabulary lesson occupies the viewport, while long lists use pagination. */
+body.vocabulary-fit{height:100dvh;overflow:hidden}
+.vocabulary-fit main{height:100dvh;margin-left:240px;max-width:none;display:flex;flex-direction:column;padding-left:28px;padding-right:28px}
+.vocabulary-fit main>footer{display:none}
+.vocabulary-fit .course-header{position:relative;top:auto;flex:0 0 auto;min-height:92px;padding:10px 0}
+.vocabulary-fit .hsk-levels button{min-height:34px;padding:7px 16px;font-size:12px}
+.vocabulary-fit .lesson-row{margin-top:7px;font-size:11px}
+.vocabulary-fit .lesson-row select{padding:7px 28px 7px 10px;font-size:11px}
+.vocabulary-fit #app{flex:1;min-height:0;padding:10px 0 12px;display:flex;flex-direction:column;overflow:hidden}
+.vocabulary-fit #app>h1{font-size:23px;margin:3px 0 5px}
+.vocabulary-fit #app>.eyebrow{font-size:9px}
+.vocabulary-fit #app>.sub{font-size:11px;margin:0 0 4px;line-height:1.6}
+.vocabulary-fit #app>.toolbar{margin:8px 0 10px;gap:8px}
+.vocabulary-fit #app>.toolbar input{padding:9px 12px;font-size:12px}
+.vocabulary-fit #app>.toolbar .btn{font-size:11px;padding:10px 14px}
+.vocabulary-fit #wordlist{flex:1;min-height:0;gap:10px;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+.vocabulary-fit #wordlist .word{padding:14px;min-height:0;display:flex;flex-direction:column;overflow:auto}
+.vocabulary-fit #wordlist .han{font-size:27px}
+.vocabulary-fit #wordlist .pinyin{font-size:12px;margin:5px 0}
+.vocabulary-fit #wordlist .meaning{font-size:12px!important;margin:3px 0}
+.vocabulary-fit #wordlist .example{font-size:14px;margin:7px 0;padding-top:7px;line-height:1.6}
+.vocabulary-fit #wordlist .btn{font-size:10px;padding:7px 10px;align-self:flex-start;margin-top:auto}
+.vocabulary-pagination,.context-pagination{display:flex;align-items:center;justify-content:center;gap:16px;font-size:11px;color:#617582;flex:0 0 auto}
+.vocabulary-pagination{padding-top:8px}
+.vocabulary-pagination button,.context-pagination button{border:1px solid #dce2dc;background:transparent;border-radius:6px;color:#284d43;padding:3px 12px;font-size:19px;line-height:1.2}
+.vocabulary-pagination button:disabled,.context-pagination button:disabled{opacity:.3;cursor:default}
+.vocabulary-fit .dictation-title{gap:12px}
+.vocabulary-fit .dictation-title h1{font-size:22px}
+.vocabulary-fit .dictation-title>span{font-size:11px}
+.vocabulary-fit .dictation-links{margin:4px 0 6px;gap:18px}
+.vocabulary-fit .text-button{font-size:11px}
+.vocabulary-fit .practice-mode-control{margin:3px 0 8px;font-size:11px;gap:8px}
+.vocabulary-fit .practice-mode-control select{padding:5px 10px}
+.vocabulary-fit .practice-mode-control>span{display:none}
+.vocabulary-fit .dictation-tabs{flex:0 0 auto}
+.vocabulary-fit .dictation-tabs button{font-size:13px;padding:10px 17px}
+.vocabulary-fit .dictation-workspace{flex:1;min-height:0;padding:14px 16px;display:flex;flex-direction:column;overflow:hidden}
+.vocabulary-fit .context-controls{margin-bottom:9px;gap:8px;font-size:11px;flex:0 0 auto}
+.vocabulary-fit .context-controls select{padding:6px 10px;font-size:11px}
+.vocabulary-fit .context-grid{flex:1;min-height:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);gap:16px}
+.vocabulary-fit .context-left,.vocabulary-fit .context-right{min-height:0;display:flex;flex-direction:column}
+.vocabulary-fit .context-sentence-card{flex:1;min-height:0;display:flex;flex-direction:column;padding:10px}
+.vocabulary-fit .context-current{flex:1;min-height:0;padding:8px;overflow:auto}
+.vocabulary-fit .context-hanzi{font-size:26px;line-height:1.7}
+.vocabulary-fit .context-pinyin,.vocabulary-fit .context-meaning{font-size:12px;margin-top:8px;line-height:1.6}
+.vocabulary-fit .context-focus{font-size:10px;margin-top:10px}
+.vocabulary-fit .context-navigation{flex:0 0 auto;margin-top:5px;padding:3px}
+.vocabulary-fit .context-navigation button{font-size:19px;padding:1px 6px}
+.vocabulary-fit .context-practice-button{flex:0 0 auto;font-size:11px;padding:6px 0;text-align:left}
+.vocabulary-fit #contextSourceSlot{position:relative;flex:0 0 auto;font-size:10px}
+.vocabulary-fit .context-source{font-size:10px}
+.vocabulary-fit .context-source[open]{position:absolute;bottom:0;left:0;right:0;max-height:180px;overflow:auto;background:#fff;border:1px solid #dce1e7;border-radius:8px;padding:10px;box-shadow:0 5px 20px #0002;z-index:3}
+.vocabulary-fit .context-sentence-list{flex:1;min-height:0;max-height:none;display:flex;flex-direction:column;overflow:hidden}
+.vocabulary-fit .context-row{flex:1;min-height:0;padding:5px 12px;gap:10px}
+.vocabulary-fit .context-row[hidden]{display:none!important}
+.vocabulary-fit .context-row.selected{padding-left:9px}
+.vocabulary-fit .context-row-text{font-size:15px;line-height:1.5}
+.vocabulary-fit .context-row-play{width:28px;height:28px;font-size:17px}
+.context-pagination{padding-top:6px;font-size:10px;gap:12px}
+.context-pagination button{padding:2px 10px;font-size:17px}
+.vocabulary-fit .context-auto-scroll{font-size:10px;margin-top:5px}
+.vocabulary-fit .context-editorial{display:none}
+.vocabulary-fit .practice-topline{flex:0 0 auto;margin-bottom:8px}
+.vocabulary-fit .word-navigation{font-size:15px;gap:8px}
+.vocabulary-fit .word-navigation button{font-size:21px;padding:1px 7px}
+.vocabulary-fit .settings-open-button{font-size:12px}
+.vocabulary-fit .speech-player{min-height:36px;padding:3px 12px;font-size:12px}
+.vocabulary-fit .speech-player button{font-size:18px;min-height:28px}
+.vocabulary-fit .speech-status{font-size:10px;margin:5px 0 9px;line-height:1.5}
+.vocabulary-fit .daily-dictation-form{flex:0 0 auto;width:100%}
+.vocabulary-fit .daily-dictation-form .hanzi-answer{min-height:70px;height:80px;max-height:95px;resize:none;padding:10px 12px;font-size:23px;line-height:1.5}
+.vocabulary-fit .daily-dictation-form .hanzi-answer::placeholder{font-size:18px}
+.vocabulary-fit .dictation-actions{margin-top:10px;gap:12px}
+.vocabulary-fit .check-answer,.vocabulary-fit .skip-answer{padding:8px 14px;font-size:14px}
+.vocabulary-fit #dictationFeedback{min-height:0;overflow:auto}
+.vocabulary-fit .dictation-result{padding-top:10px}
+.vocabulary-fit .result-heading{font-size:17px}
+.vocabulary-fit .result-heading>button{font-size:12px;padding:6px 12px}
+.vocabulary-fit .masked-answer{font-size:22px;line-height:1.5;margin:4px 0 8px}
+.vocabulary-fit .partial-answer-note{margin:0 0 7px;font-size:9px}
+.vocabulary-fit .answer-options{gap:6px;padding:3px 0 8px}
+.vocabulary-fit .answer-options label{font-size:12px}
+.vocabulary-fit .answer-options input{width:18px;height:18px}
+.vocabulary-fit .answer-details{margin-top:3px;font-size:12px;line-height:1.5}
+.vocabulary-fit .answer-details p{margin:3px 0;line-height:1.5}
+.vocabulary-fit .answer-details .example{padding-top:4px;font-size:10px}
+.vocabulary-fit .shortcut-tips{margin:8px 0 0;font-size:9px;flex:0 0 auto}
+.vocabulary-fit .flash{flex:1;min-height:0;width:min(650px,100%);margin:10px auto;display:flex;flex-direction:column;justify-content:center}
+.vocabulary-fit .flash .face{flex:1;min-height:0;max-height:320px}
+.vocabulary-fit .flash>.toolbar{margin:10px 0}
+@media(max-width:1000px) and (min-width:651px){.vocabulary-fit main{margin-left:200px}.vocabulary-fit #wordlist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){
+  .vocabulary-fit aside{height:80px;padding:8px 14px;position:relative;top:auto;flex:0 0 auto}
+  .vocabulary-fit nav{margin-top:6px;padding-bottom:0;scrollbar-width:none}
+  .vocabulary-fit nav::-webkit-scrollbar{display:none}
+  .vocabulary-fit nav a{padding:6px 9px;font-size:11px}
+  .vocabulary-fit main{height:calc(100dvh - 80px);margin:0;padding:0 12px}
+  .vocabulary-fit .course-header{min-height:80px;padding:7px 0;top:auto}
+  .vocabulary-fit .hsk-levels button{padding:6px 8px;min-height:30px;font-size:11px}
+  .vocabulary-fit .lesson-row{margin-top:5px;font-size:10px}
+  .vocabulary-fit .lesson-row select{padding:5px 26px 5px 9px;font-size:10px}
+  .vocabulary-fit #app{padding:7px 0 8px}
+  .vocabulary-fit #app>h1{font-size:20px;margin:3px 0}
+  .vocabulary-fit #app>.sub{font-size:10px;line-height:1.5}
+  .vocabulary-fit #app>.toolbar{margin:7px 0;gap:6px}
+  .vocabulary-fit #app>.toolbar input{flex:1 1 100%;padding:8px 10px;min-width:0}
+  .vocabulary-fit #app>.toolbar .btn{padding:9px;font-size:10px;flex:1}
+  .vocabulary-fit #wordlist{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:8px}
+  .vocabulary-fit #wordlist .word{padding:11px}
+  .vocabulary-fit #wordlist .han{font-size:24px;overflow-wrap:anywhere}
+  .vocabulary-fit #wordlist .pinyin{font-size:10px}
+  .vocabulary-fit #wordlist .meaning{font-size:11px!important}
+  .vocabulary-fit #wordlist .example{font-size:13px}
+  .vocabulary-fit .dictation-title{gap:5px;align-items:center}
+  .vocabulary-fit .dictation-title h1{font-size:18px}
+  .vocabulary-fit .dictation-title>span{display:none}
+  .vocabulary-fit .dictation-links{margin:3px 0 4px;gap:15px}
+  .vocabulary-fit .text-button{font-size:10px;padding:2px 0}
+  .vocabulary-fit .practice-mode-control{font-size:10px;margin:3px 0 6px}
+  .vocabulary-fit .practice-mode-control select{padding:4px 8px}
+  .vocabulary-fit .dictation-tabs button{font-size:11px;padding:8px 12px}
+  .vocabulary-fit .dictation-workspace{padding:10px}
+  .vocabulary-fit .context-controls{font-size:10px;gap:5px;margin-bottom:6px;flex-wrap:nowrap}
+  .vocabulary-fit .context-controls>label:first-child{display:none}
+  .vocabulary-fit .context-controls select{font-size:10px;padding:5px 7px;min-width:0;max-width:210px}
+  .vocabulary-fit .context-repeat{margin-left:auto;white-space:nowrap;gap:4px}
+  .vocabulary-fit .context-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1.6fr) minmax(0,1fr);gap:8px}
+  .vocabulary-fit .context-sentence-card{padding:6px}
+  .vocabulary-fit .context-current{padding:5px 4px}
+  .vocabulary-fit .context-hanzi{font-size:21px;line-height:1.5}
+  .vocabulary-fit .context-pinyin,.vocabulary-fit .context-meaning{font-size:11px;line-height:1.4;margin-top:5px}
+  .vocabulary-fit .context-focus{display:none}
+  .vocabulary-fit .context-navigation{padding:0;margin-top:3px;font-size:11px}
+  .vocabulary-fit .context-practice-button{padding:4px 0;font-size:10px}
+  .vocabulary-fit .context-source{font-size:9px}
+  .vocabulary-fit .context-row{padding:3px 8px;gap:8px}
+  .vocabulary-fit .context-row.selected{padding-left:5px}
+  .vocabulary-fit .context-row-text{font-size:13px;line-height:1.4}
+  .vocabulary-fit .context-row-play{width:24px;height:24px;font-size:15px}
+  .vocabulary-fit .context-pagination{padding-top:4px;font-size:9px}
+  .vocabulary-fit .context-auto-scroll{font-size:9px;margin-top:3px}
+  .vocabulary-fit .context-auto-scroll input{width:13px;height:13px}
+  .vocabulary-fit .speech-status{font-size:9px;margin:4px 0 6px}
+  .vocabulary-fit .speech-player{min-height:30px;padding:2px 8px;font-size:11px}
+  .vocabulary-fit .speech-player button{min-width:25px;min-height:25px;font-size:17px}
+  .vocabulary-fit .daily-dictation-form .hanzi-answer{min-height:65px;height:70px;font-size:21px}
+  .vocabulary-fit .daily-dictation-form .hanzi-answer::placeholder{font-size:16px}
+  .vocabulary-fit .masked-answer{font-size:20px}
+  .vocabulary-fit .answer-options label{font-size:11px}
+  .vocabulary-fit .shortcut-tips{display:none}
+  .vocabulary-fit .flash .face{padding:20px;max-height:260px}
+  .vocabulary-fit .flash .han{font-size:48px}
+  .vocabulary-fit .flash .btn{font-size:11px;padding:10px}
+}
+@media(max-width:650px) and (max-height:740px){.vocabulary-fit .context-grid{grid-template-rows:minmax(0,1.8fr) minmax(0,.8fr)}.vocabulary-fit .context-hanzi{font-size:19px}.vocabulary-fit .context-pinyin,.vocabulary-fit .context-meaning{font-size:10px;line-height:1.3;margin-top:3px}.vocabulary-fit .context-row-text{font-size:12px}}

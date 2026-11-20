@@ -16,7 +16,7 @@ function updateContextSentence(){
     button.setAttribute('aria-current',String(selected));
     button.closest('.context-row').classList.toggle('selected',selected);
   });
-  if(s.contextAutoScroll!==false)document.querySelector('#contextRow-'+index)?.scrollIntoView?.({block:'nearest'});
+  if(s.contextAutoScroll!==false)renderContextPage(Math.floor(index/contextPageSize()));
 }
 function finishContextPlayback(playback){
   if(contextPlayback!==playback)return;

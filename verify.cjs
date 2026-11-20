@@ -3,7 +3,7 @@ const vm = require('vm');
 const elements = new Map();
 function el(id){if(!elements.has(id))elements.set(id,{innerHTML:'',textContent:'',value:'',dataset:{},style:{},setAttribute(name,value){this[name]=value},focus(){},showModal(){this.open=true},close(){this.open=false;if(this.onclose)this.onclose()},getContext:()=>({beginPath(){},moveTo(){},lineTo(){},stroke(){},clearRect(){}}),getBoundingClientRect:()=>({left:0,top:0,width:400,height:400})});return elements.get(id)}
 const data={'hanyu-v1':JSON.stringify({dictationMode:'word'})};const sandbox={document:{querySelector:el,querySelectorAll:()=>[]},location:{hash:'#home'},localStorage:{getItem:k=>data[k],setItem:(k,v)=>data[k]=v},window:{scrollTo(){},addEventListener(){}},FormData:class{constructor(f){this.f=f}get(k){return this.f[k]}},console};
-vm.createContext(sandbox);vm.runInContext(fs.readFileSync('dist/vocabulary-context.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/context-playback.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/dictation-settings.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/dictation.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/app.js','utf8'),sandbox);
+vm.createContext(sandbox);vm.runInContext(fs.readFileSync('dist/vocabulary-fit.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/vocabulary-context.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/context-playback.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/dictation-settings.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/dictation.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/app.js','utf8'),sandbox);
 function run(s){return vm.runInContext(s,sandbox)}
 for(const route of ['home','words','grammar','dialogue','practice','listening','writing']){sandbox.location.hash='#'+route;run('render()');if(!el('#app').innerHTML.length)throw Error('Empty '+route)}
 run('pages.words(); drawWords("am nhac")');if(!el('#wordlist').innerHTML.includes('音乐'))throw Error('Search failed');
@@ -116,3 +116,15 @@ el('#listenWord').onclick();if(synth.paused)throw Error('Whole-list resume faile
 el('#practiceTab').onclick();const afterTab=spoken.length;synth.speaking=false;spoken.at(-1).onend();
 if(spoken.length!==afterTab||run('contextPlayback')!==null)throw Error('Playlist continued after tab change');
 run('stopWordAudio()');console.log('PASS: one complete 22-sentence pass, whole-list repeat, single-row playback, pause/resume and cancellation.');
+
+run('pages.words();drawWords("",0)');
+if((el('#wordlist').innerHTML.match(/data-known=/g)||[]).length!==6)throw Error('Desktop vocabulary page must contain six cards');
+el('#wordsNext').onclick();if(run('vocabularyPage')!==1)throw Error('Vocabulary next page failed');
+run('drawWords("am nhac",3)');if(run('vocabularyPage')!==0||!el('#wordlist').innerHTML.includes('音乐'))throw Error('Search should reset to matching page');
+sandbox.window.innerWidth=390;sandbox.window.innerHeight=844;
+run('drawWords("",10)');if((el('#wordlist').innerHTML.match(/data-known=/g)||[]).length!==2||!el('#wordsNext').disabled)throw Error('Mobile word page must contain two cards and stop at last page');
+run('startDictation(false,"sentence");dictationSession.tab="transcript";showDictation();renderContextPage(2)');
+if(!el('#contextRow-3').hidden||el('#contextRow-4').hidden||el('#contextRow-5').hidden||!el('#contextRow-6').hidden)throw Error('Sentence pagination did not show the correct two rows');
+el('#contextPageNext').onclick();if(run('dictationSession.contextListPage')!==3)throw Error('Sentence page button failed');
+run('dictationSession.transcriptIndex=10;updateContextSentence()');if(run('dictationSession.contextListPage')!==5)throw Error('Sentence page did not follow current playback');
+console.log('PASS: word pagination, search reset, mobile page size and sentence-page following.');

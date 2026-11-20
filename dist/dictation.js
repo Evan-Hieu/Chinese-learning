@@ -54,7 +54,7 @@ function moveDictation(direction){
   showDictation();
 }
 function showDictation(){
-  stopWordAudio();const session=dictationSession;session.composing=false;
+  stopWordAudio();const session=dictationSession;session.composing=false;app.dataset.vocabView=session.tab==='transcript'?'transcript':'practice';
   if(session.position>=session.queue.length){
     app.innerHTML=dictationChrome()+'<section class="card dictation-card"><div class="icon">✓</div><h2>'+(session.queue.length?'Hoàn thành lượt học!':'Chưa có từ cần ôn lại')+'</h2><p>'+session.correct+' / '+session.queue.length+' '+(session.mode==='sentence'?'câu':'từ')+' đúng ngay lần đầu, không xem đáp án.</p><p class="sub">Từ sai hoặc đã xem đáp án được giữ lại để bạn ôn tiếp.</p><button class="btn" id="restartDictation">Học lại từ đầu</button></section>';
     bindDictationChrome();document.querySelector('#restartDictation').onclick=()=>startDictation();return;
