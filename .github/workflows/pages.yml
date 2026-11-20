@@ -13,6 +13,8 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    outputs:
+      artifact_name: ${{ steps.artifact-name.outputs.value }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -20,6 +22,13 @@ jobs:
           node-version: '22'
       - run: node --check dist/app.js
       - run: node verify.cjs
+      - name: Choose artifact name
+        id: artifact-name
+        run: echo "value=github-pages-${{ github.run_id }}-${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+          name: ${{ steps.artifact-name.outputs.value }}
   deploy:
     needs: validate
     environment:
@@ -29,9 +38,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: ${{ needs.validate.outputs.artifact_name }}
