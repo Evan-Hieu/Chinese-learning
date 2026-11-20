@@ -86,7 +86,11 @@ function showDictation(){
   document.querySelector('#hanziAnswer').onkeydown=e=>{
     if(e.key!=='Enter'||e.shiftKey||e.ctrlKey||e.altKey||e.metaKey)return;
     if(composing||session.composing||e.isComposing||e.keyCode===229)return;
-    e.preventDefault();if(!e.repeat)checkDictation();
+    e.preventDefault();if(e.repeat)return;
+    if(session.passed&&compareHanzi(e.target.value,practiceEntry(session.queue[session.position])[0]).correct){
+      moveDictation(1);
+      if(session.position<session.queue.length)document.querySelector('#hanziAnswer').focus();
+    }else checkDictation();
   };
   document.querySelector('#dictationForm').onsubmit=e=>{e.preventDefault();if(composing||e.isComposing)return;checkDictation();};
   document.querySelector('#revealWord').onclick=()=>{session.revealed=true;markDictationWrong();showWordFeedback(false,true);};

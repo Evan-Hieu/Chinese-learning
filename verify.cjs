@@ -157,3 +157,13 @@ el('#hanziAnswer').oncompositionstart();el('#hanziAnswer').onkeydown({key:'Enter
 run('updateDictationPreference("showFull",true)');el('#hanziAnswer').onkeydown({key:'Enter',preventDefault(){}});
 if(!el('#dictationFeedback').innerHTML.includes(run('practiceEntry(0)[0]')))throw Error('Full sentence preference ignored');
 console.log('PASS: finite repeats, combinations, input preferences, Enter checking, IME protection and full sentence feedback.');
+run('state.dictationPrefs={showImmediate:true,showFull:false};startDictation(false,"sentence")');
+const enterAnswer=()=>el('#hanziAnswer').onkeydown({key:'Enter',target:el('#hanziAnswer'),preventDefault(){}});
+el('#hanziAnswer').value=run('practiceEntry(0)[0]');enterAnswer();
+if(!run('dictationSession.passed')||run('dictationSession.position')!==0)throw Error('First Enter must check only');
+enterAnswer();if(run('dictationSession.position')!==1||el('#hanziAnswer').value!=='')throw Error('Second Enter must advance with empty input');
+el('#hanziAnswer').value='错';enterAnswer();enterAnswer();if(run('dictationSession.position')!==1)throw Error('Wrong answer advanced');
+el('#hanziAnswer').value=run('practiceEntry(1)[0]');enterAnswer();el('#hanziAnswer').value='错';enterAnswer();if(run('dictationSession.position')!==1||run('dictationSession.passed'))throw Error('Edited answer advanced');
+run('dictationSession.position=21;showDictation()');el('#hanziAnswer').value=run('practiceEntry(21)[0]');enterAnswer();enterAnswer();
+if(!el('#app').innerHTML.includes('Hoàn thành lượt học'))throw Error('Final Enter did not complete');
+console.log('PASS: Enter checks first, advances correct answers only, guards edited answers and completes final question.');
