@@ -46,12 +46,15 @@ function captureDictation(){
   }
 }
 function moveDictation(direction){
-  const session=dictationSession;
+  const session=dictationSession,previousPosition=session.position;
   if(direction>0&&!session.passed)markDictationWrong();
   captureDictation();session.position=Math.max(0,session.position+direction);
   const record=session.records[session.position]||{};
   session.checked=!!record.checked;session.revealed=!!record.revealed;session.passed=!!record.passed;session.lastResult=record.lastResult||null;
   showDictation();
+  if(session.tab==='practice'&&session.position!==previousPosition&&session.position<session.queue.length){
+    speakWord(currentSpeechText(),{repeatsRemaining:0});
+  }
 }
 function showDictation(){
   stopWordAudio();const session=dictationSession;session.composing=false;app.dataset.vocabView=session.tab==='transcript'?'transcript':'practice';

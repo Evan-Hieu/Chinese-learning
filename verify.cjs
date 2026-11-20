@@ -167,3 +167,11 @@ el('#hanziAnswer').value=run('practiceEntry(1)[0]');enterAnswer();el('#hanziAnsw
 run('dictationSession.position=21;showDictation()');el('#hanziAnswer').value=run('practiceEntry(21)[0]');enterAnswer();enterAnswer();
 if(!el('#app').innerHTML.includes('Hoàn thành lượt học'))throw Error('Final Enter did not complete');
 console.log('PASS: Enter checks first, advances correct answers only, guards edited answers and completes final question.');
+for(const mode of ['word','sentence']){
+ run('state.dictationPrefs={autoReplay:10};startDictation(false,'+JSON.stringify(mode)+')');
+ const beforeAuto=spoken.length;run('moveDictation(1)');
+ if(spoken.length!==beforeAuto+1||spoken.at(-1).text!==run('currentSpeechText().replace(/[…。，]/g," ").trim()'))throw Error('New item must read once: '+mode);
+ synth.speaking=false;spoken.at(-1).onend();if(replayTimers.size)throw Error('Navigation playback repeated: '+mode);
+ run('dictationSession.position=21;showDictation()');const beforeComplete=spoken.length;run('moveDictation(1)');if(spoken.length!==beforeComplete)throw Error('Completion played audio');
+}
+console.log('PASS: sentence and word navigation each play once, ignore repeat count and stop at completion.');
