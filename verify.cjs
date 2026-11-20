@@ -2,8 +2,8 @@ const fs = require('fs');
 const vm = require('vm');
 const elements = new Map();
 function el(id){if(!elements.has(id))elements.set(id,{innerHTML:'',textContent:'',value:'',dataset:{},style:{},setAttribute(name,value){this[name]=value},focus(){},showModal(){this.open=true},close(){this.open=false;if(this.onclose)this.onclose()},getContext:()=>({beginPath(){},moveTo(){},lineTo(){},stroke(){},clearRect(){}}),getBoundingClientRect:()=>({left:0,top:0,width:400,height:400})});return elements.get(id)}
-const data={};const sandbox={document:{querySelector:el,querySelectorAll:()=>[]},location:{hash:'#home'},localStorage:{getItem:k=>data[k],setItem:(k,v)=>data[k]=v},window:{scrollTo(){},addEventListener(){}},FormData:class{constructor(f){this.f=f}get(k){return this.f[k]}},console};
-vm.createContext(sandbox);vm.runInContext(fs.readFileSync('dist/dictation-settings.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/dictation.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/app.js','utf8'),sandbox);
+const data={'hanyu-v1':JSON.stringify({dictationMode:'word'})};const sandbox={document:{querySelector:el,querySelectorAll:()=>[]},location:{hash:'#home'},localStorage:{getItem:k=>data[k],setItem:(k,v)=>data[k]=v},window:{scrollTo(){},addEventListener(){}},FormData:class{constructor(f){this.f=f}get(k){return this.f[k]}},console};
+vm.createContext(sandbox);vm.runInContext(fs.readFileSync('dist/vocabulary-context.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/dictation-settings.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/dictation.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/app.js','utf8'),sandbox);
 function run(s){return vm.runInContext(s,sandbox)}
 for(const route of ['home','words','grammar','dialogue','practice','listening','writing']){sandbox.location.hash='#'+route;run('render()');if(!el('#app').innerHTML.length)throw Error('Empty '+route)}
 run('pages.words(); drawWords("am nhac")');if(!el('#wordlist').innerHTML.includes('音乐'))throw Error('Search failed');
@@ -31,7 +31,7 @@ console.log('PASS: dictation normalization, character feedback, hidden answers, 
 
 run('state.dictationWrong=[];pages.words()');el('#dictationBtn').onclick({type:'click'});if(run('dictationSession.queue.length')!==22)throw Error('Click event selected review instead of lesson');console.log('PASS: vocabulary button starts all 22 words.');
 
-run('startDictation()');el('#hanziAnswer').value='在';el('#dictationForm').onsubmit({preventDefault(){}});el('#forwardWord').onclick();el('#previousWord').onclick();if(el('#hanziAnswer').value!=='在')throw Error('Previous word lost draft');const count=run('dictationSession.correct');el('#dictationForm').onsubmit({preventDefault(){}});if(run('dictationSession.correct')!==count)throw Error('Revisiting double counted score');el('#transcriptTab').onclick();if(!el('#app').innerHTML.includes('transcript-list'))throw Error('Transcript tab did not open');el('#practiceTab').onclick();if(el('#hanziAnswer').value!=='在')throw Error('Tab switch lost answer');console.log('PASS: previous/next, transcript tabs, preserved answer and no duplicate scoring.');
+run('startDictation()');el('#hanziAnswer').value='在';el('#dictationForm').onsubmit({preventDefault(){}});el('#forwardWord').onclick();el('#previousWord').onclick();if(el('#hanziAnswer').value!=='在')throw Error('Previous word lost draft');const count=run('dictationSession.correct');el('#dictationForm').onsubmit({preventDefault(){}});if(run('dictationSession.correct')!==count)throw Error('Revisiting double counted score');el('#transcriptTab').onclick();if(!el('#app').innerHTML.includes('context-sentence-list'))throw Error('Transcript tab did not open');el('#practiceTab').onclick();if(el('#hanziAnswer').value!=='在')throw Error('Tab switch lost answer');console.log('PASS: previous/next, transcript tabs, preserved answer and no duplicate scoring.');
 
 run('state.dictationPrefs={showImmediate:false,showFull:false};startDictation();dictationSession.position=3;showDictation()');
 el('#hanziAnswer').value='音';el('#dictationForm').onsubmit({preventDefault(){}});
@@ -71,3 +71,24 @@ el('#openDictationSettings').onclick();if(replayTimers.size)throw Error('Dialog 
 const atDialog=spoken.length;sandbox.event=keyEvent('Control');run('dictationKeyDown(event);dictationKeyUp(event)');if(spoken.length!==atDialog)throw Error('Shortcut active inside modal');
 el('#closeDictationSettings').onclick();run('stopWordAudio()');
 console.log('PASS: simulated speech pause/resume, delayed replay cancellation, Ctrl+C and modal shortcut guards.');
+
+if(run('vocabularyContexts.length')!==22)throw Error('Each word needs a sentence');
+if(!run('vocabularyContexts.every((item,i)=>item.target===words[i][0]&&item.zh&&item.py&&item.vi&&contextSources[item.source]&&(item.parts||[item.target]).every(part=>item.zh.includes(part)))'))throw Error('Context content or source mapping invalid');
+run('state.dictationMode="sentence";state.sentenceDictationWrong=[];startDictation()');
+if(run('dictationSession.mode')!=='sentence')throw Error('Sentence mode not selected');
+el('#hanziAnswer').value='我在听中文歌';el('#dictationForm').onsubmit({preventDefault(){}});
+if(!run('dictationSession.passed'))throw Error('Full sentence without punctuation rejected');
+run('moveDictation(1)');const oldWordMistakes=run('JSON.stringify(state.dictationWrong)');
+el('#hanziAnswer').value='正';el('#dictationForm').onsubmit({preventDefault(){}});
+if(run('dictationSession.passed')||!run('state.sentenceDictationWrong.includes(1)'))throw Error('Single word incorrectly passed sentence exercise');
+if(run('JSON.stringify(state.dictationWrong)')!==oldWordMistakes)throw Error('Sentence errors changed word review queue');
+el('#transcriptTab').onclick();
+if(!el('#app').innerHTML.includes('context-sentence-list')||(el('#app').innerHTML.match(/data-context-select=/g)||[]).length!==22)throw Error('Transcript should list all sentences');
+if(el('#app').innerHTML.includes('Māma zhèng kàn'))throw Error('Pinyin leaked in Chinese-only mode');
+el('#contextTranslation').onchange({target:{value:'both'}});
+if(!el('#app').innerHTML.includes('Māma zhèng kàn')||!el('#app').innerHTML.includes('Mẹ đang xem ti vi.'))throw Error('Translation selector failed');
+run('selectContextSentence(3)');el('#listenWord').onclick();
+if(spoken.at(-1).text!==run('vocabularyContexts[3].zh.replace(/[…。，]/g," ").trim()'))throw Error('Transcript player used the wrong sentence');
+el('#practiceContextSentence').onclick();
+if(run('dictationSession.mode')!=='sentence'||run('dictationSession.position')!==3)throw Error('Practice selected sentence failed');
+run('stopWordAudio()');console.log('PASS: 22 sourced sentence contexts, sentence grading, separate review, Chinese-only transcript, translation and selected-sentence practice.');

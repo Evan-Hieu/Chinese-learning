@@ -57,7 +57,7 @@ function dictationShortcutsActive(e){
 }
 function runDictationShortcut(key){
   const p=dictationPrefs();
-  if(key===p.replayKey){speakWord(words[dictationSession.queue[dictationSession.position]][0]);return true;}
+  if(key===p.replayKey){speakWord(currentSpeechText());return true;}
   if(key===p.playKey){toggleWordPlayback();return true;}return false;
 }
 function dictationKeyDown(e){
