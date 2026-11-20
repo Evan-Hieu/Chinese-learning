@@ -3,7 +3,7 @@ const vm = require('vm');
 const elements = new Map();
 function el(id){if(!elements.has(id))elements.set(id,{innerHTML:'',textContent:'',value:'',dataset:{},style:{},setAttribute(name,value){this[name]=value},focus(){},showModal(){this.open=true},close(){this.open=false;if(this.onclose)this.onclose()},getContext:()=>({beginPath(){},moveTo(){},lineTo(){},stroke(){},clearRect(){}}),getBoundingClientRect:()=>({left:0,top:0,width:400,height:400})});return elements.get(id)}
 const data={'hanyu-v1':JSON.stringify({dictationMode:'word'})};const sandbox={document:{querySelector:el,querySelectorAll:()=>[]},location:{hash:'#home'},localStorage:{getItem:k=>data[k],setItem:(k,v)=>data[k]=v},window:{scrollTo(){},addEventListener(){}},FormData:class{constructor(f){this.f=f}get(k){return this.f[k]}},console};
-vm.createContext(sandbox);vm.runInContext(fs.readFileSync('dist/vocabulary-context.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/dictation-settings.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/dictation.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/app.js','utf8'),sandbox);
+vm.createContext(sandbox);vm.runInContext(fs.readFileSync('dist/vocabulary-context.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/context-playback.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/dictation-settings.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/dictation.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/app.js','utf8'),sandbox);
 function run(s){return vm.runInContext(s,sandbox)}
 for(const route of ['home','words','grammar','dialogue','practice','listening','writing']){sandbox.location.hash='#'+route;run('render()');if(!el('#app').innerHTML.length)throw Error('Empty '+route)}
 run('pages.words(); drawWords("am nhac")');if(!el('#wordlist').innerHTML.includes('音乐'))throw Error('Search failed');
@@ -86,9 +86,33 @@ el('#transcriptTab').onclick();
 if(!el('#app').innerHTML.includes('context-sentence-list')||(el('#app').innerHTML.match(/data-context-select=/g)||[]).length!==22)throw Error('Transcript should list all sentences');
 if(el('#app').innerHTML.includes('Māma zhèng kàn'))throw Error('Pinyin leaked in Chinese-only mode');
 el('#contextTranslation').onchange({target:{value:'both'}});
-if(!el('#app').innerHTML.includes('Māma zhèng kàn')||!el('#app').innerHTML.includes('Mẹ đang xem ti vi.'))throw Error('Translation selector failed');
+if(!el('.context-current').innerHTML.includes('Māma zhèng kàn')||!el('.context-current').innerHTML.includes('Mẹ đang xem ti vi.'))throw Error('Translation selector failed');
 run('selectContextSentence(3)');el('#listenWord').onclick();
-if(spoken.at(-1).text!==run('vocabularyContexts[3].zh.replace(/[…。，]/g," ").trim()'))throw Error('Transcript player used the wrong sentence');
+if(spoken.at(-1).text!==run('vocabularyContexts[0].zh.replace(/[…。，]/g," ").trim()'))throw Error('Main player must start at first sentence');
 el('#practiceContextSentence').onclick();
-if(run('dictationSession.mode')!=='sentence'||run('dictationSession.position')!==3)throw Error('Practice selected sentence failed');
+if(run('dictationSession.mode')!=='sentence'||run('dictationSession.position')!==0)throw Error('Practice selected sentence failed');
 run('stopWordAudio()');console.log('PASS: 22 sourced sentence contexts, sentence grading, separate review, Chinese-only transcript, translation and selected-sentence practice.');
+
+run('startDictation(false,"sentence");dictationSession.tab="transcript";dictationSession.transcriptIndex=9;showDictation()');
+let playlistStart=spoken.length;el('#listenWord').onclick();
+for(let i=0;i<22;i++){
+  if(spoken.at(-1).text!==run('vocabularyContexts['+i+'].zh.replace(/[…。，]/g," ").trim()'))throw Error('Whole-list order mismatch at '+i);
+  if(run('dictationSession.transcriptIndex')!==i)throw Error('Selected sentence did not follow playback');
+  synth.speaking=false;spoken.at(-1).onend();
+}
+if(spoken.length-playlistStart!==22||run('contextPlayback')!==null||replayTimers.size)throw Error('Playback must stop after one whole pass');
+el('#contextRepeat').onchange({target:{checked:true}});playlistStart=spoken.length;el('#listenWord').onclick();
+for(let i=0;i<22;i++){synth.speaking=false;spoken.at(-1).onend();}
+if(spoken.length-playlistStart!==22||replayTimers.size!==1)throw Error('Repeat must wait until the whole list finishes');
+const repeatEntry=[...replayTimers.entries()][0];replayTimers.delete(repeatEntry[0]);repeatEntry[1].cb();
+if(spoken.at(-1).text!==run('vocabularyContexts[0].zh.replace(/[…。，]/g," ").trim()'))throw Error('Repeat did not restart from first sentence');
+el('#contextRepeat').onchange({target:{checked:false}});
+if(!synth.speaking||run('contextPlayback')===null)throw Error('Turning repeat off stopped the current pass');
+const staleEnd=spoken.at(-1).onend;run('selectContextSentence(3,true)');
+const individualStart=spoken.length;synth.speaking=false;spoken.at(-1).onend();staleEnd();
+if(spoken.length!==individualStart||replayTimers.size||run('contextPlayback')!==null)throw Error('Individual sentence replayed or old playlist resumed');
+el('#listenWord').onclick();el('#listenWord').onclick();if(!synth.paused)throw Error('Whole-list pause failed');
+el('#listenWord').onclick();if(synth.paused)throw Error('Whole-list resume failed');
+el('#practiceTab').onclick();const afterTab=spoken.length;synth.speaking=false;spoken.at(-1).onend();
+if(spoken.length!==afterTab||run('contextPlayback')!==null)throw Error('Playlist continued after tab change');
+run('stopWordAudio()');console.log('PASS: one complete 22-sentence pass, whole-list repeat, single-row playback, pause/resume and cancellation.');

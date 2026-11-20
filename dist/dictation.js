@@ -1,6 +1,7 @@
 // Vocabulary listening practice. Browser speech is separate from the textbook recordings.
 let dictationSession=null,wordReplayTimer=null,wordSpeechEpoch=0,wordUtterance=null;
-function stopWordAudio(){
+function stopWordAudio(preservePlaylist=false){
+  if(!preservePlaylist)cancelContextPlayback();
   wordSpeechEpoch++;
   if(wordReplayTimer!==null){clearTimeout(wordReplayTimer);wordReplayTimer=null;}
   wordUtterance=null;
@@ -95,27 +96,28 @@ function toggleWordPlayback(){
   if(wordReplayTimer!==null){stopWordAudio();status.textContent='Đã dừng tự nghe lại. Bấm ▶ để phát.';return;}
   speakWord(currentSpeechText());
 }
-function speakWord(text){
+function speakWord(text,options={}){
   const status=document.querySelector('#speechStatus');
-  if(!window.speechSynthesis||!window.SpeechSynthesisUtterance){status.textContent='Trình duyệt chưa hỗ trợ đọc từ. Bạn vẫn có thể xem đáp án để học từ.';return;}
-  stopWordAudio();const epoch=wordSpeechEpoch,session=dictationSession,position=activeSpeechPosition();
+  if(!window.speechSynthesis||!window.SpeechSynthesisUtterance){status.textContent='Trình duyệt chưa hỗ trợ đọc từ. Bạn vẫn có thể xem đáp án để học từ.';return false;}
+  stopWordAudio(!!options.playlist);const epoch=wordSpeechEpoch,session=dictationSession,position=activeSpeechPosition();
   const voices=window.speechSynthesis.getVoices();
   const voice=voices.find(v=>/^zh[-_]CN/i.test(v.lang))||voices.find(v=>/^zh/i.test(v.lang));
-  if(!voice){status.textContent='Chưa tìm thấy giọng tiếng Trung. Hãy bật hoặc cài giọng tiếng Trung trong thiết bị rồi thử lại. Bạn vẫn có thể dùng “Xem đáp án”.';return;}
+  if(!voice){status.textContent='Chưa tìm thấy giọng tiếng Trung. Hãy bật hoặc cài giọng tiếng Trung trong thiết bị rồi thử lại. Bạn vẫn có thể dùng “Xem đáp án”.';return false;}
   const utterance=new window.SpeechSynthesisUtterance(text.replace(/[…。，]/g,' ').trim());wordUtterance=utterance;
   utterance.volume=Number(session.volume===undefined?1:session.volume);utterance.voice=voice;utterance.lang=voice.lang;utterance.rate=Number(document.querySelector('#wordRate').value)||0.85;
-  utterance.onstart=()=>{if(epoch!==wordSpeechEpoch)return;status.textContent='Đang đọc…';document.querySelector('#listenWord').textContent='❚❚';};
+  utterance.onstart=()=>{if(epoch!==wordSpeechEpoch)return;status.textContent=options.playlist?'Đang nghe toàn bộ bài · Câu '+(position+1)+' / '+session.queue.length:'Đang đọc…';document.querySelector('#listenWord').textContent='❚❚';};
   utterance.onend=()=>{
     if(epoch!==wordSpeechEpoch)return;wordUtterance=null;document.querySelector('#listenWord').textContent='▶';
+    if(options.onComplete){options.onComplete();return;}
     const prefs=dictationPrefs();
-    const repeat=session.tab==='transcript'?session.transcriptRepeat:(prefs.autoReplay&&!session.passed&&!session.revealed);
+    const repeat=session.tab!=='transcript'&&prefs.autoReplay&&!session.passed&&!session.revealed;
     if(repeat&&session===dictationSession&&position===activeSpeechPosition()){
       status.textContent='Nghe lại sau '+prefs.replayDelay+' giây. Bấm ▶ để dừng.';
       wordReplayTimer=setTimeout(()=>{wordReplayTimer=null;if(epoch===wordSpeechEpoch)speakWord(text);},prefs.replayDelay*1000);
     }else status.textContent='Đã đọc xong. Bấm ▶ để nghe lại.';
   };
-  utterance.onerror=event=>{if(epoch!==wordSpeechEpoch)return;wordUtterance=null;document.querySelector('#listenWord').textContent='▶';if(event.error!=='canceled'&&event.error!=='interrupted')status.textContent='Không phát được giọng đọc. Hãy thử lại hoặc xem đáp án.';};
-  window.speechSynthesis.resume();window.speechSynthesis.speak(utterance);
+  utterance.onerror=event=>{if(epoch!==wordSpeechEpoch)return;wordUtterance=null;document.querySelector('#listenWord').textContent='▶';if(event.error!=='canceled'&&event.error!=='interrupted')status.textContent='Không phát được giọng đọc. Hãy thử lại hoặc xem đáp án.';if(options.onError)options.onError();};
+  window.speechSynthesis.resume();window.speechSynthesis.speak(utterance);return true;
 }
 function markDictationWrong(){
   const id=dictationSession.queue[dictationSession.position];
