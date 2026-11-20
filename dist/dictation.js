@@ -24,7 +24,7 @@ function startDictation(review=false){
   stopWordAudio();
   const mistakes=Array.isArray(state.dictationWrong)?state.dictationWrong.filter(i=>Number.isInteger(i)&&i>=0&&i<words.length):[];
   const queue=review?mistakes:words.map((_,i)=>i);
-  dictationSession={queue,position:0,checked:false,revealed:false,correct:0,review,records:{},tab:'practice',rate:'0.85',volume:'1',lastResult:null,composing:false};
+  dictationSession={queue,position:0,checked:false,revealed:false,correct:0,review,records:{},tab:'practice',rate:'0.85',volume:'1',lastResult:null,composing:false,hideNote:true};
   showDictation();
 }
 function dictationChrome(){
@@ -70,7 +70,7 @@ function showDictation(){
   const record=session.records[session.position]||{};
   document.querySelector('#hanziAnswer').value=record.draft||'';
   if(session.lastResult)showWordFeedback(session.lastResult.correct,session.lastResult.reveal,session.lastResult.parts);
-  if(session.checked||session.revealed)document.querySelector('#nextWord').textContent='Tiếp theo →';
+  if(session.passed)document.querySelector('#nextWord').textContent='Tiếp theo →';
   document.querySelector('#listenWord').onclick=toggleWordPlayback;
   document.querySelector('#wordRate').value=session.rate||'0.85';
   document.querySelector('#wordRate').onchange=e=>{session.rate=e.target.value;stopWordAudio();};
