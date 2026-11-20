@@ -170,3 +170,7 @@ body.vocabulary-fit{height:100dvh;overflow:hidden}
 .vocabulary-fit .word-match .activity-buttons .btn{padding:10px 18px;line-height:1.4}
 .vocabulary-fit .word-match .activity-top,.vocabulary-fit .word-match .match-instruction{margin:0;line-height:1.5}
 @media(max-width:650px){.vocabulary-fit .word-match{gap:8px;grid-template-rows:auto auto minmax(197px,1fr) auto auto}.vocabulary-fit .word-match .match-board{min-height:197px}}
+.vocabulary-fit .word-match{padding:14px;gap:8px}
+.vocabulary-fit .word-match .match-board>div{min-height:0;height:100%}
+.vocabulary-fit .word-match .match-tile{padding:6px;line-height:1.2;overflow:hidden}
+@media(max-width:650px){.vocabulary-fit .word-match{padding:12px}}
