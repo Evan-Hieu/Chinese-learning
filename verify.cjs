@@ -11,3 +11,9 @@ run('flash()');if(!el('#app').innerHTML.includes('Thẻ 1 / 22'))throw Error('Fl
 run('pages.practice()');const answers={q0:'0',q1:'1',q2:'2',q3:'0',q4:'1',q5:'1'};el('#quiz').onsubmit({preventDefault(){},target:answers});if(!el('#result').textContent.includes('6/6'))throw Error('Scoring failed');
 for(const file of ['Q2B1.mp3','Q2B1.NC1.MP3','Q2B1.NC2.MP3','Q2B1.NC3.MP3'])if(fs.statSync('dist/audio/'+file).size<1000)throw Error('Missing audio');
 console.log('PASS: seven views, accent-insensitive search, flashcards, saved progress, quiz scoring, four audio assets. DOM simulation only; browser layout not verified.');
+
+run('state.level=1; render()');if(!el('#app').innerHTML.includes('Chưa có bài học')||!el('#lesson-select').disabled)throw Error('HSK1 must have no lessons');
+run('state.level=2; render()');if(!el('#lesson-select').innerHTML.includes('Lesson 1')||el('#lesson-select').disabled)throw Error('HSK2 lesson unavailable');
+for(const level of [3,4]){run('state.level='+level+'; render()');if(!el('#app').innerHTML.includes('Chưa có bài học'))throw Error('Unavailable course leaked content');}
+run('state.level=2; render()');if(!run('state.known.includes(0)'))throw Error('Course selection lost progress');
+console.log('PASS: HSK1–4 selection, HSK2 Lesson 1 mapping, empty courses and preserved progress.');

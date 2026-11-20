@@ -21,7 +21,6 @@ jobs:
       - run: node --check dist/app.js
       - run: node verify.cjs
   deploy:
-    if: github.event_name == 'workflow_dispatch'
     needs: validate
     environment:
       name: github-pages
