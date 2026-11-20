@@ -36,7 +36,7 @@ function dictationChrome(){
 function bindDictationChrome(){
   document.querySelector('#backWords').onclick=()=>{stopWordAudio();pages.words();};
   document.querySelector('#reviewWrong').onclick=()=>startDictation(true);
-  document.querySelector('#practiceMode').onchange=e=>startDictation(false,e.target.value);
+  document.querySelector('#practiceMode').onchange=e=>selectVocabularyActivity(e.target.value);
   if(!dictationSession.hideNote)document.querySelector('#dismissPracticeNote').onclick=()=>{captureDictation();dictationSession.hideNote=true;showDictation();};
 }
 function captureDictation(){
@@ -116,7 +116,7 @@ function speakWord(text,options={}){
   const voice=voices.find(v=>/^zh[-_]CN/i.test(v.lang))||voices.find(v=>/^zh/i.test(v.lang));
   if(!voice){status.textContent='Chưa tìm thấy giọng tiếng Trung. Hãy bật hoặc cài giọng tiếng Trung trong thiết bị rồi thử lại. Bạn vẫn có thể dùng “Xem đáp án”.';return false;}
   const utterance=new window.SpeechSynthesisUtterance(text.replace(/[…。，]/g,' ').trim());wordUtterance=utterance;
-  utterance.volume=Number(session.volume===undefined?1:session.volume);utterance.voice=voice;utterance.lang=voice.lang;utterance.rate=Number(document.querySelector('#wordRate').value)||0.85;
+  utterance.volume=Number(session.volume===undefined?1:session.volume);utterance.voice=voice;utterance.lang=voice.lang;utterance.rate=Number(document.querySelector('#wordRate')?.value)||0.85;
   utterance.onstart=()=>{if(epoch!==wordSpeechEpoch)return;status.textContent=options.playlist?'Đang nghe toàn bộ bài · Câu '+(position+1)+' / '+session.queue.length:'Đang đọc…';document.querySelector('#listenWord').textContent='❚❚';};
   utterance.onend=()=>{
     if(epoch!==wordSpeechEpoch)return;wordUtterance=null;document.querySelector('#listenWord').textContent='▶';

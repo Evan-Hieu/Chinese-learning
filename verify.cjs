@@ -175,3 +175,18 @@ for(const mode of ['word','sentence']){
  run('dictationSession.position=21;showDictation()');const beforeComplete=spoken.length;run('moveDictation(1)');if(spoken.length!==beforeComplete)throw Error('Completion played audio');
 }
 console.log('PASS: sentence and word navigation each play once, ignore repeat count and stop at completion.');
+vm.runInContext(fs.readFileSync('dist/vocabulary-activities.js','utf8'),sandbox);
+run('pages.words()');if(!el('#app').innerHTML.includes('hanziAnswer'))throw Error('Vocabulary must open practice directly');
+run('selectVocabularyActivity("flash")');if(!el('#app').innerHTML.includes('activityFlip'))throw Error('Flash activity missing');
+el('#activityFlip').onclick();if(!el('#app').innerHTML.includes(run('vocabularyContexts[0].vi')))throw Error('Flash context missing');
+const knownBefore=run('state.known.length');el('#remember').onclick();el('#remember').onclick();if(run('new Set(state.known).size!==state.known.length'))throw Error('Duplicate remembered word');
+run('startWordMatch()');const firstPair=run('matchRoundIds()[0]');run('chooseMatchMeaning('+firstPair+')');if(run('wordMatch.attempts')!==0)throw Error('Unselected guess counted');
+const wrongPair=run('matchRoundIds().find(id=>words[id][2]!==words[matchRoundIds()[0]][2])');run('selectMatchWord('+firstPair+');chooseMatchMeaning('+wrongPair+')');if(run('wordMatch.matches')!==0||run('wordMatch.attempts')!==1)throw Error('Wrong pair accepted');
+for(let round=0;round<6;round++){
+ const ids=JSON.parse(run('JSON.stringify(matchRoundIds())'));
+ for(const id of ids)run('selectMatchWord('+id+');chooseMatchMeaning('+id+')');
+ if(run('wordMatch.solved.length')!==ids.length)throw Error('Round not completed');
+ el('#matchNext').onclick();
+}
+if(!el('#app').innerHTML.includes('Hoàn thành ghép từ')||run('wordMatch.matches')!==22||!JSON.parse(data['hanyu-v1']).matchBest)throw Error('Game completion missing');
+console.log('PASS: vocabulary entry, integrated flashcards with contexts, wrong/correct matches, all 22 pairs and saved best score.');
