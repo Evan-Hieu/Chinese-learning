@@ -83,6 +83,11 @@ function showDictation(){
   let composing=false;
   document.querySelector('#hanziAnswer').oncompositionstart=()=>{composing=true;session.composing=true;};
   document.querySelector('#hanziAnswer').oncompositionend=()=>{composing=false;session.composing=false;};
+  document.querySelector('#hanziAnswer').onkeydown=e=>{
+    if(e.key!=='Enter'||e.shiftKey||e.ctrlKey||e.altKey||e.metaKey)return;
+    if(composing||session.composing||e.isComposing||e.keyCode===229)return;
+    e.preventDefault();if(!e.repeat)checkDictation();
+  };
   document.querySelector('#dictationForm').onsubmit=e=>{e.preventDefault();if(composing||e.isComposing)return;checkDictation();};
   document.querySelector('#revealWord').onclick=()=>{session.revealed=true;markDictationWrong();showWordFeedback(false,true);};
   document.querySelector('#nextWord').onclick=()=>moveDictation(1);
@@ -110,10 +115,11 @@ function speakWord(text,options={}){
     if(epoch!==wordSpeechEpoch)return;wordUtterance=null;document.querySelector('#listenWord').textContent='▶';
     if(options.onComplete){options.onComplete();return;}
     const prefs=dictationPrefs();
-    const repeat=session.tab!=='transcript'&&prefs.autoReplay&&!session.passed&&!session.revealed;
+    const remaining=Number.isInteger(options.repeatsRemaining)?options.repeatsRemaining:prefs.autoReplay;
+    const repeat=session.tab!=='transcript'&&remaining>0&&!session.passed&&!session.revealed;
     if(repeat&&session===dictationSession&&position===activeSpeechPosition()){
-      status.textContent='Nghe lại sau '+prefs.replayDelay+' giây. Bấm ▶ để dừng.';
-      wordReplayTimer=setTimeout(()=>{wordReplayTimer=null;if(epoch===wordSpeechEpoch)speakWord(text);},prefs.replayDelay*1000);
+      status.textContent='Còn '+remaining+' lần nghe lại · phát sau '+prefs.replayDelay+' giây. Bấm ▶ để dừng.';
+      wordReplayTimer=setTimeout(()=>{wordReplayTimer=null;if(epoch===wordSpeechEpoch)speakWord(text,{...options,repeatsRemaining:remaining-1});},prefs.replayDelay*1000);
     }else status.textContent='Đã đọc xong. Bấm ▶ để nghe lại.';
   };
   utterance.onerror=event=>{if(epoch!==wordSpeechEpoch)return;wordUtterance=null;document.querySelector('#listenWord').textContent='▶';if(event.error!=='canceled'&&event.error!=='interrupted')status.textContent='Không phát được giọng đọc. Hãy thử lại hoặc xem đáp án.';if(options.onError)options.onError();};
@@ -138,10 +144,19 @@ function checkDictation(){
   session.checked=true;showWordFeedback(result.correct,false,result.parts);
 }
 function maskedWordFeedback(parts,showImmediate){
-  let hinted=false;
-  return parts.filter(p=>p.kind!=='extra').map(p=>{
+  const expected=parts.filter(p=>p.kind!=='extra'),firstMissing=expected.findIndex(p=>p.kind==='missing');
+  let hintStart=firstMissing,hintEnd=firstMissing+1;
+  if(showImmediate&&firstMissing>=0&&typeof Intl.Segmenter==='function'){
+    const text=expected.map(p=>p.text).join('');
+    let offset=0;
+    for(const item of new Intl.Segmenter('zh-CN',{granularity:'word'}).segment(text)){
+      const end=offset+Array.from(item.segment).length;
+      if(firstMissing>=offset&&firstMissing<end){hintStart=offset;hintEnd=end;break;}offset=end;
+    }
+  }
+  return expected.map((p,index)=>{
     if(p.kind==='correct')return '<span class="answer-match">'+esc(p.text)+'</span>';
-    if(showImmediate&&!hinted){hinted=true;return '<span class="answer-hint">'+esc(p.text)+'</span>';}
+    if(showImmediate&&index>=hintStart&&index<hintEnd)return '<span class="answer-hint">'+esc(p.text)+'</span>';
     return '<span class="answer-mask" aria-label="Chữ còn ẩn">＊</span>';
   }).join('');
 }

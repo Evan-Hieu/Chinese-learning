@@ -128,3 +128,32 @@ if(!el('#contextRow-3').hidden||el('#contextRow-4').hidden||el('#contextRow-5').
 el('#contextPageNext').onclick();if(run('dictationSession.contextListPage')!==3)throw Error('Sentence page button failed');
 run('dictationSession.transcriptIndex=10;updateContextSentence()');if(run('dictationSession.contextListPage')!==5)throw Error('Sentence page did not follow current playback');
 console.log('PASS: word pagination, search reset, mobile page size and sentence-page following.');
+
+run('state.dictationPrefs={autoReplay:3,replayDelay:1.5};startDictation(false,"sentence");speakWord(currentSpeechText())');
+const finiteStart=spoken.length;
+for(let i=0;i<4;i++){
+ synth.speaking=false;spoken.at(-1).onend();
+ if(i<3){const entry=[...replayTimers.entries()][0];if(!entry||entry[1].delay!==1500)throw Error('Finite replay delay');replayTimers.delete(entry[0]);entry[1].cb();}
+}
+if(spoken.length-finiteStart!==3||replayTimers.size)throw Error('Finite repeat did not stop');
+for(const count of [0,1,10])if(!run('updateDictationPreference("autoReplay",'+count+')'))throw Error('Valid repeat rejected');
+if(run('updateDictationPreference("autoReplay",11)'))throw Error('Invalid repeat accepted');
+run('updateDictationPreference("suggestions",true);updateDictationPreference("shortcutTips",false)');
+if(el('#hanziAnswer').autocomplete!=='on'||!el('#shortcutTips').hidden)throw Error('Input preferences not applied');
+run('updateDictationPreference("shortcutTips",true)');if(el('#shortcutTips').hidden)throw Error('Tips did not show');
+for(const [shortcut,key,code,mods] of [['Control+Shift','Shift','ShiftLeft',{ctrlKey:true,shiftKey:true}],['Control+Alt','Alt','AltLeft',{ctrlKey:true,altKey:true}],['Meta','Meta','MetaLeft',{metaKey:true}],['Control+Space',' ','Space',{ctrlKey:true}],['Control+KeyB','b','KeyB',{ctrlKey:true}]]){
+ run('state.dictationPrefs.replayKey='+JSON.stringify(shortcut));const beforeChord=spoken.length;
+ sandbox.event=keyEvent(key,code,mods);run('dictationKeyDown(event);dictationKeyUp(event)');
+ if(spoken.length!==beforeChord+1)throw Error('Chord failed '+shortcut);
+}
+run('stopWordAudio();state.dictationPrefs={showImmediate:true,showFull:false};startDictation(false,"sentence")');
+el('#hanziAnswer').value='我在听';
+let prevented=false;el('#hanziAnswer').onkeydown({key:'Enter',preventDefault(){prevented=true;}});
+if(!prevented||!run('dictationSession.checked')||!el('#dictationFeedback').innerHTML.includes('answer-hint'))throw Error('Enter did not check with hint');
+run('startDictation(false,"sentence")');el('#hanziAnswer').value='我';
+el('#hanziAnswer').onkeydown({key:'Enter',isComposing:true,preventDefault(){throw Error('IME Enter intercepted');}});
+if(run('dictationSession.checked'))throw Error('IME answer checked');
+el('#hanziAnswer').oncompositionstart();el('#hanziAnswer').onkeydown({key:'Enter',preventDefault(){throw Error('Composition intercepted');}});el('#hanziAnswer').oncompositionend();
+run('updateDictationPreference("showFull",true)');el('#hanziAnswer').onkeydown({key:'Enter',preventDefault(){}});
+if(!el('#dictationFeedback').innerHTML.includes(run('practiceEntry(0)[0]')))throw Error('Full sentence preference ignored');
+console.log('PASS: finite repeats, combinations, input preferences, Enter checking, IME protection and full sentence feedback.');
