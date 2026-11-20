@@ -28,3 +28,5 @@ el('#hanziAnswer').value='在';el('#dictationForm').onsubmit({preventDefault(){}
 run('startDictation(true)');el('#hanziAnswer').value='在';el('#dictationForm').onsubmit({preventDefault(){}});if(run('state.dictationWrong.includes(0)'))throw Error('Review did not clear word');
 run('startDictation()');el('#revealWord').onclick();if(!run('state.dictationWrong.includes(0)'))throw Error('Revealed answer missing from review');
 console.log('PASS: dictation normalization, character feedback, hidden answers, saved mistakes, retry scoring and review.');
+
+run('state.dictationWrong=[];pages.words()');el('#dictationBtn').onclick({type:'click'});if(run('dictationSession.queue.length')!==22)throw Error('Click event selected review instead of lesson');console.log('PASS: vocabulary button starts all 22 words.');
