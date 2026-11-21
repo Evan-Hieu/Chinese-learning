@@ -57,3 +57,7 @@ Lesson 5 — 你这个周末什么时候有空儿？ adds twenty vocabulary grou
 HSK2 Lesson 6
 
 Lesson 6 — 上个周末你做什么了？ contains nineteen vocabulary groups, two transcribed dialogues, completion 了 / negative 没 and subject-predicate-predicate grammar, reading/cloze activities, three past-event question forms and a weekend-report simulation. The twelve source pages 65–76 and four supplied Q2B6 MP3 files are preserved. The first page has a clipboard notification covering some lesson goals; those obscured goals were not reconstructed. NC1–NC3 transcripts and original letter keys were checked visually against PDF page 17; the fifteen graded comprehension questions are independently authored and labelled. Textbook recording 06-3 remains ungraded without a verified corresponding recording/transcript. Vocabulary and exercise progress is isolated across Lessons 1–6; the advanced vocabulary library is unchanged.
+
+HSK2 Lesson 7
+
+Lesson 7 — 你是跟谁一起去的？ adds 21 vocabulary groups, two transcribed dialogues, 是……的 grammar, transport/photo/reading exercises and a recent-trip simulation. Fourteen supplied pages 77–90 and all four Q2B7 audio files are preserved. NC1–NC3 transcripts and original letter keys were checked against answer PDF page 18; fifteen independently authored listening questions are labelled separately. Textbook 07-3 remains ungraded until its corresponding recording/transcript is verified. Progress is isolated across Lessons 1–7; advanced vocabulary is unchanged.
