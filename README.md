@@ -42,3 +42,8 @@ HSK2 Lesson 3
 Select Lesson 3 — 可以用一下你的手机吗？. The 21 textbook vocabulary groups (电话 and 号 remain associated subwords), two transcribed dialogues, reading passage, fill-in and reading exercises are in lesson3-data.js. lesson3.js adds the seven learning views, borrowing simulation, fictional telephone-number role-play and independent lesson progress. All eleven original pages 27–37 are accessible in references.
 
 The four supplied Q2B3 files are playable. BTNC NC1–NC3 transcripts and original answer keys were checked against PDF page 14; the page image is included. The 15 automatically graded comprehension questions are newly authored and labelled separately from the absent original BTNC question sheets. Textbook code 03-3 remains ungraded without a verified corresponding recording/transcript. Device speech of the two textbook dialogues is separate from the MP3 recordings.
+
+
+HSK2 Lesson 4
+
+Lesson 4 — 你想要哪件？ contains the 19 textbook vocabulary groups (色 remains a subword of 颜色), two shopping dialogues, the reading passage, fill-in and reading-comprehension exercises, and a shopping role-play for colours, sizes and bargaining. Progress is isolated across Lessons 1–4. All thirteen supplied image excerpts are preserved, with labels for their overlapping pages 39–50. Four Q2B4 audio files are playable. NC1–NC3 transcripts and original answer-letter sequences were checked visually against PDF page 15. The fifteen graded comprehension questions are newly authored and labelled separately from the original BTNC questions. Textbook 04-3 remains ungraded pending a verified corresponding recording/transcript.
