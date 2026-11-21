@@ -9,7 +9,7 @@ const activityPictures=[
 const simultaneousPictures=[
  {box:[84,199,117,85],actions:['走路','听音乐'],vi:'Người vừa đi đường vừa nghe nhạc'},
  {box:[305,199,119,85],actions:['唱歌','跳舞'],vi:'Người đang biểu diễn với các nốt nhạc'},
- {box:[84,336,118,85],actions:['看书','吃饭'],vi:'Người vừa đọc vừa ăn'}
+ {box:[84,336,118,85],actions:['看书','喝茶'],vi:'Người vừa đọc sách vừa uống đồ uống'}
 ];
 let pictureMode='identify',pictureIndex=0;
 function pictureKey(){return pictureMode+':'+pictureIndex;}
@@ -47,7 +47,7 @@ function gradePicture(mode,index,answer,question=''){
    const item=activityPictures[index],subject='(?:他|她|他们|她们)',action=item.action==='打球'?'打(?:篮)?球':item.action==='吃饭'?'(?:吃饭|吃东西|吃汉堡)':item.action;
    return new RegExp('^'+subject+'(?:现在)?(?:在|正在|正)做什么(?:呢)?$').test(normalizeHanzi(question))&&new RegExp('^'+subject+'(?:现在)?(?:在|正在|正)'+action+'(?:呢)?$').test(text);
  }
- const actions=simultaneousPictures[index].actions;
+ const actions=simultaneousPictures[index].actions.map(action=>index===2&&action==='喝茶'?'(?:喝茶|喝咖啡|喝水)':action);
  return actions.some((first,i)=>new RegExp('^(?:他|她|他们|她们)?一边'+first+'一边'+actions[1-i]+'$').test(text));
 }
 function checkPictureAnswer(){
