@@ -47,3 +47,8 @@ The four supplied Q2B3 files are playable. BTNC NC1–NC3 transcripts and origin
 HSK2 Lesson 4
 
 Lesson 4 — 你想要哪件？ contains the 19 textbook vocabulary groups (色 remains a subword of 颜色), two shopping dialogues, the reading passage, fill-in and reading-comprehension exercises, and a shopping role-play for colours, sizes and bargaining. Progress is isolated across Lessons 1–4. All thirteen supplied image excerpts are preserved, with labels for their overlapping pages 39–50. Four Q2B4 audio files are playable. NC1–NC3 transcripts and original answer-letter sequences were checked visually against PDF page 15. The fifteen graded comprehension questions are newly authored and labelled separately from the original BTNC questions. Textbook 04-3 remains ungraded pending a verified corresponding recording/transcript.
+
+
+HSK2 Lesson 5
+
+Lesson 5 — 你这个周末什么时候有空儿？ adds twenty vocabulary groups, two transcribed telephone dialogues, 跟/给 and 有点儿/一点儿 grammar, a reading passage, picture activities, practice responses and an appointment role-play. All thirteen supplied pages 51–63 are preserved in references. Progress for vocabulary, exercises and the appointment form is isolated across Lessons 1–5. Four Q2B5 MP3s are playable. NC1–NC3 transcripts and original answer letters were checked against PDF page 16; fifteen newly authored listening-comprehension questions are labelled separately. Textbook recording 05-3 remains ungraded without its verified transcript/recording.
