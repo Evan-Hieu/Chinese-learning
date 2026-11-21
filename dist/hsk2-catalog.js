@@ -9,7 +9,7 @@ function renderHsk2Sections(){
  const visible=filteredHsk2Stories();
  document.querySelector('#hsk2SectionList').innerHTML=visible.length?hsk2Sections.map(([id,title],index)=>{
   const lessons=visible.filter(story=>story.section===id);if(!lessons.length)return '';
-  const all=hsk2Stories.filter(story=>story.section===id),terms=new Set(all.flatMap(story=>story.vocabulary.map(w=>w[0])));
+  const terms=new Set(lessons.flatMap(story=>story.vocabulary.map(w=>w[0])));
   return `<details class="hsk2-section" data-hsk2-section="${id}" ${openHsk2Sections.has(id)||hsk2LibraryQuery?'open':''}><summary><strong>Section ${index+1}</strong><span>${title}</span><small>(${lessons.length} bài · ${terms.size} từ)</small></summary><div class="hsk2-lesson-grid">${lessons.map(story=>{
    const p=storyProgress(story.id),status=hsk2StoryStatus(story),correct=Object.values(p.records).filter(r=>r.correct).length;
    return `<button class="hsk2-lesson-card" data-story-open="${story.id}" type="button"><strong>${hsk2Stories.indexOf(story)+1}. ${esc(story.title)}</strong><span>${story.lines.length} câu · HSK2 · ${story.vocabulary.length} từ</span><small class="lesson-status ${status}">${status==='done'?'Đã đi hết · '+correct+'/'+story.lines.length+' câu đúng':status==='learning'?'Đang học · Câu '+Math.min(p.position+1,story.lines.length)+'/'+story.lines.length:'Chưa học'}</small></button>`;
