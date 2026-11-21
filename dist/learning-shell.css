@@ -22,3 +22,4 @@ body.learning-shell{height:100dvh}
  #courseHeader .avatar{display:none}
  .learning-shell:not(.vocabulary-fit) #app{padding:14px 0 12px}
 }
+@media(max-width:650px){#learningSidebar nav{margin-top:6px;padding-bottom:0;scrollbar-width:none}#learningSidebar nav::-webkit-scrollbar{display:none}#learningSidebar nav a{padding:6px 9px;font-size:11px}}
