@@ -264,7 +264,7 @@ const expectedCounts=[0,190,150,295,600,1295,2513];
 const progressBeforeLevels=run('JSON.stringify(state.hsk2Stories)');
 for(let level=1;level<=6;level++){
  sandbox.location.hash='#stories';run('state.level='+level+';render()');
- if(!el('#app').innerHTML.includes('Hội thoại HSK'+level)||!el('#app').innerHTML.includes(expectedCounts[level]+' / '+expectedCounts[level]))throw Error('Wrong level catalogue '+level);
+ if(!el('#app').innerHTML.includes('từ HSK'+level)||!el('#app').innerHTML.includes(expectedCounts[level]+' / '+expectedCounts[level]))throw Error('Wrong level catalogue '+level);
  const allStories=run('hsk2Stories'),data=run('advancedLibraryData['+level+']');
  if(level!==2){const ids=new Set(allStories.flatMap(s=>s.entryIds));if(data.entries.some(e=>!ids.has(e.id)))throw Error('Missing source row '+level);}
  for(const story of allStories){
@@ -279,7 +279,7 @@ for(let level=1;level<=6;level++){
  run('moveStory(1)');if(!run('storyProgress().position===1'))throw Error('Level save failed');
  run('pages.stories(); selectHsk2Story('+JSON.stringify(story.id)+',true)');if(!run('storySession.position===1'))throw Error('Level resume failed');
  el('#transcriptTab').onclick();if(level!==2&&el('#app').innerHTML.includes('context-transcript'))throw Error('Leaked textbook vocabulary');
- sandbox.location.hash='#words';run('render()');if(level!==2&&!el('#app').innerHTML.includes('Hội thoại HSK'+level))throw Error('Vocabulary sidebar blocked');
+ sandbox.location.hash='#words';run('render()');if(level!==2&&!el('#app').innerHTML.includes('từ HSK'+level))throw Error('Vocabulary sidebar blocked');
 }
 if(run('JSON.stringify(words)')!==originalLessonWords)throw Error('Textbook words changed');
 sandbox.location.hash='#stories';run('state.level=2;render()');if(run('hsk2Stories.length')!==12)throw Error('Original HSK2 stories changed');
