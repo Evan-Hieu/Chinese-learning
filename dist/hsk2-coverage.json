@@ -1,0 +1,3190 @@
+{
+  "source": "https://docs.google.com/spreadsheets/d/1IfhJNwdSUCpranQc6i8jNHeZnaLL4UE-_w9y-Tp5y9c/edit#gid=1408847024",
+  "sheet": "2",
+  "sourceWords": 150,
+  "coveredWords": 150,
+  "lessons": 12,
+  "sentences": 129,
+  "entries": [
+    {
+      "word": "吧",
+      "pinyin": "ba",
+      "meaning": "đi, nhé, nhỉ (đứng cuối câu)",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 1,
+          "text": "明天是姐姐的生日，我们一起去买东西吧。"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 13,
+          "text": "我们买完东西，再去喝咖啡吧。"
+        },
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 3,
+          "text": "你每天都运动，身体一定很好吧。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 7,
+          "text": "那来一公斤吧。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 11,
+          "text": "好，我们现在开始吧。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 2,
+          "text": "谢谢大家！快进来坐吧。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 8,
+          "text": "来，我们一起吃生日蛋糕吧。"
+        }
+      ]
+    },
+    {
+      "word": "白",
+      "pinyin": "bái",
+      "meaning": "trắng",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 3,
+          "text": "穿白衣服的女人是我的妻子。"
+        },
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 9,
+          "text": "这是我们的猫，它叫小白。"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 3,
+          "text": "红色太亮了，有白色的吗？"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 4,
+          "text": "有，这件白色的比那件黑色的便宜。"
+        }
+      ]
+    },
+    {
+      "word": "百",
+      "pinyin": "bǎi",
+      "meaning": "trăm",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 8,
+          "text": "衣服一百元，手表一千元。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 6,
+          "text": "好，两张票一共一百元。"
+        }
+      ]
+    },
+    {
+      "word": "帮助",
+      "pinyin": "bāngzhù",
+      "meaning": "giúp đỡ",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 12,
+          "text": "谢谢你的帮助，现在可以走了。"
+        }
+      ]
+    },
+    {
+      "word": "报纸",
+      "pinyin": "bàozhǐ",
+      "meaning": "báo",
+      "occurrences": [
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 9,
+          "text": "你每天看中文报纸吗？"
+        }
+      ]
+    },
+    {
+      "word": "比",
+      "pinyin": "bǐ",
+      "meaning": "so sánh",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 5,
+          "text": "对，他比我高，头发也比我的长。"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 4,
+          "text": "有，这件白色的比那件黑色的便宜。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 5,
+          "text": "他比我快，但是我比他高。"
+        }
+      ]
+    },
+    {
+      "word": "别",
+      "pinyin": "bié",
+      "meaning": "đừng, khác biệt",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 9,
+          "text": "可以，别着急，我现在就打。"
+        },
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 7,
+          "text": "今天别做太多事情，先睡一会儿。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 7,
+          "text": "好，我慢慢说，你别着急。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 7,
+          "text": "从三号门上船，别走错了。"
+        }
+      ]
+    },
+    {
+      "word": "长",
+      "pinyin": "cháng",
+      "meaning": "dài",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 5,
+          "text": "对，他比我高，头发也比我的长。"
+        }
+      ]
+    },
+    {
+      "word": "唱歌",
+      "pinyin": "chànggē",
+      "meaning": "hát",
+      "occurrences": [
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 3,
+          "text": "你妹妹正在唱歌，她唱得真好听。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 4,
+          "text": "对，她最喜欢唱歌，也喜欢跳舞。"
+        }
+      ]
+    },
+    {
+      "word": "出",
+      "pinyin": "chū",
+      "meaning": "ra ngoài",
+      "occurrences": [
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 5,
+          "text": "出门以后向右走，车站就在右边。"
+        }
+      ]
+    },
+    {
+      "word": "穿",
+      "pinyin": "chuān",
+      "meaning": "mặc",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 3,
+          "text": "穿白衣服的女人是我的妻子。"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 6,
+          "text": "可以让他穿一下。"
+        }
+      ]
+    },
+    {
+      "word": "船",
+      "pinyin": "chuán",
+      "meaning": "thuyền",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 1,
+          "text": "你好，我们想买两张去小岛的船票。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 7,
+          "text": "从三号门上船，别走错了。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 8,
+          "text": "这船开得快吗？"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 12,
+          "text": "那太好了，这是我第一次坐船旅游。"
+        }
+      ]
+    },
+    {
+      "word": "次",
+      "pinyin": "cì",
+      "meaning": "lần",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 6,
+          "text": "让我每天吃两次药，一次两片。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 10,
+          "text": "谢谢，欢迎下次再来！"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 1,
+          "text": "这是我第一次在这个教室上课。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 10,
+          "text": "我懂了，这次不会错了。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 8,
+          "text": "这次我懂了，我刚才写错了。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 12,
+          "text": "那太好了，这是我第一次坐船旅游。"
+        }
+      ]
+    },
+    {
+      "word": "从",
+      "pinyin": "cóng",
+      "meaning": "từ, theo",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 3,
+          "text": "我看见大家正从门外走进来。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 3,
+          "text": "你从哪儿上车？"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 7,
+          "text": "从三号门上船，别走错了。"
+        }
+      ]
+    },
+    {
+      "word": "错",
+      "pinyin": "cuò",
+      "meaning": "sai",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 10,
+          "text": "我懂了，这次不会错了。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 8,
+          "text": "这次我懂了，我刚才写错了。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 7,
+          "text": "从三号门上船，别走错了。"
+        }
+      ]
+    },
+    {
+      "word": "打篮球",
+      "pinyin": "dǎ lánqiú",
+      "meaning": "chơi bóng rổ",
+      "occurrences": [
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 1,
+          "text": "下午我们去运动吧，你想打篮球还是踢足球？"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 2,
+          "text": "我想打篮球。你哥哥也来吗？"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 6,
+          "text": "你们谁打篮球打得最好？"
+        }
+      ]
+    },
+    {
+      "word": "大家",
+      "pinyin": "dàjiā",
+      "meaning": "mọi người",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 3,
+          "text": "我看见大家正从门外走进来。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 2,
+          "text": "谢谢大家！快进来坐吧。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 7,
+          "text": "他真有意思，大家都很高兴。"
+        }
+      ]
+    },
+    {
+      "word": "但是",
+      "pinyin": "dànshì",
+      "meaning": "nhưng",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 11,
+          "text": "今天是晴天，但是明天可能是阴天。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 5,
+          "text": "他比我快，但是我比他高。"
+        }
+      ]
+    },
+    {
+      "word": "到",
+      "pinyin": "dào",
+      "meaning": "đến",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 4,
+          "text": "我到了，这里离商店远吗？"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 6,
+          "text": "等一下，我找不到手机了。"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 10,
+          "text": "我听到了！手机在椅子旁边。"
+        }
+      ]
+    },
+    {
+      "word": "得",
+      "pinyin": "děi",
+      "meaning": "phải, đạt được",
+      "occurrences": [
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 5,
+          "text": "你得先看这句话，再回答问题。"
+        }
+      ]
+    },
+    {
+      "word": "等",
+      "pinyin": "děng",
+      "meaning": "đợi",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 3,
+          "text": "我在公司门外等你。"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 6,
+          "text": "等一下，我找不到手机了。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 8,
+          "text": "好，请等一下，鱼马上就好。"
+        }
+      ]
+    },
+    {
+      "word": "弟弟",
+      "pinyin": "dìdì",
+      "meaning": "em trai",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 7,
+          "text": "这是我的弟弟、妹妹，还有姐姐的儿子。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 3,
+          "text": "他今天很忙，弟弟和妹妹会来。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 4,
+          "text": "好，你弟弟跑得快吗？"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 6,
+          "text": "因为弟弟一边跳舞，一边学小猫叫。"
+        }
+      ]
+    },
+    {
+      "word": "第一",
+      "pinyin": "dì yī",
+      "meaning": "đầu tiên",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 1,
+          "text": "这是我第一次在这个教室上课。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 9,
+          "text": "现在请你回答第一题。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 12,
+          "text": "那太好了，这是我第一次坐船旅游。"
+        }
+      ]
+    },
+    {
+      "word": "懂",
+      "pinyin": "dǒng",
+      "meaning": "hiểu",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 7,
+          "text": "这个字是什么意思？我不懂。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 10,
+          "text": "我懂了，这次不会错了。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 4,
+          "text": "这道题是什么意思？我看不懂。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 8,
+          "text": "这次我懂了，我刚才写错了。"
+        }
+      ]
+    },
+    {
+      "word": "对",
+      "pinyin": "duì",
+      "meaning": "đúng, đối với",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 11,
+          "text": "对，就是你的手机！"
+        },
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 5,
+          "text": "对，他比我高，头发也比我的长。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 4,
+          "text": "对，我们现在开始上课。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 4,
+          "text": "对，她最喜欢唱歌，也喜欢跳舞。"
+        }
+      ]
+    },
+    {
+      "word": "房间",
+      "pinyin": "fángjiān",
+      "meaning": "phòng",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 8,
+          "text": "孩子们的眼睛都很大，这个房间也很大！"
+        }
+      ]
+    },
+    {
+      "word": "非常",
+      "pinyin": "fēicháng",
+      "meaning": "rất, cực kỳ",
+      "occurrences": [
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 2,
+          "text": "今天的鱼很新鲜，羊肉也非常好吃。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 10,
+          "text": "谢谢你们来，我非常高兴。"
+        }
+      ]
+    },
+    {
+      "word": "服务员",
+      "pinyin": "fúwùyuán",
+      "meaning": "nhân viên phục vụ",
+      "occurrences": [
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 1,
+          "text": "服务员，你们这儿有什么好吃的？"
+        }
+      ]
+    },
+    {
+      "word": "高",
+      "pinyin": "gāo",
+      "meaning": "cao",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 5,
+          "text": "对，他比我高，头发也比我的长。"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 5,
+          "text": "他个子很高，这件衣服会不会太小？"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 5,
+          "text": "他比我快，但是我比他高。"
+        }
+      ]
+    },
+    {
+      "word": "告诉",
+      "pinyin": "gàosù",
+      "meaning": "nói cho, thông báo",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 8,
+          "text": "我告诉你：“近”就是不远。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 10,
+          "text": "好的，谢谢你告诉我怎么走。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 4,
+          "text": "有，请告诉我你们的名字。"
+        }
+      ]
+    },
+    {
+      "word": "哥哥",
+      "pinyin": "gēge",
+      "meaning": "anh trai",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 4,
+          "text": "她旁边的男人是您的哥哥吗？"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 11,
+          "text": "好，我买两件，一件送给丈夫，一件送给哥哥。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 2,
+          "text": "我想打篮球。你哥哥也来吗？"
+        }
+      ]
+    },
+    {
+      "word": "给",
+      "pinyin": "gěi",
+      "meaning": "đưa cho, cho",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 8,
+          "text": "黑色的，你可以给我打电话吗？"
+        },
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 2,
+          "text": "欢迎，请进！我给您介绍一下我的家人。"
+        },
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 9,
+          "text": "有问题就给我打电话。"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 1,
+          "text": "我想给丈夫买一件衣服。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 1,
+          "text": "生日快乐！这是我们送给你的礼物。"
+        }
+      ]
+    },
+    {
+      "word": "公共汽车",
+      "pinyin": "gōnggòng qìchē",
+      "meaning": "xe buýt",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 5,
+          "text": "不远，我们坐公共汽车去。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 2,
+          "text": "早上七点，我想坐公共汽车去。"
+        }
+      ]
+    },
+    {
+      "word": "公斤",
+      "pinyin": "gōngjīn",
+      "meaning": "kilogram (kg)",
+      "occurrences": [
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 6,
+          "text": "卖，西瓜每公斤六元。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 7,
+          "text": "那来一公斤吧。"
+        }
+      ]
+    },
+    {
+      "word": "公司",
+      "pinyin": "gōngsī",
+      "meaning": "công ty",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 3,
+          "text": "我在公司门外等你。"
+        },
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 6,
+          "text": "我骑自行车去公司，骑半个小时。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 4,
+          "text": "从公司旁边的车站上车。"
+        }
+      ]
+    },
+    {
+      "word": "贵",
+      "pinyin": "guì",
+      "meaning": "đắt, quý",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 9,
+          "text": "手表太贵了，我只买衣服。"
+        }
+      ]
+    },
+    {
+      "word": "过",
+      "pinyin": "guò",
+      "meaning": "qua, đi qua",
+      "occurrences": [
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 6,
+          "text": "是过了那条路再向左走吗？"
+        }
+      ]
+    },
+    {
+      "word": "还",
+      "pinyin": "hái",
+      "meaning": "vẫn, còn",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 7,
+          "text": "这是我的弟弟、妹妹，还有姐姐的儿子。"
+        },
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 4,
+          "text": "还可以。跑完步，我喝牛奶，吃鸡蛋。"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 7,
+          "text": "这件多少钱？这家店还卖手表吗？"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 4,
+          "text": "好的，您还要喝点什么？"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 2,
+          "text": "欢迎！九点开始，现在还有五分钟。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 2,
+          "text": "还没有，我有几个问题想问你。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 3,
+          "text": "今天下午，还有票吗？"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 7,
+          "text": "弟弟最好，我还在学。"
+        }
+      ]
+    },
+    {
+      "word": "孩子",
+      "pinyin": "háizi",
+      "meaning": "trẻ con",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 6,
+          "text": "这三个孩子呢？"
+        }
+      ]
+    },
+    {
+      "word": "好吃",
+      "pinyin": "hǎochī",
+      "meaning": "ngon",
+      "occurrences": [
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 1,
+          "text": "服务员，你们这儿有什么好吃的？"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 2,
+          "text": "今天的鱼很新鲜，羊肉也非常好吃。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 9,
+          "text": "这鱼真好吃！"
+        }
+      ]
+    },
+    {
+      "word": "号",
+      "pinyin": "hào",
+      "meaning": "số (như số điện thoại, số nhà)",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 7,
+          "text": "从三号门上船，别走错了。"
+        }
+      ]
+    },
+    {
+      "word": "黑",
+      "pinyin": "hēi",
+      "meaning": "đen",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 8,
+          "text": "黑色的，你可以给我打电话吗？"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 4,
+          "text": "有，这件白色的比那件黑色的便宜。"
+        }
+      ]
+    },
+    {
+      "word": "红",
+      "pinyin": "hóng",
+      "meaning": "đỏ",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 3,
+          "text": "红色太亮了，有白色的吗？"
+        }
+      ]
+    },
+    {
+      "word": "欢迎",
+      "pinyin": "huānyíng",
+      "meaning": "hoan nghênh, chào mừng",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 2,
+          "text": "欢迎，请进！我给您介绍一下我的家人。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 10,
+          "text": "谢谢，欢迎下次再来！"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 2,
+          "text": "欢迎！九点开始，现在还有五分钟。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 13,
+          "text": "欢迎，祝你们玩得快乐！"
+        }
+      ]
+    },
+    {
+      "word": "回答",
+      "pinyin": "huídá",
+      "meaning": "trả lời",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 9,
+          "text": "现在请你回答第一题。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 5,
+          "text": "你得先看这句话，再回答问题。"
+        }
+      ]
+    },
+    {
+      "word": "机场",
+      "pinyin": "jīchǎng",
+      "meaning": "sân bay",
+      "occurrences": [
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 1,
+          "text": "你明天几点去机场？"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 8,
+          "text": "知道了，机场离这里近吗？"
+        }
+      ]
+    },
+    {
+      "word": "鸡蛋",
+      "pinyin": "jīdàn",
+      "meaning": "trứng gà",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 4,
+          "text": "还可以。跑完步，我喝牛奶，吃鸡蛋。"
+        }
+      ]
+    },
+    {
+      "word": "件",
+      "pinyin": "jiàn",
+      "meaning": "cái (dùng cho sự việc, quần áo)",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 1,
+          "text": "我想给丈夫买一件衣服。"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 5,
+          "text": "他个子很高，这件衣服会不会太小？"
+        }
+      ]
+    },
+    {
+      "word": "教室",
+      "pinyin": "jiàoshì",
+      "meaning": "lớp học",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 1,
+          "text": "这是我第一次在这个教室上课。"
+        }
+      ]
+    },
+    {
+      "word": "姐姐",
+      "pinyin": "jiějie",
+      "meaning": "chị gái",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 1,
+          "text": "明天是姐姐的生日，我们一起去买东西吧。"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 14,
+          "text": "好，希望姐姐喜欢我们的礼物。"
+        },
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 7,
+          "text": "这是我的弟弟、妹妹，还有姐姐的儿子。"
+        }
+      ]
+    },
+    {
+      "word": "介绍",
+      "pinyin": "jièshào",
+      "meaning": "giới thiệu",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 2,
+          "text": "欢迎，请进！我给您介绍一下我的家人。"
+        }
+      ]
+    },
+    {
+      "word": "进",
+      "pinyin": "jìn",
+      "meaning": "vào",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 2,
+          "text": "欢迎，请进！我给您介绍一下我的家人。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 3,
+          "text": "我看见大家正从门外走进来。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 2,
+          "text": "谢谢大家！快进来坐吧。"
+        }
+      ]
+    },
+    {
+      "word": "近",
+      "pinyin": "jìn",
+      "meaning": "gần",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 8,
+          "text": "我告诉你：“近”就是不远。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 8,
+          "text": "知道了，机场离这里近吗？"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 9,
+          "text": "不近，要坐一个小时。"
+        }
+      ]
+    },
+    {
+      "word": "就",
+      "pinyin": "jiù",
+      "meaning": "thì, ngay",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 9,
+          "text": "可以，别着急，我现在就打。"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 11,
+          "text": "对，就是你的手机！"
+        },
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 8,
+          "text": "谢谢，我希望明天就能去上课。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 8,
+          "text": "好，请等一下，鱼马上就好。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 8,
+          "text": "我告诉你：“近”就是不远。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 5,
+          "text": "出门以后向右走，车站就在右边。"
+        }
+      ]
+    },
+    {
+      "word": "觉得",
+      "pinyin": "juéde",
+      "meaning": "cảm thấy",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 3,
+          "text": "现在觉得怎么样？"
+        }
+      ]
+    },
+    {
+      "word": "咖啡",
+      "pinyin": "kāfēi",
+      "meaning": "cà phê",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 13,
+          "text": "我们买完东西，再去喝咖啡吧。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 5,
+          "text": "我想喝咖啡，还想吃西瓜，你们卖西瓜吗？"
+        }
+      ]
+    },
+    {
+      "word": "开始",
+      "pinyin": "kāishǐ",
+      "meaning": "bắt đầu",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 2,
+          "text": "欢迎！九点开始，现在还有五分钟。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 4,
+          "text": "对，我们现在开始上课。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 11,
+          "text": "好，我们现在开始吧。"
+        }
+      ]
+    },
+    {
+      "word": "考试",
+      "pinyin": "kǎoshì",
+      "meaning": "thi",
+      "occurrences": [
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 1,
+          "text": "明天有考试，你准备好了吗？"
+        }
+      ]
+    },
+    {
+      "word": "可能",
+      "pinyin": "kěnéng",
+      "meaning": "có thể",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 8,
+          "text": "很忙，我晚上可能会很累。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 11,
+          "text": "今天是晴天，但是明天可能是阴天。"
+        }
+      ]
+    },
+    {
+      "word": "可以",
+      "pinyin": "kěyǐ",
+      "meaning": "có thể",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 8,
+          "text": "黑色的，你可以给我打电话吗？"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 9,
+          "text": "可以，别着急，我现在就打。"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 12,
+          "text": "谢谢你的帮助，现在可以走了。"
+        },
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 4,
+          "text": "还可以。跑完步，我喝牛奶，吃鸡蛋。"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 6,
+          "text": "可以让他穿一下。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 5,
+          "text": "老师，我可以问一个问题吗？"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 6,
+          "text": "可以，请说。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 3,
+          "text": "可以，我们还有一个小时的时间。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 9,
+          "text": "不快，路上可以看风景。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 9,
+          "text": "可以，但是我现在有点累。"
+        }
+      ]
+    },
+    {
+      "word": "课",
+      "pinyin": "kè",
+      "meaning": "bài học",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 1,
+          "text": "你为什么没来上课？"
+        },
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 8,
+          "text": "谢谢，我希望明天就能去上课。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 1,
+          "text": "这是我第一次在这个教室上课。"
+        }
+      ]
+    },
+    {
+      "word": "快",
+      "pinyin": "kuài",
+      "meaning": "nhanh",
+      "occurrences": [
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 6,
+          "text": "你说得太快了，请慢一点儿。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 8,
+          "text": "这船开得快吗？"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 9,
+          "text": "不快，路上可以看风景。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 4,
+          "text": "好，你弟弟跑得快吗？"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 2,
+          "text": "谢谢大家！快进来坐吧。"
+        }
+      ]
+    },
+    {
+      "word": "快乐",
+      "pinyin": "kuàilè",
+      "meaning": "vui vẻ",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 13,
+          "text": "欢迎，祝你们玩得快乐！"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 1,
+          "text": "生日快乐！这是我们送给你的礼物。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 9,
+          "text": "好，希望你每天都快乐！"
+        }
+      ]
+    },
+    {
+      "word": "累",
+      "pinyin": "lèi",
+      "meaning": "mệt",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 8,
+          "text": "很忙，我晚上可能会很累。"
+        },
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 4,
+          "text": "身体很累，眼睛也不舒服。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 9,
+          "text": "可以，但是我现在有点累。"
+        }
+      ]
+    },
+    {
+      "word": "离",
+      "pinyin": "lí",
+      "meaning": "cách (khoảng cách), rời",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 4,
+          "text": "我到了，这里离商店远吗？"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 8,
+          "text": "知道了，机场离这里近吗？"
+        }
+      ]
+    },
+    {
+      "word": "两",
+      "pinyin": "liǎng",
+      "meaning": "hai (khi đếm số lượng)",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 6,
+          "text": "让我每天吃两次药，一次两片。"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 11,
+          "text": "好，我买两件，一件送给丈夫，一件送给哥哥。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 1,
+          "text": "你好，我们想买两张去小岛的船票。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 6,
+          "text": "好，两张票一共一百元。"
+        }
+      ]
+    },
+    {
+      "word": "路",
+      "pinyin": "lù",
+      "meaning": "đường",
+      "occurrences": [
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 6,
+          "text": "是过了那条路再向左走吗？"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 9,
+          "text": "不快，路上可以看风景。"
+        }
+      ]
+    },
+    {
+      "word": "旅游",
+      "pinyin": "lǚyóu",
+      "meaning": "du lịch",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 12,
+          "text": "那太好了，这是我第一次坐船旅游。"
+        }
+      ]
+    },
+    {
+      "word": "卖",
+      "pinyin": "mài",
+      "meaning": "bán",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 7,
+          "text": "这件多少钱？这家店还卖手表吗？"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 5,
+          "text": "我想喝咖啡，还想吃西瓜，你们卖西瓜吗？"
+        }
+      ]
+    },
+    {
+      "word": "慢",
+      "pinyin": "màn",
+      "meaning": "chậm",
+      "occurrences": [
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 6,
+          "text": "你说得太快了，请慢一点儿。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 7,
+          "text": "好，我慢慢说，你别着急。"
+        }
+      ]
+    },
+    {
+      "word": "忙",
+      "pinyin": "máng",
+      "meaning": "bận",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 7,
+          "text": "今天工作忙吗？"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 3,
+          "text": "他今天很忙，弟弟和妹妹会来。"
+        }
+      ]
+    },
+    {
+      "word": "每",
+      "pinyin": "měi",
+      "meaning": "mỗi",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 1,
+          "text": "你每天早上几点起床？"
+        },
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 6,
+          "text": "让我每天吃两次药，一次两片。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 6,
+          "text": "卖，西瓜每公斤六元。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 9,
+          "text": "你每天看中文报纸吗？"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 10,
+          "text": "看，我每天看半个小时。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 9,
+          "text": "好，希望你每天都快乐！"
+        }
+      ]
+    },
+    {
+      "word": "妹妹",
+      "pinyin": "mèimei",
+      "meaning": "em gái",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 7,
+          "text": "这是我的弟弟、妹妹，还有姐姐的儿子。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 3,
+          "text": "他今天很忙，弟弟和妹妹会来。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 3,
+          "text": "你妹妹正在唱歌，她唱得真好听。"
+        }
+      ]
+    },
+    {
+      "word": "门",
+      "pinyin": "mén",
+      "meaning": "cửa",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 3,
+          "text": "我在公司门外等你。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 3,
+          "text": "我看见大家正从门外走进来。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 5,
+          "text": "出门以后向右走，车站就在右边。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 7,
+          "text": "从三号门上船，别走错了。"
+        }
+      ]
+    },
+    {
+      "word": "男人",
+      "pinyin": "nánrén",
+      "meaning": "đàn ông",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 4,
+          "text": "她旁边的男人是您的哥哥吗？"
+        }
+      ]
+    },
+    {
+      "word": "您",
+      "pinyin": "nín",
+      "meaning": "bạn (dùng lịch sự)",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 1,
+          "text": "您好，我姓王，是您的新邻居。"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 2,
+          "text": "您喜欢什么颜色的？"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 4,
+          "text": "好的，您还要喝点什么？"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 2,
+          "text": "您想什么时候出发？"
+        }
+      ]
+    },
+    {
+      "word": "牛奶",
+      "pinyin": "niúnǎi",
+      "meaning": "sữa bò",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 4,
+          "text": "还可以。跑完步，我喝牛奶，吃鸡蛋。"
+        }
+      ]
+    },
+    {
+      "word": "女人",
+      "pinyin": "nǚrén",
+      "meaning": "phụ nữ",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 3,
+          "text": "穿白衣服的女人是我的妻子。"
+        }
+      ]
+    },
+    {
+      "word": "旁边",
+      "pinyin": "pángbiān",
+      "meaning": "bên cạnh",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 10,
+          "text": "我听到了！手机在椅子旁边。"
+        },
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 4,
+          "text": "她旁边的男人是您的哥哥吗？"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 4,
+          "text": "从公司旁边的车站上车。"
+        }
+      ]
+    },
+    {
+      "word": "跑步",
+      "pinyin": "pǎobù",
+      "meaning": "chạy bộ",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 2,
+          "text": "六点，起床以后我先洗脸，再去跑步。"
+        }
+      ]
+    },
+    {
+      "word": "便宜",
+      "pinyin": "piányí",
+      "meaning": "rẻ",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 4,
+          "text": "有，这件白色的比那件黑色的便宜。"
+        }
+      ]
+    },
+    {
+      "word": "票",
+      "pinyin": "piào",
+      "meaning": "vé",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 1,
+          "text": "你好，我们想买两张去小岛的船票。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 3,
+          "text": "今天下午，还有票吗？"
+        }
+      ]
+    },
+    {
+      "word": "妻子",
+      "pinyin": "qīzi",
+      "meaning": "vợ",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 3,
+          "text": "穿白衣服的女人是我的妻子。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 5,
+          "text": "我姓王，这是我的妻子。"
+        }
+      ]
+    },
+    {
+      "word": "起床",
+      "pinyin": "qǐchuáng",
+      "meaning": "dậy (rời khỏi giường)",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 1,
+          "text": "你每天早上几点起床？"
+        }
+      ]
+    },
+    {
+      "word": "千",
+      "pinyin": "qiān",
+      "meaning": "nghìn",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 8,
+          "text": "衣服一百元，手表一千元。"
+        }
+      ]
+    },
+    {
+      "word": "晴",
+      "pinyin": "qíng",
+      "meaning": "nắng, quang đãng",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 11,
+          "text": "今天是晴天，但是明天可能是阴天。"
+        }
+      ]
+    },
+    {
+      "word": "去年",
+      "pinyin": "qùnián",
+      "meaning": "năm ngoái",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 10,
+          "text": "去年下雪，我们没有来。"
+        }
+      ]
+    },
+    {
+      "word": "让",
+      "pinyin": "ràng",
+      "meaning": "để, làm cho, nhường",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 5,
+          "text": "医生让你吃药了吗？"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 6,
+          "text": "可以让他穿一下。"
+        }
+      ]
+    },
+    {
+      "word": "上班",
+      "pinyin": "shàngbān",
+      "meaning": "đi làm",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 5,
+          "text": "你怎么去上班？"
+        }
+      ]
+    },
+    {
+      "word": "身体",
+      "pinyin": "shēntǐ",
+      "meaning": "cơ thể",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 3,
+          "text": "你每天都运动，身体一定很好吧。"
+        },
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 10,
+          "text": "好，你也要注意身体。"
+        },
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 4,
+          "text": "身体很累，眼睛也不舒服。"
+        }
+      ]
+    },
+    {
+      "word": "生病",
+      "pinyin": "shēngbìng",
+      "meaning": "bị bệnh",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 2,
+          "text": "因为我生病了，所以今天在家休息。"
+        }
+      ]
+    },
+    {
+      "word": "生日",
+      "pinyin": "shēngrì",
+      "meaning": "sinh nhật",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 1,
+          "text": "明天是姐姐的生日，我们一起去买东西吧。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 1,
+          "text": "生日快乐！这是我们送给你的礼物。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 8,
+          "text": "来，我们一起吃生日蛋糕吧。"
+        }
+      ]
+    },
+    {
+      "word": "时间",
+      "pinyin": "shíjiān",
+      "meaning": "thời gian",
+      "occurrences": [
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 3,
+          "text": "可以，我们还有一个小时的时间。"
+        }
+      ]
+    },
+    {
+      "word": "事情",
+      "pinyin": "shìqíng",
+      "meaning": "việc",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 7,
+          "text": "今天别做太多事情，先睡一会儿。"
+        }
+      ]
+    },
+    {
+      "word": "手表",
+      "pinyin": "shǒubiǎo",
+      "meaning": "đồng hồ",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 7,
+          "text": "这件多少钱？这家店还卖手表吗？"
+        }
+      ]
+    },
+    {
+      "word": "手机",
+      "pinyin": "shǒujī",
+      "meaning": "điện thoại di động",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 6,
+          "text": "等一下，我找不到手机了。"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 7,
+          "text": "你的手机是什么颜色的？"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 10,
+          "text": "我听到了！手机在椅子旁边。"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 11,
+          "text": "对，就是你的手机！"
+        }
+      ]
+    },
+    {
+      "word": "送",
+      "pinyin": "sòng",
+      "meaning": "tặng",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 11,
+          "text": "好，我买两件，一件送给丈夫，一件送给哥哥。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 1,
+          "text": "生日快乐！这是我们送给你的礼物。"
+        }
+      ]
+    },
+    {
+      "word": "所以",
+      "pinyin": "suǒyǐ",
+      "meaning": "vì vậy",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 2,
+          "text": "因为我生病了，所以今天在家休息。"
+        }
+      ]
+    },
+    {
+      "word": "它",
+      "pinyin": "tā",
+      "meaning": "nó (cho vật, động vật)",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 9,
+          "text": "这是我们的猫，它叫小白。"
+        }
+      ]
+    },
+    {
+      "word": "踢足球",
+      "pinyin": "tī zúqiú",
+      "meaning": "đá bóng",
+      "occurrences": [
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 1,
+          "text": "下午我们去运动吧，你想打篮球还是踢足球？"
+        }
+      ]
+    },
+    {
+      "word": "题",
+      "pinyin": "tí",
+      "meaning": "câu hỏi, đề bài",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 9,
+          "text": "现在请你回答第一题。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 4,
+          "text": "这道题是什么意思？我看不懂。"
+        }
+      ]
+    },
+    {
+      "word": "跳舞",
+      "pinyin": "tiàowǔ",
+      "meaning": "nhảy múa",
+      "occurrences": [
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 4,
+          "text": "对，她最喜欢唱歌，也喜欢跳舞。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 6,
+          "text": "因为弟弟一边跳舞，一边学小猫叫。"
+        }
+      ]
+    },
+    {
+      "word": "外",
+      "pinyin": "wài",
+      "meaning": "ngoài",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 3,
+          "text": "我在公司门外等你。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 3,
+          "text": "我看见大家正从门外走进来。"
+        }
+      ]
+    },
+    {
+      "word": "玩",
+      "pinyin": "wán",
+      "meaning": "chơi",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 13,
+          "text": "欢迎，祝你们玩得快乐！"
+        }
+      ]
+    },
+    {
+      "word": "完",
+      "pinyin": "wán",
+      "meaning": "xong, hoàn thành",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 13,
+          "text": "我们买完东西，再去喝咖啡吧。"
+        },
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 4,
+          "text": "还可以。跑完步，我喝牛奶，吃鸡蛋。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 8,
+          "text": "打完篮球，我们去游泳怎么样？"
+        }
+      ]
+    },
+    {
+      "word": "晚上",
+      "pinyin": "wǎnshàng",
+      "meaning": "buổi tối",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 8,
+          "text": "很忙，我晚上可能会很累。"
+        }
+      ]
+    },
+    {
+      "word": "为什么",
+      "pinyin": "wèishénme",
+      "meaning": "tại sao",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 1,
+          "text": "你为什么没来上课？"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 5,
+          "text": "你为什么笑？"
+        }
+      ]
+    },
+    {
+      "word": "问",
+      "pinyin": "wèn",
+      "meaning": "hỏi",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 5,
+          "text": "老师，我可以问一个问题吗？"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 2,
+          "text": "还没有，我有几个问题想问你。"
+        }
+      ]
+    },
+    {
+      "word": "问题",
+      "pinyin": "wèntí",
+      "meaning": "vấn đề",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 9,
+          "text": "有问题就给我打电话。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 5,
+          "text": "老师，我可以问一个问题吗？"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 2,
+          "text": "还没有，我有几个问题想问你。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 5,
+          "text": "你得先看这句话，再回答问题。"
+        }
+      ]
+    },
+    {
+      "word": "西瓜",
+      "pinyin": "xīguā",
+      "meaning": "dưa hấu",
+      "occurrences": [
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 5,
+          "text": "我想喝咖啡，还想吃西瓜，你们卖西瓜吗？"
+        }
+      ]
+    },
+    {
+      "word": "希望",
+      "pinyin": "xīwàng",
+      "meaning": "hy vọng",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 14,
+          "text": "好，希望姐姐喜欢我们的礼物。"
+        },
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 8,
+          "text": "谢谢，我希望明天就能去上课。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 9,
+          "text": "好，希望你每天都快乐！"
+        }
+      ]
+    },
+    {
+      "word": "洗",
+      "pinyin": "xǐ",
+      "meaning": "rửa",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 2,
+          "text": "六点，起床以后我先洗脸，再去跑步。"
+        }
+      ]
+    },
+    {
+      "word": "向",
+      "pinyin": "xiàng",
+      "meaning": "hướng về, đối với",
+      "occurrences": [
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 5,
+          "text": "出门以后向右走，车站就在右边。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 6,
+          "text": "是过了那条路再向左走吗？"
+        }
+      ]
+    },
+    {
+      "word": "小时",
+      "pinyin": "xiǎoshí",
+      "meaning": "tiếng đồng hồ",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 6,
+          "text": "我骑自行车去公司，骑半个小时。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 3,
+          "text": "可以，我们还有一个小时的时间。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 10,
+          "text": "看，我每天看半个小时。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 9,
+          "text": "不近，要坐一个小时。"
+        }
+      ]
+    },
+    {
+      "word": "笑",
+      "pinyin": "xiào",
+      "meaning": "cười",
+      "occurrences": [
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 5,
+          "text": "你为什么笑？"
+        }
+      ]
+    },
+    {
+      "word": "新",
+      "pinyin": "xīn",
+      "meaning": "mới",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 1,
+          "text": "您好，我姓王，是您的新邻居。"
+        }
+      ]
+    },
+    {
+      "word": "姓",
+      "pinyin": "xìng",
+      "meaning": "họ",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 1,
+          "text": "您好，我姓王，是您的新邻居。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 5,
+          "text": "我姓王，这是我的妻子。"
+        }
+      ]
+    },
+    {
+      "word": "休息",
+      "pinyin": "xiūxi",
+      "meaning": "nghỉ ngơi",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 9,
+          "text": "那下班以后早点休息吧。"
+        },
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 2,
+          "text": "因为我生病了，所以今天在家休息。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 10,
+          "text": "那我们先休息十分钟，再去。"
+        }
+      ]
+    },
+    {
+      "word": "雪",
+      "pinyin": "xuě",
+      "meaning": "tuyết",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 10,
+          "text": "去年下雪，我们没有来。"
+        }
+      ]
+    },
+    {
+      "word": "颜色",
+      "pinyin": "yánsè",
+      "meaning": "màu sắc",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 7,
+          "text": "你的手机是什么颜色的？"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 2,
+          "text": "您喜欢什么颜色的？"
+        }
+      ]
+    },
+    {
+      "word": "眼睛",
+      "pinyin": "yǎnjing",
+      "meaning": "mắt",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 8,
+          "text": "孩子们的眼睛都很大，这个房间也很大！"
+        },
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 4,
+          "text": "身体很累，眼睛也不舒服。"
+        }
+      ]
+    },
+    {
+      "word": "羊肉",
+      "pinyin": "yángròu",
+      "meaning": "thịt cừu",
+      "occurrences": [
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 2,
+          "text": "今天的鱼很新鲜，羊肉也非常好吃。"
+        }
+      ]
+    },
+    {
+      "word": "要",
+      "pinyin": "yào",
+      "meaning": "muốn, cần",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 10,
+          "text": "好，你也要注意身体。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 3,
+          "text": "那我们要一条鱼，再要一些羊肉。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 9,
+          "text": "不近，要坐一个小时。"
+        }
+      ]
+    },
+    {
+      "word": "药",
+      "pinyin": "yào",
+      "meaning": "thuốc",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 5,
+          "text": "医生让你吃药了吗？"
+        },
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 6,
+          "text": "让我每天吃两次药，一次两片。"
+        }
+      ]
+    },
+    {
+      "word": "也",
+      "pinyin": "yě",
+      "meaning": "cũng",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 5,
+          "text": "对，他比我高，头发也比我的长。"
+        },
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 10,
+          "text": "好，你也要注意身体。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 2,
+          "text": "我想打篮球。你哥哥也来吗？"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 4,
+          "text": "对，她最喜欢唱歌，也喜欢跳舞。"
+        }
+      ]
+    },
+    {
+      "word": "已经",
+      "pinyin": "yǐjīng",
+      "meaning": "đã",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 2,
+          "text": "好，我已经准备好了。"
+        }
+      ]
+    },
+    {
+      "word": "一起",
+      "pinyin": "yìqǐ",
+      "meaning": "cùng nhau",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 1,
+          "text": "明天是姐姐的生日，我们一起去买东西吧。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 8,
+          "text": "来，我们一起吃生日蛋糕吧。"
+        }
+      ]
+    },
+    {
+      "word": "意思",
+      "pinyin": "yìsi",
+      "meaning": "ý nghĩa",
+      "occurrences": [
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 7,
+          "text": "这个字是什么意思？我不懂。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 4,
+          "text": "这道题是什么意思？我看不懂。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 7,
+          "text": "他真有意思，大家都很高兴。"
+        }
+      ]
+    },
+    {
+      "word": "阴",
+      "pinyin": "yīn",
+      "meaning": "âm u, trời nhiều mây",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 11,
+          "text": "今天是晴天，但是明天可能是阴天。"
+        }
+      ]
+    },
+    {
+      "word": "因为",
+      "pinyin": "yīnwèi",
+      "meaning": "vì",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 2,
+          "text": "因为我生病了，所以今天在家休息。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 6,
+          "text": "因为弟弟一边跳舞，一边学小猫叫。"
+        }
+      ]
+    },
+    {
+      "word": "游泳",
+      "pinyin": "yóuyǒng",
+      "meaning": "bơi",
+      "occurrences": [
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 8,
+          "text": "打完篮球，我们去游泳怎么样？"
+        }
+      ]
+    },
+    {
+      "word": "右边",
+      "pinyin": "yòubiān",
+      "meaning": "bên phải",
+      "occurrences": [
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 5,
+          "text": "出门以后向右走，车站就在右边。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 7,
+          "text": "不是，左边是学校，车站在右边。"
+        }
+      ]
+    },
+    {
+      "word": "鱼",
+      "pinyin": "yú",
+      "meaning": "cá",
+      "occurrences": [
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 2,
+          "text": "今天的鱼很新鲜，羊肉也非常好吃。"
+        }
+      ]
+    },
+    {
+      "word": "元",
+      "pinyin": "yuán",
+      "meaning": "Đồng (đơn vị tiền tệ)",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 8,
+          "text": "衣服一百元，手表一千元。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 6,
+          "text": "卖，西瓜每公斤六元。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 6,
+          "text": "好，两张票一共一百元。"
+        }
+      ]
+    },
+    {
+      "word": "远",
+      "pinyin": "yuǎn",
+      "meaning": "xa",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 4,
+          "text": "我到了，这里离商店远吗？"
+        },
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 5,
+          "text": "不远，我们坐公共汽车去。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 8,
+          "text": "我告诉你：“近”就是不远。"
+        }
+      ]
+    },
+    {
+      "word": "运动",
+      "pinyin": "yùndòng",
+      "meaning": "vận",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 3,
+          "text": "你每天都运动，身体一定很好吧。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 1,
+          "text": "下午我们去运动吧，你想打篮球还是踢足球？"
+        }
+      ]
+    },
+    {
+      "word": "再",
+      "pinyin": "zài",
+      "meaning": "lại",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 13,
+          "text": "我们买完东西，再去喝咖啡吧。"
+        },
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 2,
+          "text": "六点，起床以后我先洗脸，再去跑步。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 3,
+          "text": "那我们要一条鱼，再要一些羊肉。"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 10,
+          "text": "谢谢，欢迎下次再来！"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 5,
+          "text": "你得先看这句话，再回答问题。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 6,
+          "text": "是过了那条路再向左走吗？"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 10,
+          "text": "那我们先休息十分钟，再去。"
+        }
+      ]
+    },
+    {
+      "word": "早上",
+      "pinyin": "zǎoshàng",
+      "meaning": "buổi sáng",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 1,
+          "text": "你每天早上几点起床？"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 2,
+          "text": "早上七点，我想坐公共汽车去。"
+        }
+      ]
+    },
+    {
+      "word": "张",
+      "pinyin": "zhāng",
+      "meaning": "tờ, bức (dùng cho vật phẳng, giấy, tranh, bàn)",
+      "occurrences": [
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 1,
+          "text": "你好，我们想买两张去小岛的船票。"
+        },
+        {
+          "lesson": "island-tickets-v1",
+          "title": "Mua vé tàu đi chơi",
+          "sentence": 6,
+          "text": "好，两张票一共一百元。"
+        }
+      ]
+    },
+    {
+      "word": "丈夫",
+      "pinyin": "zhàngfu",
+      "meaning": "chồng",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 1,
+          "text": "我想给丈夫买一件衣服。"
+        },
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 11,
+          "text": "好，我买两件，一件送给丈夫，一件送给哥哥。"
+        }
+      ]
+    },
+    {
+      "word": "找",
+      "pinyin": "zhǎo",
+      "meaning": "tìm",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 6,
+          "text": "等一下，我找不到手机了。"
+        }
+      ]
+    },
+    {
+      "word": "着",
+      "pinyin": "zhe",
+      "meaning": "đang (dùng để chỉ trạng thái hiện tại)",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 10,
+          "text": "它坐着看我们，真可爱！"
+        }
+      ]
+    },
+    {
+      "word": "真",
+      "pinyin": "zhēn",
+      "meaning": "thật",
+      "occurrences": [
+        {
+          "lesson": "new-neighbours-v1",
+          "title": "Làm quen gia đình hàng xóm",
+          "sentence": 10,
+          "text": "它坐着看我们，真可爱！"
+        },
+        {
+          "lesson": "restaurant-lunch-v1",
+          "title": "Gọi món cho bữa trưa",
+          "sentence": 9,
+          "text": "这鱼真好吃！"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 3,
+          "text": "你妹妹正在唱歌，她唱得真好听。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 7,
+          "text": "他真有意思，大家都很高兴。"
+        }
+      ]
+    },
+    {
+      "word": "正在",
+      "pinyin": "zhèngzài",
+      "meaning": "đang",
+      "occurrences": [
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 3,
+          "text": "你妹妹正在唱歌，她唱得真好听。"
+        }
+      ]
+    },
+    {
+      "word": "知道",
+      "pinyin": "zhīdào",
+      "meaning": "biết",
+      "occurrences": [
+        {
+          "lesson": "sick-day-v1",
+          "title": "Hôm nay mình bị ốm",
+          "sentence": 10,
+          "text": "好，我知道了。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 8,
+          "text": "知道了，机场离这里近吗？"
+        }
+      ]
+    },
+    {
+      "word": "准备",
+      "pinyin": "zhǔnbèi",
+      "meaning": "chuẩn bị",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 2,
+          "text": "好，我已经准备好了。"
+        },
+        {
+          "lesson": "exam-practice-v1",
+          "title": "Cùng ôn bài thi",
+          "sentence": 1,
+          "text": "明天有考试，你准备好了吗？"
+        }
+      ]
+    },
+    {
+      "word": "自行车",
+      "pinyin": "zìxíngchē",
+      "meaning": "xe đạp",
+      "occurrences": [
+        {
+          "lesson": "morning-routine-v1",
+          "title": "Một buổi sáng bận rộn",
+          "sentence": 6,
+          "text": "我骑自行车去公司，骑半个小时。"
+        }
+      ]
+    },
+    {
+      "word": "走",
+      "pinyin": "zǒu",
+      "meaning": "đi",
+      "occurrences": [
+        {
+          "lesson": "birthday-phone-v1",
+          "title": "Chiếc điện thoại để quên",
+          "sentence": 12,
+          "text": "谢谢你的帮助，现在可以走了。"
+        },
+        {
+          "lesson": "first-class-v1",
+          "title": "Buổi học đầu tiên",
+          "sentence": 3,
+          "text": "我看见大家正从门外走进来。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 5,
+          "text": "出门以后向右走，车站就在右边。"
+        },
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 10,
+          "text": "好的，谢谢你告诉我怎么走。"
+        }
+      ]
+    },
+    {
+      "word": "最",
+      "pinyin": "zuì",
+      "meaning": "nhất (so sánh nhất)",
+      "occurrences": [
+        {
+          "lesson": "clothes-present-v1",
+          "title": "Chọn áo làm quà",
+          "sentence": 10,
+          "text": "好，这是我们店最好看的衣服。"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 6,
+          "text": "你们谁打篮球打得最好？"
+        },
+        {
+          "lesson": "afternoon-sport-v1",
+          "title": "Hẹn nhau chơi thể thao",
+          "sentence": 7,
+          "text": "弟弟最好，我还在学。"
+        },
+        {
+          "lesson": "birthday-party-v1",
+          "title": "Bữa tiệc sinh nhật",
+          "sentence": 4,
+          "text": "对，她最喜欢唱歌，也喜欢跳舞。"
+        }
+      ]
+    },
+    {
+      "word": "左边",
+      "pinyin": "zuǒbiān",
+      "meaning": "bên trái",
+      "occurrences": [
+        {
+          "lesson": "airport-bus-v1",
+          "title": "Tìm trạm xe ra sân bay",
+          "sentence": 7,
+          "text": "不是，左边是学校，车站在右边。"
+        }
+      ]
+    }
+  ]
+}

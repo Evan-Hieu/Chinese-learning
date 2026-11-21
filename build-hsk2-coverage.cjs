@@ -1,0 +1,11 @@
+const fs=require('node:fs'),vm=require('node:vm');
+const context={};vm.createContext(context);
+for(const file of ['hsk2-vocabulary.js','hsk2-dialogues.js'])vm.runInContext(fs.readFileSync('dist/'+file,'utf8'),context);
+vm.runInContext(fs.readFileSync('dist/hsk2-stories.js','utf8').split('let storyLexicon=')[0],context);
+const stories=vm.runInContext('hsk2Stories',context),source=JSON.parse(fs.readFileSync('dist/hsk2-source.json','utf8'));
+const entries=source.vocabulary.map(([word,pinyin,meaning])=>({word,pinyin,meaning,occurrences:stories.flatMap(story=>story.lines.flatMap((line,i)=>line[5].includes(word)&&line[2].includes(word)?[{lesson:story.id,title:story.title,sentence:i+1,text:line[2]}]:[]))}));
+const missing=entries.filter(entry=>!entry.occurrences.length);
+if(missing.length)throw Error('Uncovered HSK2 words: '+missing.map(entry=>entry.word).join(', '));
+const report={source:source.source,sheet:'2',sourceWords:entries.length,coveredWords:entries.length-missing.length,lessons:stories.length,sentences:stories.reduce((sum,story)=>sum+story.lines.length,0),entries};
+fs.writeFileSync('dist/hsk2-coverage.json',JSON.stringify(report,null,2)+'\n');
+console.log(`HSK2 coverage: ${report.coveredWords}/${report.sourceWords} words, ${report.lessons} dialogues, ${report.sentences} sentences.`);

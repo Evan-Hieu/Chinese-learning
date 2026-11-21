@@ -205,7 +205,7 @@ run('pages.practice()');if(!el('#app').innerHTML.includes('photos/play-ball.jpg'
 console.log('PASS: eight local vector scenes, default cartoon presentation and visible source attribution.');
 for(const asset of ['play-ball','dance','watch-tv','listen-music','eat','walk-listen','sing-dance','read-drink']){const photo=fs.readFileSync('dist/images/lesson1/photos/'+asset+'.jpg');if(photo.length<10000||photo[0]!==255||photo[1]!==216)throw Error('Invalid lesson photo '+asset);}
 console.log('PASS: eight local JPEG photos downloaded and mapped to activities.');
-vm.runInContext(fs.readFileSync('dist/hsk2-stories.js','utf8'),sandbox);
+vm.runInContext(fs.readFileSync('dist/hsk2-vocabulary.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/hsk2-dialogues.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/hsk2-catalog.js','utf8'),sandbox);vm.runInContext(fs.readFileSync('dist/hsk2-stories.js','utf8'),sandbox);
 const sourceWords=new Set(JSON.parse(fs.readFileSync('dist/hsk2-source.json','utf8')).vocabulary.map(w=>w[0]));
 for(const word of JSON.parse(run('JSON.stringify(hsk2Story.vocabulary)')))if(!sourceWords.has(word[0]))throw Error('Story target not from HSK2 sheet: '+word[0]);
 if(!run('hsk2Story.lines.every(line=>line[5].every(term=>storyLexicon.has(term)&&line[2].includes(term)))'))throw Error('Target missing from sentence');
@@ -220,7 +220,7 @@ synth.speaking=false;spoken.at(-1).onend();if(replayTimers.size)throw Error('Sto
 run('startStory(true)');if(run('storySession.position')!==1)throw Error('Story resume failed');
 el('#hanziAnswer').oncompositionstart();el('#hanziAnswer').onkeydown({key:'Enter',preventDefault(){throw Error('Story IME intercepted');}});el('#hanziAnswer').oncompositionend();
 if(run('JSON.stringify([state.dictationWrong,state.sentenceDictationWrong])')!==lessonMistakes)throw Error('Story affected lesson mistakes');
-run('storySession.position=13;showStory()');el('#hanziAnswer').value=run('hsk2Story.lines[13][2]');run('checkStory();moveStory(1)');if(!el('#app').innerHTML.includes('Bạn đã tìm thấy điện thoại'))throw Error('Story completion failed');
+run('storySession.position=13;showStory()');el('#hanziAnswer').value=run('hsk2Story.lines[13][2]');run('checkStory();moveStory(1)');if(!el('#app').innerHTML.includes('Hoàn thành hội thoại'))throw Error('Story completion failed');
 console.log('PASS: HSK2 source membership, contextual targets, hidden answers, grading, Enter progression, single playback, resume and isolated story progress.');
 if(run('words.length')!==22||run('words[0][0]')!=='在'||run('words[21][0]')!=='正在')throw Error('Lesson vocabulary changed');
 if(!run('sections.some(item=>item[0]==="stories"&&item[2]==="Từ vựng nâng cao")'))throw Error('Independent advanced section missing');
@@ -228,3 +228,17 @@ run('pages.words()');if(run('dictationSession.mode')!=='sentence'||run('dictatio
 console.log('PASS: separate advanced vocabulary section and unchanged 22-word lesson practice.');
 sandbox.location.hash='#home';run('render()');if(!el('#nav').innerHTML.includes('Từ vựng nâng cao')||!el('#app').innerHTML.includes('advanced-home-entry'))throw Error('Advanced entry missing on homepage');
 console.log('PASS: advanced vocabulary is visible in initial homepage navigation and prominent homepage entry.');
+const catalog=JSON.parse(run('JSON.stringify(hsk2Stories)'));const coveredCatalog=new Set();
+for(const story of catalog){if(story.lines.length<6||!story.speakers.length)throw Error('Incomplete dialogue');for(const line of story.lines){if(!line[2]||!line[3]||!line[4])throw Error('Missing dialogue content');for(const term of line[5]){if(!sourceWords.has(term)||!line[2].includes(term))throw Error('Invalid contextual target '+term);coveredCatalog.add(term);}}}
+if(coveredCatalog.size!==150||[...sourceWords].some(term=>!coveredCatalog.has(term)))throw Error('HSK2 coverage incomplete');
+if(!run('hsk2Sections.every(([id])=>hsk2Stories.filter(s=>s.section===id).length===2)'))throw Error('Section layout invalid');
+run('hsk2LibraryQuery="报纸";hsk2LibraryFilter="all"');if(!run('filteredHsk2Stories().some(s=>s.id==="exam-practice-v1")')||run('filteredHsk2Stories().some(s=>s.id==="morning-routine-v1")'))throw Error('Vocabulary search failed');
+run('hsk2LibraryQuery="";hsk2LibraryFilter="all"');sandbox.location.hash='#stories';
+run('selectHsk2Story("morning-routine-v1",false)');el('#hanziAnswer').value=run('hsk2Story.lines[0][2]');run('checkStory();moveStory(1)');
+run('selectHsk2Story("exam-practice-v1",false)');el('#hanziAnswer').value='错';run('checkStory()');
+run('selectHsk2Story("morning-routine-v1",true)');if(run('storySession.position')!==1||!run('storySession.records[0].correct'))throw Error('Per-dialogue progress overwritten');
+for(const story of catalog){run('selectHsk2Story('+JSON.stringify(story.id)+',false)');for(const line of story.lines){el('#hanziAnswer').value=line[2];run('checkStory()');if(!run('storySession.passed'))throw Error('Valid dialogue answer rejected');run('moveStory(1)');}}
+run('hsk2LibraryFilter="done"');if(run('filteredHsk2Stories().length')!==12)throw Error('Completed filter failed');
+run('hsk2LibraryFilter="new"');if(run('filteredHsk2Stories().length')!==0)throw Error('New filter failed');
+run('hsk2LibraryFilter="all";pages.stories()');if((el('#hsk2SectionList').innerHTML.match(/data-story-open=/g)||[]).length!==12)throw Error('Lesson cards missing');
+console.log('PASS: 150/150 source words in dialogue lines, 6 sections of 2 lessons, search, isolated per-lesson progress, all 129 sentence answers and status filters.');
