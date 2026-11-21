@@ -28,3 +28,6 @@ body.learning-shell{height:100dvh}
 .vocabulary-fit #app>.dictation-tabs{order:-1;flex:0 0 auto;margin:0 0 12px;background:var(--paper)}
 .vocabulary-fit #app>.dictation-page{flex:0 0 auto}
 @media(max-width:650px){.vocabulary-fit #app>.dictation-tabs{margin-bottom:8px}}
+
+/* The practice selector belongs only to interactive exercises. */
+#app[data-vocab-view="transcript"] .practice-mode-control{display:none}
