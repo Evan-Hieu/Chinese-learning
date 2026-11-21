@@ -190,3 +190,13 @@ for(let round=0;round<6;round++){
 }
 if(!el('#app').innerHTML.includes('Hoàn thành ghép từ')||run('wordMatch.matches')!==22||!JSON.parse(data['hanyu-v1']).matchBest)throw Error('Game completion missing');
 console.log('PASS: vocabulary entry, integrated flashcards with contexts, wrong/correct matches, all 22 pairs and saved best score.');
+vm.runInContext(fs.readFileSync('dist/picture-practice.js','utf8'),sandbox);
+run('pages.practice()');if(!el('#app').innerHTML.includes('exercise-picture'))throw Error('Picture practice not default');
+if(!run('gradePicture("identify",0,"打球")')||run('gradePicture("identify",0,"唱歌")'))throw Error('Activity grading');
+for(const marker of ['在','正在','正'])if(!run('gradePicture("dialogue",0,"他'+marker+'打篮球呢。","他在做什么？")'))throw Error('Progressive variant rejected');
+if(run('gradePicture("dialogue",0,"他在唱歌","他在做什么")'))throw Error('Wrong pictured action accepted');
+if(!run('gradePicture("simultaneous",1,"她一边跳舞，一边唱歌。")')||run('gradePicture("simultaneous",1,"她在跳舞")'))throw Error('Simultaneous grading');
+el('#pictureAction').value='打球';run('checkPictureAnswer()');if(!JSON.parse(data['hanyu-v1']).picturePractice['identify:0'].correct)throw Error('Picture progress not saved');
+run('showPictureHint()');if(!el('#pictureFeedback').textContent.includes('打球'))throw Error('Hint missing');
+for(const path of ['activities-page5.png','activities-page6.png'])if(fs.statSync('dist/images/lesson1/'+path).size<1000)throw Error('Missing textbook image');
+console.log('PASS: textbook picture exercises, action grading, progressive variants, reordered simultaneous actions, hints and saved progress.');
