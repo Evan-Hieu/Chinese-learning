@@ -65,3 +65,7 @@ Lesson 7 — 你是跟谁一起去的？ adds 21 vocabulary groups, two transcri
 HSK2 Lesson 8
 
 Lesson 8 — 你会做菜吗？ adds sixteen vocabulary groups (回来 remains a companion of 回), two transcribed dialogues, skill 会 / 除了……以外，还…… grammar, cloze and reading exercises, skill/picture practice, and a saved classmate interview. Thirteen source pages 91–103 and all four supplied Q2B8 MP3s are preserved. NC1–NC3 transcripts and original answer letters were visually checked against answer PDF page 19; fifteen independently authored listening questions are labelled separately. Textbook 08-3 is ungraded pending verification of the corresponding recording/transcript. Progress is isolated across Lessons 1–8. Also namespaced the listening-form binders for Lessons 4–7 so loading a later lesson cannot bind another lesson’s forms.
+
+HSK2 Lesson 9
+
+Lesson 9 — 你见过熊猫吗？ adds nineteen vocabulary groups (动物 and 对／感／兴趣 retain their textbook grouping), two transcribed dialogues, experience 过 grammar with two question forms and 没／还没 negatives, cloze/reading exercises, four picture tasks, and a saved experience interview. Twelve source pages 105–116 and all four supplied Q2B9 MP3 files are preserved. NC1–NC3 transcripts and original letter keys were checked visually against answer PDF page 20; fifteen independently authored listening questions are labelled separately. Textbook 09-3 remains ungraded until its corresponding recording/transcript is verified. Vocabulary and practice progress is isolated across Lessons 1–9; advanced vocabulary is unchanged.
