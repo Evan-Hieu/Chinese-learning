@@ -1,5 +1,6 @@
 // Vocabulary listening practice. Browser speech is separate from the textbook recordings.
 let dictationSession=null,wordReplayTimer=null,wordSpeechEpoch=0,wordUtterance=null;
+function vocabularyTabsMarkup(active){return '<div class="dictation-tabs" role="tablist" aria-label="Chế độ học từ">'+[['practice','practiceTab','Nghe & gõ'],['transcript','transcriptTab','Toàn bộ từ vựng'],['advanced','advancedTab','Từ vựng nâng cao']].map(([key,id,label])=>'<button role="tab" id="'+id+'" aria-controls="practicePanel" aria-selected="'+(active===key)+'">'+label+'</button>').join('')+'</div>';}
 function stopWordAudio(preservePlaylist=false){
   if(!preservePlaylist)cancelContextPlayback();
   wordSpeechEpoch++;
@@ -63,7 +64,7 @@ function showDictation(){
     bindDictationChrome();document.querySelector('#restartDictation').onclick=()=>startDictation();return;
   }
   const word=practiceEntry(session.queue[session.position]),transcript=session.tab==='transcript';
-  const tabs='<div class="dictation-tabs" role="tablist" aria-label="Chế độ học từ"><button role="tab" id="practiceTab" aria-controls="practicePanel" aria-selected="'+!transcript+'">Nghe & gõ</button><button role="tab" id="transcriptTab" aria-controls="practicePanel" aria-selected="'+transcript+'">Toàn bộ từ vựng</button></div>';
+  const tabs=vocabularyTabsMarkup(transcript?'transcript':'practice');
   const body=transcript?contextTranscriptHtml():`
   <div class="practice-topline"><div class="word-navigation"><button id="previousWord" aria-label="Từ trước" ${session.position===0?'disabled':''}>←</button><span>${session.position+1} / ${session.queue.length}</span><button id="forwardWord" aria-label="Từ sau">→</button></div><button class="settings-open-button" id="openDictationSettings" aria-haspopup="dialog">⚙ Cài đặt</button></div>
   <div class="dictation-player"><div class="speech-player"><button id="listenWord" aria-label="${session.mode==='sentence'?'Nghe câu tiếng Trung':'Nghe từ tiếng Trung'}">▶</button><span>${session.mode==='sentence'?'Nghe câu':'Nghe từ'}</span><span class="speech-player-line" aria-hidden="true"></span><span aria-hidden="true">♫</span></div><select id="wordRate" aria-label="Tốc độ đọc từ"><option value="0.65">0.65×</option><option value="0.85">0.85×</option><option value="1">1×</option></select></div>
@@ -73,6 +74,7 @@ function showDictation(){
   bindDictationChrome();
   document.querySelector('#practiceTab').onclick=()=>{if(!transcript)return;session.tab='practice';showDictation();};
   document.querySelector('#transcriptTab').onclick=()=>{if(transcript)return;captureDictation();if(session.transcriptIndex===undefined)session.transcriptIndex=session.position;session.tab='transcript';showDictation();};
+  document.querySelector('#advancedTab').onclick=()=>openAdvancedVocabulary();
   if(transcript){bindContextTranscript();return;}
   const record=session.records[session.position]||{};
   document.querySelector('#hanziAnswer').value=record.draft||'';

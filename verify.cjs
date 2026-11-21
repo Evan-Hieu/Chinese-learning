@@ -223,10 +223,10 @@ if(run('JSON.stringify([state.dictationWrong,state.sentenceDictationWrong])')!==
 run('storySession.position=13;showStory()');el('#hanziAnswer').value=run('hsk2Story.lines[13][2]');run('checkStory();moveStory(1)');if(!el('#app').innerHTML.includes('Hoàn thành hội thoại'))throw Error('Story completion failed');
 console.log('PASS: HSK2 source membership, contextual targets, hidden answers, grading, Enter progression, single playback, resume and isolated story progress.');
 if(run('words.length')!==22||run('words[0][0]')!=='在'||run('words[21][0]')!=='正在')throw Error('Lesson vocabulary changed');
-if(!run('sections.some(item=>item[0]==="stories"&&item[2]==="Từ vựng nâng cao")'))throw Error('Independent advanced section missing');
+if(run('sections.some(item=>item[0]==="stories")'))throw Error('Advanced sidebar entry should be removed');
 run('pages.words()');if(run('dictationSession.mode')!=='sentence'||run('dictationSession.queue.length')!==22)throw Error('Lesson activity mixed with story');
 console.log('PASS: separate advanced vocabulary section and unchanged 22-word lesson practice.');
-sandbox.location.hash='#home';run('render()');if(!el('#nav').innerHTML.includes('Từ vựng nâng cao')||!el('#app').innerHTML.includes('advanced-home-entry'))throw Error('Advanced entry missing on homepage');
+sandbox.location.hash='#home';run('render()');if(el('#nav').innerHTML.includes('Từ vựng nâng cao')||!el('#app').innerHTML.includes('advanced-home-entry'))throw Error('Advanced entry missing on homepage');
 console.log('PASS: advanced vocabulary is visible in initial homepage navigation and prominent homepage entry.');
 const catalog=JSON.parse(run('JSON.stringify(hsk2Stories)'));const coveredCatalog=new Set();
 for(const story of catalog){if(story.lines.length<6||!story.speakers.length)throw Error('Incomplete dialogue');for(const line of story.lines){if(!line[2]||!line[3]||!line[4])throw Error('Missing dialogue content');for(const term of line[5]){if(!sourceWords.has(term)||!line[2].includes(term))throw Error('Invalid contextual target '+term);coveredCatalog.add(term);}}}
@@ -242,3 +242,9 @@ run('hsk2LibraryFilter="done"');if(run('filteredHsk2Stories().length')!==12)thro
 run('hsk2LibraryFilter="new"');if(run('filteredHsk2Stories().length')!==0)throw Error('New filter failed');
 run('hsk2LibraryFilter="all";pages.stories()');if((el('#hsk2SectionList').innerHTML.match(/data-story-open=/g)||[]).length!==12)throw Error('Lesson cards missing');
 console.log('PASS: 150/150 source words in dialogue lines, 6 sections of 2 lessons, search, isolated per-lesson progress, all 129 sentence answers and status filters.');
+sandbox.location.hash='#words';run('returnLessonTab=null;pages.words();dictationSession.position=3;showDictation()');el('#hanziAnswer').value='我正在';
+run('openAdvancedVocabulary();render()');if(!el('#app').innerHTML.includes('advancedTab')||el('#nav').innerHTML.includes('Từ vựng nâng cao'))throw Error('Advanced tab migration incomplete');
+if(!el('#nav').innerHTML.includes('href="#words" class="active"'))throw Error('Vocabulary sidebar not highlighted');
+run('returnToLessonVocabulary("practice");render()');if(run('dictationSession.position')!==3||el('#hanziAnswer').value!=='我正在')throw Error('Lesson draft not preserved across advanced tab');
+run('openAdvancedVocabulary();render();returnToLessonVocabulary("transcript");render()');if(run('dictationSession.tab')!=='transcript'||run('dictationSession.transcriptIndex')!==3)throw Error('Transcript return failed');
+console.log('PASS: third vocabulary tab, removed sidebar entry, correct sidebar highlight and preserved lesson draft/transcript selection.');

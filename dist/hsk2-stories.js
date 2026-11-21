@@ -40,10 +40,10 @@ function moveStory(direction){
 function storyWordsHtml(line){return line[5].map(term=>{const w=storyLexicon.get(term);return '<div class="story-vocab"><b lang="zh-CN">'+esc(w[0])+'</b><span>'+esc(w[1])+'</span><small>'+esc(w[2])+'</small></div>';}).join('');}
 function showStory(){
  stopWordAudio();app.dataset.vocabView='story';const s=storySession,total=hsk2Story.lines.length;
- if(s.position>=total){app.innerHTML='<section class="story-finish"><span class="story-kicker">HSK2 · HOÀN THÀNH HỘI THOẠI</span><h1>Hoàn thành hội thoại!</h1><p>Đã đi qua '+total+' câu · '+hsk2Story.vocabulary.length+' từ HSK2 trong một câu chuyện.</p><p>'+Object.values(s.records).filter(r=>r.correct).length+' câu đã gõ đúng · Có thể học lại để ôn các từ.</p><button class="btn" id="storyRestart">Học lại câu chuyện</button><button class="btn secondary" id="storyHome">Về danh sách hội thoại</button></section>';document.querySelector('#storyRestart').onclick=()=>startStory(false);document.querySelector('#storyHome').onclick=pages.stories;saveStoryProgress();return;}
+ if(s.position>=total){app.innerHTML=vocabularyTabsMarkup('advanced')+'<section class="story-finish" id="practicePanel" role="tabpanel" aria-labelledby="advancedTab"><span class="story-kicker">HSK2 · HOÀN THÀNH HỘI THOẠI</span><h1>Hoàn thành hội thoại!</h1><p>Đã đi qua '+total+' câu · '+hsk2Story.vocabulary.length+' từ HSK2 trong một câu chuyện.</p><p>'+Object.values(s.records).filter(r=>r.correct).length+' câu đã gõ đúng · Có thể học lại để ôn các từ.</p><button class="btn" id="storyRestart">Học lại câu chuyện</button><button class="btn secondary" id="storyHome">Về danh sách hội thoại</button></section>';bindAdvancedVocabularyTabs();document.querySelector('#storyRestart').onclick=()=>startStory(false);document.querySelector('#storyHome').onclick=pages.stories;saveStoryProgress();return;}
  const line=hsk2Story.lines[s.position],record=s.records[s.position]||{};s.passed=!!record.correct;s.revealed=!!record.revealed;
- app.innerHTML=`<div class="story-heading"><div><span class="story-kicker">TỪ VỰNG NÂNG CAO · HSK2</span><h1>${hsk2Story.title}</h1></div><button class="text-button" id="storyHome">← Danh sách bài</button></div><div class="story-scene"><span class="story-speaker">${line[0]+' · '+esc(hsk2Story.speakers[line[0]==='A'?0:1])}</span><span>${esc(line[1])}</span><strong>Câu ${s.position+1} / ${total}</strong></div><section class="story-workspace"><div class="story-vocab-heading"><b>Từ cần học trong câu này</b><small>Chữ Hán · Pinyin · Nghĩa</small></div><div class="story-vocab-row">${storyWordsHtml(line)}</div>${line[6]?'<p class="story-support">'+line[6].map(esc).join(' · ')+'</p>':''}<div class="story-player"><button class="btn" id="listenWord" aria-label="Nghe câu hội thoại">▶ Nghe câu</button><select id="wordRate" aria-label="Tốc độ đọc"><option value="0.65">0.65×</option><option value="0.85" selected>0.85×</option><option value="1">1×</option></select><button class="text-button" id="openDictationSettings">⚙ Cài đặt</button></div><p id="speechStatus" role="status" class="speech-status">Bấm nghe câu. Giọng đọc phụ thuộc giọng tiếng Trung trên thiết bị.</p><form id="dictationForm"><label for="hanziAnswer" class="sr-only">Câu hội thoại bạn nghe được</label><textarea id="hanziAnswer" class="hanzi-answer" lang="zh-CN" maxlength="160" placeholder="Nghe và gõ câu tiếng Trung…" rows="2"></textarea><div class="story-answer-actions"><button class="btn" type="submit">Kiểm tra ↵</button><button class="btn secondary" id="storyReveal" type="button">Xem câu</button></div></form><div id="storyFeedback" role="status" aria-live="polite"></div><p id="shortcutTips" class="shortcut-tips"></p><div class="story-navigation"><button class="btn secondary" id="storyPrevious" ${s.position===0?'disabled':''}>← Câu trước</button><span>Đúng rồi → Enter để tiếp tục</span><button class="btn secondary" id="storyNext">Bỏ qua →</button></div></section>${dictationSettingsMarkup()}`;
- const input=document.querySelector('#hanziAnswer');input.value=record.draft||'';
+ app.innerHTML=vocabularyTabsMarkup('advanced')+`<div class="story-heading"><div><span class="story-kicker">TỪ VỰNG NÂNG CAO · HSK2</span><h1>${hsk2Story.title}</h1></div><button class="text-button" id="storyHome">← Danh sách bài</button></div><div class="story-scene"><span class="story-speaker">${line[0]+' · '+esc(hsk2Story.speakers[line[0]==='A'?0:1])}</span><span>${esc(line[1])}</span><strong>Câu ${s.position+1} / ${total}</strong></div><section class="story-workspace" id="practicePanel" role="tabpanel" aria-labelledby="advancedTab"><div class="story-vocab-heading"><b>Từ cần học trong câu này</b><small>Chữ Hán · Pinyin · Nghĩa</small></div><div class="story-vocab-row">${storyWordsHtml(line)}</div>${line[6]?'<p class="story-support">'+line[6].map(esc).join(' · ')+'</p>':''}<div class="story-player"><button class="btn" id="listenWord" aria-label="Nghe câu hội thoại">▶ Nghe câu</button><select id="wordRate" aria-label="Tốc độ đọc"><option value="0.65">0.65×</option><option value="0.85" selected>0.85×</option><option value="1">1×</option></select><button class="text-button" id="openDictationSettings">⚙ Cài đặt</button></div><p id="speechStatus" role="status" class="speech-status">Bấm nghe câu. Giọng đọc phụ thuộc giọng tiếng Trung trên thiết bị.</p><form id="dictationForm"><label for="hanziAnswer" class="sr-only">Câu hội thoại bạn nghe được</label><textarea id="hanziAnswer" class="hanzi-answer" lang="zh-CN" maxlength="160" placeholder="Nghe và gõ câu tiếng Trung…" rows="2"></textarea><div class="story-answer-actions"><button class="btn" type="submit">Kiểm tra ↵</button><button class="btn secondary" id="storyReveal" type="button">Xem câu</button></div></form><div id="storyFeedback" role="status" aria-live="polite"></div><p id="shortcutTips" class="shortcut-tips"></p><div class="story-navigation"><button class="btn secondary" id="storyPrevious" ${s.position===0?'disabled':''}>← Câu trước</button><span>Đúng rồi → Enter để tiếp tục</span><button class="btn secondary" id="storyNext">Bỏ qua →</button></div></section>${dictationSettingsMarkup()}`;
+ bindAdvancedVocabularyTabs();const input=document.querySelector('#hanziAnswer');input.value=record.draft||'';
  document.querySelector('#storyHome').onclick=()=>{storyCapture();stopWordAudio();pages.stories();};
  document.querySelector('#listenWord').onclick=toggleWordPlayback;
  document.querySelector('#wordRate').value=s.rate;document.querySelector('#wordRate').onchange=e=>{s.rate=e.target.value;stopWordAudio();};
@@ -64,7 +64,27 @@ function renderStoryFeedback(reveal){
 pages.stories=function(){renderHsk2Catalog();};
 const baseCurrentSpeechText=currentSpeechText;
 currentSpeechText=function(){return storyIsActive()?hsk2Story.lines[storySession.position][2]:baseCurrentSpeechText();};
-sections.splice(2,0,['stories','◌','Từ vựng nâng cao']);
+let suspendedLessonSession=null,returnLessonTab=null;
+function openAdvancedVocabulary(){
+ if(dictationSession&&dictationSession.mode!=='story'&&dictationSession.position<dictationSession.queue.length){captureDictation();suspendedLessonSession=dictationSession;}
+ stopWordAudio();if(location.hash==='#stories')pages.stories();else location.hash='#stories';
+}
+function returnToLessonVocabulary(tab){
+ if(storyIsActive()&&storySession.position<hsk2Story.lines.length)storyCapture();
+ stopWordAudio();returnLessonTab=tab;if(location.hash==='#words')pages.words();else location.hash='#words';
+}
+function bindAdvancedVocabularyTabs(){
+ document.querySelector('#practiceTab').onclick=()=>returnToLessonVocabulary('practice');
+ document.querySelector('#transcriptTab').onclick=()=>returnToLessonVocabulary('transcript');
+ document.querySelector('#advancedTab').onclick=()=>{if(storyIsActive()&&storySession.position<hsk2Story.lines.length)storyCapture();pages.stories();};
+}
+const wordsBeforeAdvancedTabs=pages.words;
+pages.words=function(){
+ if(!returnLessonTab){wordsBeforeAdvancedTabs();return;}
+ const tab=returnLessonTab;returnLessonTab=null;
+ if(suspendedLessonSession){dictationSession=suspendedLessonSession;dictationSession.tab=tab;if(tab==='transcript'&&dictationSession.transcriptIndex===undefined)dictationSession.transcriptIndex=dictationSession.position;showDictation();}
+ else{startDictation(false,'sentence');if(tab==='transcript'){dictationSession.tab=tab;showDictation();}}
+};
 const homeBeforeAdvanced=pages.home;
 pages.home=function(){
  homeBeforeAdvanced();
