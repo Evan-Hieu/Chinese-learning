@@ -66,7 +66,7 @@ const baseCurrentSpeechText=currentSpeechText;
 currentSpeechText=function(){return storyIsActive()?hsk2Story.lines[storySession.position][2]:baseCurrentSpeechText();};
 let suspendedLessonSession=null,returnLessonTab=null;
 function openAdvancedVocabulary(){
- if(dictationSession&&dictationSession.mode!=='story'&&dictationSession.position<dictationSession.queue.length){captureDictation();suspendedLessonSession=dictationSession;}
+ if(dictationSession&&dictationSession.mode!=='story'&&dictationSession.position<dictationSession.queue.length){if(app.dataset.vocabView!=='activity')captureDictation();suspendedLessonSession=dictationSession;}
  stopWordAudio();if(location.hash==='#stories')pages.stories();else location.hash='#stories';
 }
 function returnToLessonVocabulary(tab){

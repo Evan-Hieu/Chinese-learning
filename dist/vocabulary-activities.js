@@ -12,9 +12,12 @@ function selectVocabularyActivity(value){
   else startDictation(false,value);
 }
 function activityChrome(value){
-  return dictationChrome().replace('value="sentence" selected','value="sentence"').replace('value="word" selected','value="word"').replace('value="'+value+'"','value="'+value+'" selected');
+  return vocabularyTabsMarkup('practice')+dictationChrome().replace('value="sentence" selected','value="sentence"').replace('value="word" selected','value="word"').replace('value="'+value+'"','value="'+value+'" selected');
 }
 function bindActivityChrome(){
+  document.querySelector('#practiceTab').onclick=()=>startDictation(false,'sentence');
+  document.querySelector('#transcriptTab').onclick=()=>{startDictation(false,'sentence');dictationSession.tab='transcript';showDictation();};
+  document.querySelector('#advancedTab').onclick=()=>openAdvancedVocabulary();
   document.querySelector('#backWords').onclick=()=>{stopWordAudio();vocabularyListPage();};
   document.querySelector('#reviewWrong').onclick=()=>startDictation(true);
   document.querySelector('#practiceMode').onchange=e=>selectVocabularyActivity(e.target.value);

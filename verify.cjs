@@ -248,3 +248,12 @@ if(!el('#nav').innerHTML.includes('href="#words" class="active"'))throw Error('V
 run('returnToLessonVocabulary("practice");render()');if(run('dictationSession.position')!==3||el('#hanziAnswer').value!=='我正在')throw Error('Lesson draft not preserved across advanced tab');
 run('openAdvancedVocabulary();render();returnToLessonVocabulary("transcript");render()');if(run('dictationSession.tab')!=='transcript'||run('dictationSession.transcriptIndex')!==3)throw Error('Transcript return failed');
 console.log('PASS: third vocabulary tab, removed sidebar entry, correct sidebar highlight and preserved lesson draft/transcript selection.');
+
+for(const activity of ['flash','match']){
+ run('selectVocabularyActivity('+JSON.stringify(activity)+')');
+ for(const id of ['practiceTab','transcriptTab','advancedTab'])if(!el('#app').innerHTML.includes('id="'+id+'"')||typeof el('#'+id).onclick!=='function')throw Error('Activity tab missing: '+activity+' '+id);
+ el('#transcriptTab').onclick();if(!el('#app').innerHTML.includes('context-transcript'))throw Error('Activity transcript navigation failed');
+ run('selectVocabularyActivity('+JSON.stringify(activity)+')');el('#practiceTab').onclick();if(!el('#app').innerHTML.includes('dictationForm'))throw Error('Activity practice navigation failed');
+ run('selectVocabularyActivity('+JSON.stringify(activity)+')');el('#advancedTab').onclick();if(sandbox.location.hash!=='#stories')throw Error('Activity advanced navigation failed');
+}
+console.log('PASS: flashcard and matching retain all three working vocabulary tabs.');
