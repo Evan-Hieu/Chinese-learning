@@ -1,0 +1,24 @@
+/* One fixed application frame and one shared course header for every route. */
+html,body.learning-shell{height:100%;overflow:hidden}
+body.learning-shell{height:100dvh}
+#learningMain{margin:0 0 0 240px;height:100dvh;max-width:none;min-height:0;display:flex;flex-direction:column;padding:0 28px;overflow:hidden}
+#learningMain>footer{display:none}
+#learningSidebar{position:fixed;top:0;left:0;bottom:0;height:100dvh;overflow-y:auto;z-index:20}
+#courseHeader{position:relative;top:auto;z-index:10;flex:0 0 92px;height:92px;min-height:92px;padding:10px 0;margin:0;gap:16px;background:var(--paper);border-bottom:1px solid var(--line)}
+#courseHeader .hsk-levels{display:flex;gap:8px;flex-wrap:wrap}
+#courseHeader .hsk-levels button{min-height:34px;padding:7px 16px;font-size:12px}
+#courseHeader .lesson-row{display:flex;align-items:center;gap:10px;margin-top:7px;font-size:11px}
+#courseHeader .lesson-row select{padding:7px 28px 7px 10px;font-size:11px}
+.learning-shell:not(.vocabulary-fit) #app{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;padding:22px 0 18px;scrollbar-gutter:stable}
+@media(min-width:651px) and (max-width:1000px){#learningMain{margin-left:200px;padding:0 24px}}
+@media(max-width:650px){
+ #learningSidebar{position:fixed;inset:0 0 auto;height:80px;width:100%;padding:8px 14px;overflow:hidden;z-index:30}
+ #learningMain{margin:80px 0 0;height:calc(100dvh - 80px);padding:0 12px}
+ #courseHeader{position:relative;top:auto;flex-basis:80px;height:80px;min-height:80px;padding:7px 0;gap:8px;align-items:flex-start}
+ #courseHeader .hsk-levels{gap:6px}
+ #courseHeader .hsk-levels button{min-height:30px;padding:6px 8px;font-size:11px;flex:1}
+ #courseHeader .lesson-row{margin-top:5px;gap:8px;font-size:10px}
+ #courseHeader .lesson-row select{font-size:10px;padding:5px 26px 5px 9px}
+ #courseHeader .avatar{display:none}
+ .learning-shell:not(.vocabulary-fit) #app{padding:14px 0 12px}
+}
