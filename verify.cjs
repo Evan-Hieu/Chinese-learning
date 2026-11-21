@@ -205,3 +205,20 @@ run('pages.practice()');if(!el('#app').innerHTML.includes('photos/play-ball.jpg'
 console.log('PASS: eight local vector scenes, default cartoon presentation and visible source attribution.');
 for(const asset of ['play-ball','dance','watch-tv','listen-music','eat','walk-listen','sing-dance','read-drink']){const photo=fs.readFileSync('dist/images/lesson1/photos/'+asset+'.jpg');if(photo.length<10000||photo[0]!==255||photo[1]!==216)throw Error('Invalid lesson photo '+asset);}
 console.log('PASS: eight local JPEG photos downloaded and mapped to activities.');
+vm.runInContext(fs.readFileSync('dist/hsk2-stories.js','utf8'),sandbox);
+const sourceWords=new Set(JSON.parse(fs.readFileSync('dist/hsk2-source.json','utf8')).vocabulary.map(w=>w[0]));
+for(const word of JSON.parse(run('JSON.stringify(hsk2Story.vocabulary)')))if(!sourceWords.has(word[0]))throw Error('Story target not from HSK2 sheet: '+word[0]);
+if(!run('hsk2Story.lines.every(line=>line[5].every(term=>storyLexicon.has(term)&&line[2].includes(term)))'))throw Error('Target missing from sentence');
+sandbox.location.hash='#stories';run('state.level=2;state.dictationPrefs={showFull:false,showImmediate:true};pages.stories();startStory(false)');
+if(el('#app').innerHTML.includes(run('hsk2Story.lines[0][2]'))||!el('#app').innerHTML.includes('story-vocab-row'))throw Error('Story answer leaked or vocabulary missing');
+const lessonMistakes=run('JSON.stringify([state.dictationWrong,state.sentenceDictationWrong])');
+el('#hanziAnswer').value='错';run('checkStory()');if(!el('#storyFeedback').innerHTML.includes('Chưa chính xác'))throw Error('Wrong story accepted');
+el('#hanziAnswer').value=run('hsk2Story.lines[0][2]');run('checkStory()');if(!run('storySession.passed'))throw Error('Correct story rejected');
+const storySpeechBefore=spoken.length;el('#hanziAnswer').onkeydown({key:'Enter',preventDefault(){}});
+if(run('storySession.position')!==1||spoken.length!==storySpeechBefore+1)throw Error('Story Enter transition failed');
+synth.speaking=false;spoken.at(-1).onend();if(replayTimers.size)throw Error('Story navigation repeated audio');
+run('startStory(true)');if(run('storySession.position')!==1)throw Error('Story resume failed');
+el('#hanziAnswer').oncompositionstart();el('#hanziAnswer').onkeydown({key:'Enter',preventDefault(){throw Error('Story IME intercepted');}});el('#hanziAnswer').oncompositionend();
+if(run('JSON.stringify([state.dictationWrong,state.sentenceDictationWrong])')!==lessonMistakes)throw Error('Story affected lesson mistakes');
+run('storySession.position=13;showStory()');el('#hanziAnswer').value=run('hsk2Story.lines[13][2]');run('checkStory();moveStory(1)');if(!el('#app').innerHTML.includes('Bạn đã tìm thấy điện thoại'))throw Error('Story completion failed');
+console.log('PASS: HSK2 source membership, contextual targets, hidden answers, grading, Enter progression, single playback, resume and isolated story progress.');
