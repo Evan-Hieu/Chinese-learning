@@ -274,7 +274,8 @@ for(let level=1;level<=6;level++){
   }
  }
  const story=allStories[0];run('selectHsk2Story('+JSON.stringify(story.id)+',false)');
- if(level!==2&&!el('#app').innerHTML.includes('HSK'+level))throw Error('Wrong practice level');
+ if(run('hsk2Story.id')!==story.id||!el('#app').innerHTML.includes(story.title))throw Error('Wrong practice story');
+ if(el('#app').innerHTML.includes('TỪ VỰNG NÂNG CAO · HSK'))throw Error('Redundant level label remains');
  el('#hanziAnswer').value=story.lines[0][2];run('checkStory()');if(!run('storySession.passed'))throw Error('Level answer failed');
  run('moveStory(1)');if(!run('storyProgress().position===1'))throw Error('Level save failed');
  run('pages.stories(); selectHsk2Story('+JSON.stringify(story.id)+',true)');if(!run('storySession.position===1'))throw Error('Level resume failed');
