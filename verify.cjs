@@ -222,3 +222,7 @@ el('#hanziAnswer').oncompositionstart();el('#hanziAnswer').onkeydown({key:'Enter
 if(run('JSON.stringify([state.dictationWrong,state.sentenceDictationWrong])')!==lessonMistakes)throw Error('Story affected lesson mistakes');
 run('storySession.position=13;showStory()');el('#hanziAnswer').value=run('hsk2Story.lines[13][2]');run('checkStory();moveStory(1)');if(!el('#app').innerHTML.includes('Bạn đã tìm thấy điện thoại'))throw Error('Story completion failed');
 console.log('PASS: HSK2 source membership, contextual targets, hidden answers, grading, Enter progression, single playback, resume and isolated story progress.');
+if(run('words.length')!==22||run('words[0][0]')!=='在'||run('words[21][0]')!=='正在')throw Error('Lesson vocabulary changed');
+if(!run('sections.some(item=>item[0]==="stories"&&item[2]==="Từ vựng nâng cao")'))throw Error('Independent advanced section missing');
+run('pages.words()');if(run('dictationSession.mode')!=='sentence'||run('dictationSession.queue.length')!==22)throw Error('Lesson activity mixed with story');
+console.log('PASS: separate advanced vocabulary section and unchanged 22-word lesson practice.');
