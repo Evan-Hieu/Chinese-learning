@@ -285,6 +285,7 @@ if(run('JSON.stringify(words)')!==originalLessonWords)throw Error('Textbook word
 sandbox.location.hash='#stories';run('state.level=2;render()');if(run('hsk2Stories.length')!==12)throw Error('Original HSK2 stories changed');
 console.log('PASS: six advanced catalogues, all 5043 source rows, literal targets, bilingual sentences, grading, per-story save/resume, isolated textbook tabs and unchanged HSK2 stories.');
 vm.runInContext(fs.readFileSync('dist/lesson2-data.js','utf8'),sandbox);
+vm.runInContext(fs.readFileSync('dist/lesson2-btnc.js','utf8'),sandbox);
 vm.runInContext(fs.readFileSync('dist/lesson2.js','utf8'),sandbox);
 sandbox.location.hash='#words';run('state.level=2;state.known=[0,2];state.sentenceDictationWrong=[4];save();switchTextbookLesson("2")');
 if(run('words.length')!==20||run('state.lesson')!=='2'||run('state.known.length')!==0)throw Error('Lesson 2 vocabulary or isolation failed');
@@ -304,3 +305,8 @@ run('state.level=2;switchTextbookLesson("1")');sandbox.location.hash='#stories';
 console.log('PASS: Lesson 2 seven views, 20 contextual targets, all dictation answers, flash/matching, textbook exercises, clock times, isolated progress and twelve source pages.');
 
 run('switchTextbookLesson("2");pages.listening()');for(const file of ['Q2B2.mp3','Q2B2.NC1.MP3','Q2B2.NC2.MP3','Q2B2.NC3.MP3'])if(fs.statSync('dist/audio/'+file).size<1000||!el('#app').innerHTML.includes('audio/'+file))throw Error('Missing Lesson 2 audio '+file);run('switchTextbookLesson("1")');console.log('PASS: all four supplied Q2B2 audio files appear only in Lesson 2.');
+
+run('switchTextbookLesson("2");pages.listening()');
+const ncGroups=run('lesson2BTNC');for(let id=0;id<ncGroups.length;id++){const answers={};ncGroups[id].questions.forEach((q,i)=>answers['nc'+id+'q'+i]=String(q[2]));el('#lesson2BTNCForm'+id).onsubmit({preventDefault(){},target:answers});if(!el('#lesson2BTNCResult'+id).textContent.includes('5 / 5'))throw Error('BTNC self-practice grading failed');}
+if(run('lesson2BTNC[0].key.join("")')!=='EBACD'||run('lesson2BTNC[1].key.join("")')!=='EABDC'||run('lesson2BTNC[2].key.join("")')!=='BCCBB')throw Error('Original PDF key changed');
+run('switchTextbookLesson("1")');console.log('PASS: fifteen new transcript-based listening questions and three original BTNC answer keys remain separate.');
