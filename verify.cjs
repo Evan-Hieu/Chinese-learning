@@ -200,3 +200,6 @@ el('#pictureAction').value='打球';run('checkPictureAnswer()');if(!JSON.parse(d
 run('showPictureHint()');if(!el('#pictureFeedback').textContent.includes('打球'))throw Error('Hint missing');
 for(const path of ['activities-page5.png','activities-page6.png'])if(fs.statSync('dist/images/lesson1/'+path).size<1000)throw Error('Missing textbook image');
 console.log('PASS: textbook picture exercises, action grading, progressive variants, reordered simultaneous actions, hints and saved progress.');
+for(const asset of ['play-ball','dance','watch-tv','listen-music','eat','walk-listen','sing-dance','read-drink']){const svg=fs.readFileSync('dist/images/lesson1/cartoon/'+asset+'.svg','utf8');if(!svg.includes('viewBox="0 0 320 240"')||svg.includes('<script'))throw Error('Invalid cartoon scene '+asset);}
+run('pages.practice()');if(!el('#app').innerHTML.includes('cartoon/play-ball.svg')||!el('#app').innerHTML.includes('CC BY-SA 4.0'))throw Error('Cartoon or attribution missing');
+console.log('PASS: eight local vector scenes, default cartoon presentation and visible source attribution.');
