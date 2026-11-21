@@ -226,3 +226,5 @@ if(run('words.length')!==22||run('words[0][0]')!=='在'||run('words[21][0]')!=='
 if(!run('sections.some(item=>item[0]==="stories"&&item[2]==="Từ vựng nâng cao")'))throw Error('Independent advanced section missing');
 run('pages.words()');if(run('dictationSession.mode')!=='sentence'||run('dictationSession.queue.length')!==22)throw Error('Lesson activity mixed with story');
 console.log('PASS: separate advanced vocabulary section and unchanged 22-word lesson practice.');
+sandbox.location.hash='#home';run('render()');if(!el('#nav').innerHTML.includes('Từ vựng nâng cao')||!el('#app').innerHTML.includes('advanced-home-entry'))throw Error('Advanced entry missing on homepage');
+console.log('PASS: advanced vocabulary is visible in initial homepage navigation and prominent homepage entry.');

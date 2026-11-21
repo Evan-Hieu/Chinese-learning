@@ -65,4 +65,11 @@ pages.stories=function(){
 const baseCurrentSpeechText=currentSpeechText;
 currentSpeechText=function(){return storyIsActive()?hsk2Story.lines[storySession.position][2]:baseCurrentSpeechText();};
 sections.splice(2,0,['stories','◌','Từ vựng nâng cao']);
-if(location.hash==='#stories')render();
+const homeBeforeAdvanced=pages.home;
+pages.home=function(){
+ homeBeforeAdvanced();
+ app.innerHTML=app.innerHTML.replace('<section class="hero">','<a class="advanced-home-entry" href="#stories"><span>◌ KHO HỌC RIÊNG · HSK2</span><strong>Từ vựng nâng cao qua hội thoại</strong><small>Nghe & gõ từng câu · Từ mới hiện phía trên · Mở bài thử →</small></a><section class="hero">');
+};
+// The first navigation was rendered before this script registered the new section.
+// Refresh every initial route so the menu is present on the plain homepage too.
+render();
