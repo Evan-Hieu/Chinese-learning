@@ -27,3 +27,10 @@ Advanced vocabulary HSK1–HSK6
 The read-only source snapshot is advanced-source-full.json (tabs 1–6 in the user's spreadsheet). Practice/check columns are excluded. The tab assignment is preserved, including 41 procurement entries in tab 1. advanced-example-fixes.json records corrected or supplemented examples; advanced-procurement-dialogues.json contains six original workplace dialogues. Source examples for other new levels are grouped by topic into short question-and-answer practice lessons with authored connecting turns. These are topical exchanges rather than newly authored continuous narratives. HSK2 retains the original 12 connected dialogues and their progress IDs. Textbook vocabulary remains separate.
 
 Build with node build-advanced-library.cjs, then node verify.cjs. dist/advanced-coverage.json lists per-level source row coverage, sections, lessons and sentences. All 5,043 source entries must have a tagged occurrence in practice; display annotations and alternate spellings are normalized only when checking literal occurrence.
+
+
+HSK2 Lesson 2
+
+Select Lesson 2 — 你平时几点起床？ under HSK2. lesson2-data.js transcribes the 20 vocabulary entries, two dialogues and reading passage from the supplied pages 15–26. lesson2.js adds the seven learning views and isolates known words, mistakes, exercises, notes and matching scores per textbook lesson. The advanced HSK vocabulary library is unchanged. The twelve original page images are available in collapsible references. Clock practice deliberately uses newly rendered times and is labelled as supplementary practice rather than an asserted reading of the small printed clocks.
+
+The four supplied Q2B2 BTNC MP3 files are playable with speed controls. Their correspondence to printed codes 02-1/02-2/02-3 is unverified; no listening answer keys are inferred from filenames. Device TTS of the two transcribed dialogues is separately labelled; 02-3 questions await a verified recording/transcript.

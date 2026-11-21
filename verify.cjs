@@ -284,3 +284,23 @@ for(let level=1;level<=6;level++){
 if(run('JSON.stringify(words)')!==originalLessonWords)throw Error('Textbook words changed');
 sandbox.location.hash='#stories';run('state.level=2;render()');if(run('hsk2Stories.length')!==12)throw Error('Original HSK2 stories changed');
 console.log('PASS: six advanced catalogues, all 5043 source rows, literal targets, bilingual sentences, grading, per-story save/resume, isolated textbook tabs and unchanged HSK2 stories.');
+vm.runInContext(fs.readFileSync('dist/lesson2-data.js','utf8'),sandbox);
+vm.runInContext(fs.readFileSync('dist/lesson2.js','utf8'),sandbox);
+sandbox.location.hash='#words';run('state.level=2;state.known=[0,2];state.sentenceDictationWrong=[4];save();switchTextbookLesson("2")');
+if(run('words.length')!==20||run('state.lesson')!=='2'||run('state.known.length')!==0)throw Error('Lesson 2 vocabulary or isolation failed');
+if(!el('#lesson-select').innerHTML.includes('Lesson 2'))throw Error('Lesson 2 selector unavailable');
+for(const route of ['home','words','grammar','dialogue','practice','listening','writing']){sandbox.location.hash='#'+route;run('render()');if(!el('#app').innerHTML.length)throw Error('Empty Lesson 2 '+route);if(route==='listening'&&el('#app').innerHTML.includes('audio/Q2B1'))throw Error('Lesson 1 audio leaked');}
+run('startDictation(false,"sentence")');const lesson2Words=run('words'),lesson2Contexts=run('vocabularyContexts');
+for(let i=0;i<20;i++){if(!lesson2Contexts[i].zh.includes(lesson2Words[i][0]))throw Error('Lesson 2 target absent');el('#hanziAnswer').value=lesson2Contexts[i].zh;run('checkDictation()');if(!run('dictationSession.passed'))throw Error('Lesson 2 answer failed');if(i<19)run('moveDictation(1)');}
+run('selectVocabularyActivity("flash")');if(!el('#app').innerHTML.includes('1 / 20'))throw Error('Lesson 2 flash count');
+run('startWordMatch()');while(run('wordMatch.round')<5){const ids=run('matchRoundIds()');for(const id of ids)run('selectMatchWord('+id+');chooseMatchMeaning('+id+')');run('wordMatch.round++;wordMatch.solved=[];wordMatch.selected=null;showWordMatch()');}if(!el('#app').innerHTML.includes('20 / 20'))throw Error('Lesson 2 match completion failed');
+for(const mode of ['vocab','reading','order']){const qs=run('lesson2Exercises['+JSON.stringify(mode)+']');for(let i=0;i<qs.length;i++)if(!run('gradeLesson2Exercise('+JSON.stringify(mode)+','+i+','+JSON.stringify(qs[i][1])+').correct'))throw Error('Lesson 2 exercise answer failed');}
+if(!run('lesson2TimeText("06:15",true)==="早上六点一刻"&&lesson2TimeText("22:45",true)==="晚上十点三刻"'))throw Error('Time generation failed');
+run('state.known=[1];state.sentenceDictationWrong=[8];save();switchTextbookLesson("1")');
+if(run('words.length')!==22||run('JSON.stringify(state.known)')!=='[0,2]'||run('JSON.stringify(state.sentenceDictationWrong)')!=='[4]')throw Error('Lesson 1 progress changed');
+run('switchTextbookLesson("2")');if(run('JSON.stringify(state.known)')!=='[1]'||run('JSON.stringify(state.sentenceDictationWrong)')!=='[8]')throw Error('Lesson 2 progress lost');
+for(let page=15;page<=26;page++)if(fs.statSync('dist/images/lesson2/page-'+page+'.png').size<1000)throw Error('Missing original lesson page');
+run('state.level=2;switchTextbookLesson("1")');sandbox.location.hash='#stories';run('render()');if(run('hsk2Stories.length')!==12)throw Error('Advanced library changed');
+console.log('PASS: Lesson 2 seven views, 20 contextual targets, all dictation answers, flash/matching, textbook exercises, clock times, isolated progress and twelve source pages.');
+
+run('switchTextbookLesson("2");pages.listening()');for(const file of ['Q2B2.mp3','Q2B2.NC1.MP3','Q2B2.NC2.MP3','Q2B2.NC3.MP3'])if(fs.statSync('dist/audio/'+file).size<1000||!el('#app').innerHTML.includes('audio/'+file))throw Error('Missing Lesson 2 audio '+file);run('switchTextbookLesson("1")');console.log('PASS: all four supplied Q2B2 audio files appear only in Lesson 2.');
