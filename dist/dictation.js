@@ -32,7 +32,7 @@ function startDictation(review=false,mode=state.dictationMode==='word'?'word':'s
 }
 function dictationChrome(){
   const mode=dictationMode();
-  return '<div class="dictation-page"><div class="dictation-title"><h1>1. 你在听什么？</h1><span>Trình độ: HSK2 · Từ vựng trong ngữ cảnh</span></div><div class="toolbar dictation-links"><button class="text-button" id="backWords">← Danh sách từ</button><button class="text-button" id="reviewWrong">'+(mode==='sentence'?'Ôn câu sai':'Ôn từ sai')+' ('+dictationMistakes().length+')</button></div><div class="practice-mode-control"><label for="practiceMode">Luyện theo</label><select id="practiceMode"><option value="sentence" '+(mode==='sentence'?'selected':'')+'>Câu ví dụ</option><option value="word" '+(mode==='word'?'selected':'')+'>Từ riêng lẻ</option></select><span>'+(mode==='sentence'?'Nghe và gõ cả câu tiếng Trung.':'Nghe và gõ một từ.')+'</span></div></div>';
+  return '<div class="dictation-page"><div class="toolbar dictation-links"><button class="text-button" id="backWords">← Danh sách từ</button><button class="text-button" id="reviewWrong">'+(mode==='sentence'?'Ôn câu sai':'Ôn từ sai')+' ('+dictationMistakes().length+')</button></div><div class="practice-mode-control"><label for="practiceMode">Luyện theo</label><select id="practiceMode"><option value="sentence" '+(mode==='sentence'?'selected':'')+'>Câu ví dụ</option><option value="word" '+(mode==='word'?'selected':'')+'>Từ riêng lẻ</option></select><span>'+(mode==='sentence'?'Nghe và gõ cả câu tiếng Trung.':'Nghe và gõ một từ.')+'</span></div></div>';
 }
 function bindDictationChrome(){
   document.querySelector('#backWords').onclick=()=>{stopWordAudio();pages.words();};
