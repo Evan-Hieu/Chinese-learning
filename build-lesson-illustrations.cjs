@@ -12,7 +12,7 @@ const scenes={
  'play-ball':floor+'<path d="M45 203h230" stroke="#FFF" stroke-width="5"/>'+icon('basketball',53,0,230),
  'dance':floor+icon('dancing',57,0,230)+icon('notes',235,28,52),
  'watch-tv':icon('television',94,-8,142)+'<rect x="62" y="148" width="198" height="66" rx="20" fill="#C7B8E8" stroke="#26394A" stroke-width="4"/>'+[104,161,218].map((x,i)=>`<g stroke="#26394A" stroke-width="3"><path d="M${x-23} 208v-44q23-24 46 0v44" fill="${['#92D3F5','#F7AF8C','#A8D5BA'][i]}"/><circle cx="${x}" cy="139" r="20" fill="#775A49"/></g>`).join(''),
- 'listen-music':floor+person(155,65)+icon('headphones',99,24,112)+icon('notes',230,36,66),
+ 'listen-music':floor+person(155,65)+'<g stroke="#26394A" stroke-width="4" fill="#B9AAE8"><path d="M120 84V72a35 35 0 0 1 70 0v12" fill="none"/><rect x="117" y="78" width="13" height="25" rx="6"/><rect x="180" y="78" width="13" height="25" rx="6"/></g>'+icon('notes',230,36,66),
  'eat':floor+person(155,41,'#F7AF8C')+'<path d="M70 151h180v65H70z" fill="#DAB891" stroke="#26394A" stroke-width="4"/>'+icon('meal',101,103,113)+'<path d="M123 128 132 97" stroke="#26394A" stroke-width="5" stroke-linecap="round"/>',
  'walk-listen':floor+icon('walking',24,0,231)+icon('headphones',209,21,82)+icon('notes',221,116,60),
  'sing-dance':floor+icon('dancing',23,0,230)+icon('microphone',205,91,90)+icon('notes',215,14,74),
