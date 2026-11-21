@@ -52,3 +52,8 @@ Lesson 4 — 你想要哪件？ contains the 19 textbook vocabulary groups (色 
 HSK2 Lesson 5
 
 Lesson 5 — 你这个周末什么时候有空儿？ adds twenty vocabulary groups, two transcribed telephone dialogues, 跟/给 and 有点儿/一点儿 grammar, a reading passage, picture activities, practice responses and an appointment role-play. All thirteen supplied pages 51–63 are preserved in references. Progress for vocabulary, exercises and the appointment form is isolated across Lessons 1–5. Four Q2B5 MP3s are playable. NC1–NC3 transcripts and original answer letters were checked against PDF page 16; fifteen newly authored listening-comprehension questions are labelled separately. Textbook recording 05-3 remains ungraded without its verified transcript/recording.
+
+
+HSK2 Lesson 6
+
+Lesson 6 — 上个周末你做什么了？ contains nineteen vocabulary groups, two transcribed dialogues, completion 了 / negative 没 and subject-predicate-predicate grammar, reading/cloze activities, three past-event question forms and a weekend-report simulation. The twelve source pages 65–76 and four supplied Q2B6 MP3 files are preserved. The first page has a clipboard notification covering some lesson goals; those obscured goals were not reconstructed. NC1–NC3 transcripts and original letter keys were checked visually against PDF page 17; the fifteen graded comprehension questions are independently authored and labelled. Textbook recording 06-3 remains ungraded without a verified corresponding recording/transcript. Vocabulary and exercise progress is isolated across Lessons 1–6; the advanced vocabulary library is unchanged.
