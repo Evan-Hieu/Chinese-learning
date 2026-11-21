@@ -1,16 +1,16 @@
 // Lesson data switches independently of the six-level advanced vocabulary library.
 const lesson1Words=words.map(w=>[...w]),lesson1Contexts=vocabularyContexts.map(w=>({...w})),lesson1BookSource={...contextSources.book};
 const textbookPages={...pages};
-const lessonProgressFields=['known','score','dictationWrong','sentenceDictationWrong','notes','picturePractice','matchBest','lesson2Exercises','lesson2Schedule','lesson2Summary'];
-let activeTextbookLesson=state.lesson==='2'?'2':'1';state.lesson=activeTextbookLesson;
+const lessonProgressFields=['known','score','dictationWrong','sentenceDictationWrong','notes','picturePractice','matchBest','lesson2Exercises','lesson2Schedule','lesson2Summary','lesson3Exercises','lesson3PhoneBook','lesson3Summary'];
+let activeTextbookLesson=['2','3'].includes(state.lesson)?state.lesson:'1';state.lesson=activeTextbookLesson;
 function setTextbookData(id){
- const rows=id==='2'?lesson2Data.rows:null;
+ const data=id==='2'?lesson2Data:id==='3'&&typeof lesson3Data!=='undefined'?lesson3Data:null;const rows=data?.rows;
  words.splice(0,words.length,...(rows?rows.map(r=>[r[0]==='点（钟）'?'点':r[0],r[1],r[2],r[3]]):lesson1Words.map(w=>[...w])));
  vocabularyContexts.splice(0,vocabularyContexts.length,...(rows?rows.map(r=>({target:r[0]==='点（钟）'?'点':r[0],zh:r[3],py:r[4],vi:r[5],source:'book'})):lesson1Contexts.map(w=>({...w}))));
- contextSources.book=id==='2'?{label:'Bài 2 giáo trình bạn cung cấp',note:'Câu luyện tập biên soạn theo 20 mục từ và cách nói giờ của Bài 2; không phải audio thu âm gốc.'}:{...lesson1BookSource};
+ contextSources.book=data?{label:'Bài '+id+' giáo trình bạn cung cấp',note:'Câu luyện tập biên soạn theo '+rows.length+' mục từ của Bài '+id+'; không phải audio thu âm gốc.'}:{...lesson1BookSource};
 }
 function switchTextbookLesson(id){
- if(!['1','2'].includes(id)||id===activeTextbookLesson)return;
+ if(!['1','2','3'].includes(id)||id===activeTextbookLesson)return;
  stopWordAudio();if(storyIsActive()&&storySession?.position<hsk2Story.lines.length)storyCapture();
  state.lessonProgress=state.lessonProgress||{};const snapshot={};
  for(const key of lessonProgressFields)if(state[key]!==undefined)snapshot[key]=JSON.parse(JSON.stringify(state[key]));

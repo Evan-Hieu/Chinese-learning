@@ -36,3 +36,9 @@ Select Lesson 2 — 你平时几点起床？ under HSK2. lesson2-data.js transcr
 The four supplied Q2B2 BTNC MP3 files are playable with speed controls. Their correspondence to printed codes 02-1/02-2/02-3 is unverified; no listening answer keys are inferred from filenames. Device TTS of the two transcribed dialogues is separately labelled; 02-3 questions await a verified recording/transcript.
 
 The supplied answer PDF was subsequently checked visually at PDF page 13. lesson2-btnc.js contains the Nâng cao 1–3 listening transcripts and their original answer-letter sequences. Each audio card also offers five newly authored comprehension questions, graded against their own choices. These new questions are explicitly distinguished from the unavailable original BTNC question sheets. The PDF page is available as a reference image. This does not establish correspondence to the textbook recording codes 02-1/02-2/02-3.
+
+HSK2 Lesson 3
+
+Select Lesson 3 — 可以用一下你的手机吗？. The 21 textbook vocabulary groups (电话 and 号 remain associated subwords), two transcribed dialogues, reading passage, fill-in and reading exercises are in lesson3-data.js. lesson3.js adds the seven learning views, borrowing simulation, fictional telephone-number role-play and independent lesson progress. All eleven original pages 27–37 are accessible in references.
+
+The four supplied Q2B3 files are playable. BTNC NC1–NC3 transcripts and original answer keys were checked against PDF page 14; the page image is included. The 15 automatically graded comprehension questions are newly authored and labelled separately from the absent original BTNC question sheets. Textbook code 03-3 remains ungraded without a verified corresponding recording/transcript. Device speech of the two textbook dialogues is separate from the MP3 recordings.
