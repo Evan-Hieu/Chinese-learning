@@ -31,3 +31,5 @@ body.learning-shell{height:100dvh}
 
 /* The practice selector belongs only to interactive exercises. */
 #app[data-vocab-view="transcript"] .practice-mode-control{display:none}
+
+.vocabulary-fit .hsk2-catalog{height:auto;flex:1;min-height:0}

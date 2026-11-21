@@ -20,3 +20,10 @@ Workflow `.github/workflows/pages.yml` kiểm tra bản web khi có thay đổi 
 Tại thời điểm thiết lập, GitHub hiển thị yêu cầu nâng cấp hoặc chuyển kho sang công khai để bật Pages. Kho được giữ riêng tư; chưa có website trực tuyến. Việc chuyển công khai cần người dùng quyết định vì mã nguồn và âm thanh trong kho sẽ có thể được xem hoặc tải về.
 
 Trước khi bật website công khai, bảo đảm quyền sử dụng nội dung và âm thanh. Website tĩnh không có cơ chế bảo vệ các file nghe bằng đăng nhập. Không đưa PDF nguyên bản vào bản công khai nếu chưa có quyền phân phối.
+
+
+Advanced vocabulary HSK1–HSK6
+
+The read-only source snapshot is advanced-source-full.json (tabs 1–6 in the user's spreadsheet). Practice/check columns are excluded. The tab assignment is preserved, including 41 procurement entries in tab 1. advanced-example-fixes.json records corrected or supplemented examples; advanced-procurement-dialogues.json contains six original workplace dialogues. Source examples for other new levels are grouped by topic into short question-and-answer practice lessons with authored connecting turns. These are topical exchanges rather than newly authored continuous narratives. HSK2 retains the original 12 connected dialogues and their progress IDs. Textbook vocabulary remains separate.
+
+Build with node build-advanced-library.cjs, then node verify.cjs. dist/advanced-coverage.json lists per-level source row coverage, sections, lessons and sentences. All 5,043 source entries must have a tagged occurrence in practice; display annotations and alternate spellings are normalized only when checking literal occurrence.

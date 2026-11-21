@@ -257,3 +257,30 @@ for(const activity of ['flash','match']){
  run('selectVocabularyActivity('+JSON.stringify(activity)+')');el('#advancedTab').onclick();if(sandbox.location.hash!=='#stories')throw Error('Activity advanced navigation failed');
 }
 console.log('PASS: flashcard and matching retain all three working vocabulary tabs.');
+vm.runInContext(fs.readFileSync('dist/advanced-library-data.js','utf8'),sandbox);
+vm.runInContext(fs.readFileSync('dist/advanced-library.js','utf8'),sandbox);
+const originalLessonWords=run('JSON.stringify(words)');
+const expectedCounts=[0,190,150,295,600,1295,2513];
+const progressBeforeLevels=run('JSON.stringify(state.hsk2Stories)');
+for(let level=1;level<=6;level++){
+ sandbox.location.hash='#stories';run('state.level='+level+';render()');
+ if(!el('#app').innerHTML.includes('Hội thoại HSK'+level)||!el('#app').innerHTML.includes(expectedCounts[level]+' / '+expectedCounts[level]))throw Error('Wrong level catalogue '+level);
+ const allStories=run('hsk2Stories'),data=run('advancedLibraryData['+level+']');
+ if(level!==2){const ids=new Set(allStories.flatMap(s=>s.entryIds));if(data.entries.some(e=>!ids.has(e.id)))throw Error('Missing source row '+level);}
+ for(const story of allStories){
+  for(const line of story.lines){
+   if(!line[2]||!line[3]||!line[4])throw Error('Missing sentence content '+story.id);
+   for(const word of line[5]){const literal=word.replace(/（.*?）/g,'').split(' (')[0];if(!line[2].includes(literal))throw Error('Target absent '+word);}
+  }
+ }
+ const story=allStories[0];run('selectHsk2Story('+JSON.stringify(story.id)+',false)');
+ if(level!==2&&!el('#app').innerHTML.includes('HSK'+level))throw Error('Wrong practice level');
+ el('#hanziAnswer').value=story.lines[0][2];run('checkStory()');if(!run('storySession.passed'))throw Error('Level answer failed');
+ run('moveStory(1)');if(!run('storyProgress().position===1'))throw Error('Level save failed');
+ run('pages.stories(); selectHsk2Story('+JSON.stringify(story.id)+',true)');if(!run('storySession.position===1'))throw Error('Level resume failed');
+ el('#transcriptTab').onclick();if(level!==2&&el('#app').innerHTML.includes('context-transcript'))throw Error('Leaked textbook vocabulary');
+ sandbox.location.hash='#words';run('render()');if(level!==2&&!el('#app').innerHTML.includes('Hội thoại HSK'+level))throw Error('Vocabulary sidebar blocked');
+}
+if(run('JSON.stringify(words)')!==originalLessonWords)throw Error('Textbook words changed');
+sandbox.location.hash='#stories';run('state.level=2;render()');if(run('hsk2Stories.length')!==12)throw Error('Original HSK2 stories changed');
+console.log('PASS: six advanced catalogues, all 5043 source rows, literal targets, bilingual sentences, grading, per-story save/resume, isolated textbook tabs and unchanged HSK2 stories.');

@@ -1,0 +1,44 @@
+{
+  "1": {
+    "sourceRows": 190,
+    "coveredRows": 190,
+    "stories": 37,
+    "sections": 14,
+    "lines": 334
+  },
+  "2": {
+    "sourceRows": 150,
+    "coveredRows": 150,
+    "stories": 12,
+    "sections": 6,
+    "lines": 129
+  },
+  "3": {
+    "sourceRows": 295,
+    "coveredRows": 295,
+    "stories": 55,
+    "sections": 15,
+    "lines": 590
+  },
+  "4": {
+    "sourceRows": 600,
+    "coveredRows": 600,
+    "stories": 105,
+    "sections": 19,
+    "lines": 1200
+  },
+  "5": {
+    "sourceRows": 1295,
+    "coveredRows": 1295,
+    "stories": 222,
+    "sections": 32,
+    "lines": 2590
+  },
+  "6": {
+    "sourceRows": 2513,
+    "coveredRows": 2513,
+    "stories": 425,
+    "sections": 60,
+    "lines": 5026
+  }
+}

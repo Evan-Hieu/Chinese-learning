@@ -1,0 +1,218 @@
+[
+  [
+    "今天我们要讨论采购计划。",
+    "Jīntiān wǒmen yào tǎolùn cǎigòu jìhuà.",
+    "Hôm nay chúng ta bàn kế hoạch mua hàng.",
+    "采购"
+  ],
+  [
+    "我是负责这个项目的采购员。",
+    "Wǒ shì fùzé zhège xiàngmù de cǎigòuyuán.",
+    "Tôi là nhân viên mua hàng phụ trách dự án này.",
+    "采购员"
+  ],
+  [
+    "你已经联系供应商了吗？",
+    "Nǐ yǐjīng liánxì gōngyìngshāng le ma?",
+    "Bạn đã liên hệ nhà cung cấp chưa?",
+    "供应商"
+  ],
+  [
+    "联系了，他们有我们需要的原材料。",
+    "Liánxì le, tāmen yǒu wǒmen xūyào de yuáncáiliào.",
+    "Rồi, họ có nguyên vật liệu chúng ta cần.",
+    "原材料"
+  ],
+  [
+    "这些材料要先检查质量。",
+    "Zhèxiē cáiliào yào xiān jiǎnchá zhìliàng.",
+    "Cần kiểm tra chất lượng những vật liệu này trước.",
+    "材料"
+  ],
+  [
+    "好，我会整理物料清单。",
+    "Hǎo, wǒ huì zhěnglǐ wùliào qīngdān.",
+    "Được, tôi sẽ sắp xếp danh mục vật tư.",
+    "物料 物料清单"
+  ],
+  [
+    "清单上有多少种零件？",
+    "Qīngdān shàng yǒu duōshao zhǒng língjiàn?",
+    "Danh mục có bao nhiêu loại linh kiện?",
+    "零件"
+  ],
+  [
+    "有标准件，也有钣金件。",
+    "Yǒu biāozhǔnjiàn, yě yǒu bǎnjīnjiàn.",
+    "Có chi tiết tiêu chuẩn và cả chi tiết kim loại tấm.",
+    "标准件 钣金件"
+  ],
+  [
+    "这些机加工件需要按图纸生产。",
+    "Zhèxiē jījiāgōngjiàn xūyào àn túzhǐ shēngchǎn.",
+    "Những chi tiết gia công cơ khí này cần sản xuất theo bản vẽ.",
+    "机加工件 图纸"
+  ],
+  [
+    "我会确认每个料号的规格。",
+    "Wǒ huì quèrèn měi ge liàohào de guīgé.",
+    "Tôi sẽ xác nhận quy cách của từng mã vật tư.",
+    "料号 规格"
+  ],
+  [
+    "我们先向三家供应商询价吧。",
+    "Wǒmen xiān xiàng sān jiā gōngyìngshāng xúnjià ba.",
+    "Trước tiên ta hỏi giá ba nhà cung cấp nhé.",
+    "询价"
+  ],
+  [
+    "好的，收到报价后再比较。",
+    "Hǎo de, shōudào bàojià hòu zài bǐjiào.",
+    "Được, nhận báo giá rồi so sánh.",
+    "报价"
+  ],
+  [
+    "这家公司的单价比较高。",
+    "Zhè jiā gōngsī de dānjià bǐjiào gāo.",
+    "Đơn giá của công ty này khá cao.",
+    "单价"
+  ],
+  [
+    "我们还要考虑运输成本。",
+    "Wǒmen hái yào kǎolǜ yùnshū chéngběn.",
+    "Ta còn phải cân nhắc chi phí vận chuyển.",
+    "成本"
+  ],
+  [
+    "这个采购价格能再降低一点吗？",
+    "Zhège cǎigòu jiàgé néng zài jiàngdī yìdiǎn ma?",
+    "Giá mua này có thể giảm thêm chút nữa không?",
+    "采购价格"
+  ],
+  [
+    "我下午和他们议价。",
+    "Wǒ xiàwǔ hé tāmen yìjià.",
+    "Chiều tôi thương lượng giá với họ.",
+    "议价"
+  ],
+  [
+    "如果增加数量，他们愿意降价。",
+    "Rúguǒ zēngjiā shùliàng, tāmen yuànyì jiàngjià.",
+    "Nếu tăng số lượng, họ sẵn lòng giảm giá.",
+    "降价"
+  ],
+  [
+    "那先确认最小起订量。",
+    "Nà xiān quèrèn zuìxiǎo qǐdìngliàng.",
+    "Vậy xác nhận số lượng đặt tối thiểu trước.",
+    "最小起订量"
+  ],
+  [
+    "采购数量要根据实际需求来定。",
+    "Cǎigòu shùliàng yào gēnjù shíjì xūqiú lái dìng.",
+    "Số lượng mua cần quyết định theo nhu cầu thực tế.",
+    "采购数量 需求"
+  ],
+  [
+    "我会先核对需求数量。",
+    "Wǒ huì xiān héduì xūqiú shùliàng.",
+    "Tôi sẽ kiểm tra số lượng cần trước.",
+    "需求数量"
+  ],
+  [
+    "采购订单准备好了吗？",
+    "Cǎigòu dìngdān zhǔnbèi hǎo le ma?",
+    "Đơn đặt mua hàng đã chuẩn bị xong chưa?",
+    "采购订单"
+  ],
+  [
+    "准备好了，这张订单需要你签字。",
+    "Zhǔnbèi hǎo le, zhè zhāng dìngdān xūyào nǐ qiānzì.",
+    "Xong rồi, đơn này cần bạn ký.",
+    "订单"
+  ],
+  [
+    "请再核对一下交期。",
+    "Qǐng zài héduì yíxià jiāoqī.",
+    "Hãy kiểm tra lại thời hạn giao hàng.",
+    "交期"
+  ],
+  [
+    "他们说下周可以交货。",
+    "Tāmen shuō xià zhōu kěyǐ jiāohuò.",
+    "Họ nói tuần sau có thể giao hàng.",
+    "交货"
+  ],
+  [
+    "能不能提前两天？",
+    "Néng bu néng tíqián liǎng tiān?",
+    "Có thể sớm hơn hai ngày không?",
+    "提前"
+  ],
+  [
+    "我去问问，尽量不要延期。",
+    "Wǒ qù wènwen, jǐnliàng bú yào yánqī.",
+    "Tôi đi hỏi, cố gắng đừng trì hoãn.",
+    "延期"
+  ],
+  [
+    "到货以后，我们马上检查。",
+    "Dàohuò yǐhòu, wǒmen mǎshàng jiǎnchá.",
+    "Sau khi hàng đến, ta kiểm tra ngay.",
+    "到货"
+  ],
+  [
+    "我已经收到了供应商确认的邮件。",
+    "Wǒ yǐjīng shōudào le gōngyìngshāng quèrèn de yóujiàn.",
+    "Tôi đã nhận được email xác nhận của nhà cung cấp.",
+    "供应商确认"
+  ],
+  [
+    "生产前要先备料。",
+    "Shēngchǎn qián yào xiān bèiliào.",
+    "Trước khi sản xuất cần chuẩn bị vật tư.",
+    "备料"
+  ],
+  [
+    "现在有缺料的问题吗？",
+    "Xiànzài yǒu quēliào de wèntí ma?",
+    "Hiện có vấn đề thiếu vật tư không?",
+    "缺料"
+  ],
+  [
+    "没有，我们还有足够的库存。",
+    "Méiyǒu, wǒmen hái yǒu zúgòu de kùcún.",
+    "Không, chúng ta vẫn có đủ hàng tồn kho.",
+    "库存"
+  ],
+  [
+    "不过，安全库存不能太低。",
+    "Búguò, ānquán kùcún bù néng tài dī.",
+    "Tuy nhiên mức tồn kho an toàn không được quá thấp.",
+    "安全库存"
+  ],
+  [
+    "工厂这个月的产能怎么样？",
+    "Gōngchǎng zhège yuè de chǎnnéng zěnmeyàng?",
+    "Năng lực sản xuất tháng này của nhà máy thế nào?",
+    "产能"
+  ],
+  [
+    "产能够，但是生产周期有点长。",
+    "Chǎnnéng gòu, dànshì shēngchǎn zhōuqī yǒudiǎn cháng.",
+    "Năng lực đủ, nhưng chu kỳ sản xuất hơi dài.",
+    "生产周期"
+  ],
+  [
+    "这些零件需要外包吗？",
+    "Zhèxiē língjiàn xūyào wàibāo ma?",
+    "Những linh kiện này cần thuê ngoài không?",
+    "外包"
+  ],
+  [
+    "不用，我们安排厂内生产。",
+    "Bú yòng, wǒmen ānpái chǎngnèi shēngchǎn.",
+    "Không cần, chúng ta sắp xếp sản xuất nội bộ.",
+    "厂内生产"
+  ]
+]

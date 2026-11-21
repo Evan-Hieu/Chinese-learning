@@ -1,5 +1,5 @@
 // Original dialogues; vocabulary membership is checked against sheet "2".
-const hsk2Sections=[
+let hsk2Sections=[
  ['people','Hẹn gặp & gia đình'],['daily','Sinh hoạt & sức khỏe'],['shopping','Mua sắm & ăn uống'],
  ['study','Trường học & học tập'],['travel','Đi lại & du lịch'],['leisure','Thể thao & giải trí']
 ];

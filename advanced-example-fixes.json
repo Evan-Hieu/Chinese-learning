@@ -1,0 +1,260 @@
+{
+  "1:爱": [
+    "ài"
+  ],
+  "1:八": [
+    "bā"
+  ],
+  "1:哪里 (哪儿)": [
+    "nǎlǐ / nǎr",
+    "你住在哪里？",
+    "Nǐ zhù zài nǎlǐ?",
+    "Bạn sống ở đâu?"
+  ],
+  "3:电子邮箱": [
+    null,
+    "这是我的电子邮箱。",
+    "Zhè shì wǒ de diànzǐ yóuxiāng.",
+    "Đây là hộp thư điện tử của tôi."
+  ],
+  "3:刷牙": [
+    null,
+    "我每天早上刷牙。",
+    "Wǒ měitiān zǎoshang shuāyá.",
+    "Tôi đánh răng mỗi sáng."
+  ],
+  "4:礼拜天": [
+    null,
+    "我们礼拜天去公园。",
+    "Wǒmen lǐbàitiān qù gōngyuán.",
+    "Chủ nhật chúng ta đi công viên."
+  ],
+  "5:打喷嚏": [
+    null,
+    "她一直打喷嚏。",
+    "Tā yìzhí dǎ pēntì.",
+    "Cô ấy hắt hơi liên tục."
+  ],
+  "5:着火": [
+    null,
+    "那座房子着火了。",
+    "Nà zuò fángzi zháohuǒ le.",
+    "Ngôi nhà kia bị cháy rồi."
+  ],
+  "5:振动": [
+    null,
+    "机器运转时会产生振动。",
+    "Jīqì yùnzhuǎn shí huì chǎnshēng zhèndòng.",
+    "Máy sinh ra rung động khi vận hành."
+  ],
+  "6:百分点": [
+    null,
+    "合格率提高了两个百分点。",
+    "Hégé lǜ tígāo le liǎng ge bǎifēndiǎn.",
+    "Tỷ lệ đạt yêu cầu tăng hai điểm phần trăm."
+  ],
+  "6:颁发": [
+    null,
+    "校长给她颁发了奖状。",
+    "Xiàozhǎng gěi tā bānfā le jiǎngzhuàng.",
+    "Hiệu trưởng trao bằng khen cho cô ấy."
+  ],
+  "6:逼迫": [
+    null,
+    "不要逼迫他做决定。",
+    "Bú yào bīpò tā zuò juédìng.",
+    "Đừng ép anh ấy đưa ra quyết định."
+  ],
+  "6:搀": [
+    null,
+    "他搀着老人过马路。",
+    "Tā chān zhe lǎorén guò mǎlù.",
+    "Anh ấy dìu cụ già qua đường."
+  ],
+  "6:城堡": [
+    null,
+    "山上有一座古老的城堡。",
+    "Shān shàng yǒu yí zuò gǔlǎo de chéngbǎo.",
+    "Trên núi có một tòa lâu đài cổ."
+  ],
+  "6:成效": [
+    null,
+    "这种方法取得了明显的成效。",
+    "Zhè zhǒng fāngfǎ qǔdé le míngxiǎn de chéngxiào.",
+    "Phương pháp này đạt được hiệu quả rõ rệt."
+  ],
+  "6:成员": [
+    null,
+    "他是我们团队的成员。",
+    "Tā shì wǒmen tuánduì de chéngyuán.",
+    "Anh ấy là thành viên nhóm chúng tôi."
+  ],
+  "6:处置": [
+    null,
+    "这个问题需要妥善处置。",
+    "Zhège wèntí xūyào tuǒshàn chǔzhì.",
+    "Vấn đề này cần được xử lý thỏa đáng."
+  ],
+  "6:喘气": [
+    null,
+    "他跑得太快，停下来喘气。",
+    "Tā pǎo de tài kuài, tíng xiàlái chuǎnqì.",
+    "Anh ấy chạy quá nhanh, dừng lại để thở."
+  ],
+  "6:地步": [
+    null,
+    "事情还没到无法挽回的地步。",
+    "Shìqing hái méi dào wúfǎ wǎnhuí de dìbù.",
+    "Sự việc vẫn chưa đến mức không thể cứu vãn."
+  ],
+  "6:吊": [
+    null,
+    "工人用起重机吊起了货物。",
+    "Gōngrén yòng qǐzhòngjī diào qǐ le huòwù.",
+    "Công nhân dùng cần cẩu nâng hàng lên."
+  ],
+  "6:端": [
+    null,
+    "请把这碗汤端到桌上。",
+    "Qǐng bǎ zhè wǎn tāng duān dào zhuō shàng.",
+    "Hãy bưng bát canh này lên bàn."
+  ],
+  "6:队伍": [
+    null,
+    "这支队伍正在训练。",
+    "Zhè zhī duìwu zhèngzài xùnliàn.",
+    "Đội này đang huấn luyện."
+  ],
+  "6:呵": [
+    null,
+    "呵，这里的风景真美！",
+    "Hē, zhèlǐ de fēngjǐng zhēn měi!",
+    "Ồ, phong cảnh ở đây thật đẹp!"
+  ],
+  "6:机械": [
+    null,
+    "这台机械设备操作简单。",
+    "Zhè tái jīxiè shèbèi cāozuò jiǎndān.",
+    "Thiết bị cơ khí này vận hành đơn giản."
+  ],
+  "6:界限": [
+    null,
+    "这两个地区的界限很明确。",
+    "Zhè liǎng ge dìqū de jièxiàn hěn míngquè.",
+    "Ranh giới hai khu vực này rất rõ ràng."
+  ],
+  "6:考古": [
+    null,
+    "他对考古很感兴趣。",
+    "Tā duì kǎogǔ hěn gǎn xìngqù.",
+    "Anh ấy rất quan tâm đến khảo cổ học."
+  ],
+  "6:孔": [
+    null,
+    "这块木板上有一个孔。",
+    "Zhè kuài mùbǎn shàng yǒu yí ge kǒng.",
+    "Trên tấm gỗ này có một lỗ."
+  ],
+  "6:款式": [
+    null,
+    "这件衣服的款式很时尚。",
+    "Zhè jiàn yīfu de kuǎnshì hěn shíshàng.",
+    "Kiểu dáng chiếc áo này rất thời trang."
+  ],
+  "6:利害": [
+    null,
+    "你要先考虑清楚其中的利害。",
+    "Nǐ yào xiān kǎolǜ qīngchu qízhōng de lìhài.",
+    "Bạn cần cân nhắc rõ lợi hại trong đó trước."
+  ],
+  "6:旗帜": [
+    null,
+    "广场上的旗帜迎风飘扬。",
+    "Guǎngchǎng shàng de qízhì yíng fēng piāoyáng.",
+    "Những lá cờ trên quảng trường tung bay trong gió."
+  ],
+  "6:强迫": [
+    null,
+    "不要强迫别人接受你的意见。",
+    "Bú yào qiǎngpò biérén jiēshòu nǐ de yìjiàn.",
+    "Đừng ép người khác chấp nhận ý kiến của bạn."
+  ],
+  "6:人格": [
+    null,
+    "我们应该尊重每个人的人格。",
+    "Wǒmen yīnggāi zūnzhòng měi ge rén de réngé.",
+    "Chúng ta nên tôn trọng nhân cách của mỗi người."
+  ],
+  "6:人士": [
+    null,
+    "各界人士参加了这次会议。",
+    "Gè jiè rénshì cānjiā le zhè cì huìyì.",
+    "Các nhân sĩ từ nhiều giới tham dự cuộc họp này."
+  ],
+  "6:设置": [
+    null,
+    "请先设置一个新的密码。",
+    "Qǐng xiān shèzhì yí ge xīn de mìmǎ.",
+    "Hãy đặt một mật khẩu mới trước."
+  ],
+  "6:审判": [
+    null,
+    "法院将依法审判这个案件。",
+    "Fǎyuàn jiāng yīfǎ shěnpàn zhège ànjiàn.",
+    "Tòa án sẽ xét xử vụ án này theo pháp luật."
+  ],
+  "6:拾": [
+    null,
+    "他弯下腰拾起了地上的纸。",
+    "Tā wān xià yāo shí qǐ le dì shàng de zhǐ.",
+    "Anh ấy cúi xuống nhặt tờ giấy trên đất."
+  ],
+  "6:算数": [
+    null,
+    "你昨天说的话还算数吗？",
+    "Nǐ zuótiān shuō de huà hái suànshù ma?",
+    "Lời bạn nói hôm qua còn có giá trị không?"
+  ],
+  "6:体面": [
+    null,
+    "参加婚礼要穿得体面一些。",
+    "Cānjiā hūnlǐ yào chuān de tǐmiàn yìxiē.",
+    "Đi dự đám cưới nên ăn mặc tươm tất một chút."
+  ],
+  "6:文献": [
+    null,
+    "写论文之前要查阅相关文献。",
+    "Xiě lùnwén zhīqián yào cháyuè xiāngguān wénxiàn.",
+    "Trước khi viết luận văn cần tra cứu tài liệu liên quan."
+  ],
+  "6:舞蹈": [
+    null,
+    "她从小就学习舞蹈。",
+    "Tā cóng xiǎo jiù xuéxí wǔdǎo.",
+    "Cô ấy học múa từ nhỏ."
+  ],
+  "6:贼": [
+    null,
+    "警察抓住了那个贼。",
+    "Jǐngchá zhuā zhù le nà ge zéi.",
+    "Cảnh sát bắt được tên trộm đó."
+  ],
+  "6:职务": [
+    null,
+    "他在公司担任管理职务。",
+    "Tā zài gōngsī dānrèn guǎnlǐ zhíwù.",
+    "Anh ấy đảm nhận chức vụ quản lý trong công ty."
+  ],
+  "2:帮助": [
+    null,
+    "谢谢你的帮助。",
+    "Xièxie nǐ de bāngzhù.",
+    "Cảm ơn sự giúp đỡ của bạn."
+  ],
+  "5:性质": [
+    null,
+    "这件事的性质很特殊。",
+    "Zhè jiàn shì de xìngzhì hěn tèshū.",
+    "Tính chất của việc này rất đặc biệt."
+  ]
+}
