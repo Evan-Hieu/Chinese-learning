@@ -83,3 +83,7 @@ window.addEventListener('keydown',dictationKeyDown);
 window.addEventListener('keyup',dictationKeyUp);
 window.addEventListener('blur',()=>{soloDictationKey=null;stopWordAudio();});
 window.addEventListener('pagehide',()=>stopWordAudio());
+const vocabularySpeechRates=[0.25,0.5,0.6,0.65,0.7,0.8,0.85,0.9,1,1.1,1.2,1.3,1.4,1.5,1.75,2];
+function vocabularySpeechRate(){return vocabularySpeechRates.includes(Number(state.vocabularySpeechRate))?String(state.vocabularySpeechRate):'0.85';}
+function vocabularySpeechRateOptions(){return vocabularySpeechRates.map(rate=>'<option value="'+rate+'">'+rate+'×</option>').join('');}
+function bindVocabularySpeechRate(){const select=document.querySelector('#wordRate');if(!select)return;select.value=vocabularySpeechRate();if(dictationSession)dictationSession.rate=select.value;select.onchange=e=>{stopWordAudio();state.vocabularySpeechRate=Number(e.target.value);if(dictationSession)dictationSession.rate=String(state.vocabularySpeechRate);save();};}

@@ -26,7 +26,7 @@ function startDictation(review=false,mode=state.dictationMode==='word'?'word':'s
   stopWordAudio();
   const mistakes=dictationMistakes(mode);
   const queue=review?mistakes:words.map((_,i)=>i);
-  dictationSession={queue,position:0,checked:false,revealed:false,correct:0,review,mode,records:{},tab:'practice',rate:'0.85',volume:'1',lastResult:null,composing:false,hideNote:true};
+  dictationSession={queue,position:0,checked:false,revealed:false,correct:0,review,mode,records:{},tab:'practice',rate:vocabularySpeechRate(),volume:'1',lastResult:null,composing:false,hideNote:true};
   state.dictationMode=mode;save();
   showDictation();
 }
@@ -67,7 +67,7 @@ function showDictation(){
   const tabs=vocabularyTabsMarkup(transcript?'transcript':'practice');
   const body=transcript?contextTranscriptHtml():`
   <div class="practice-topline"><div class="word-navigation"><button id="previousWord" aria-label="Từ trước" ${session.position===0?'disabled':''}>←</button><span>${session.position+1} / ${session.queue.length}</span><button id="forwardWord" aria-label="Từ sau">→</button></div><button class="settings-open-button" id="openDictationSettings" aria-haspopup="dialog">⚙ Cài đặt</button></div>
-  <div class="dictation-player"><div class="speech-player"><button id="listenWord" aria-label="${session.mode==='sentence'?'Nghe câu tiếng Trung':'Nghe từ tiếng Trung'}">▶</button><span>${session.mode==='sentence'?'Nghe câu':'Nghe từ'}</span><span class="speech-player-line" aria-hidden="true"></span><span aria-hidden="true">♫</span></div><select id="wordRate" aria-label="Tốc độ đọc từ"><option value="0.65">0.65×</option><option value="0.85">0.85×</option><option value="1">1×</option></select></div>
+  <div class="dictation-player"><div class="speech-player"><button id="listenWord" aria-label="${session.mode==='sentence'?'Nghe câu tiếng Trung':'Nghe từ tiếng Trung'}">▶</button><span>${session.mode==='sentence'?'Nghe câu':'Nghe từ'}</span><span class="speech-player-line" aria-hidden="true"></span><span aria-hidden="true">♫</span></div><select id="wordRate" aria-label="Tốc độ đọc từ">${vocabularySpeechRateOptions()}</select></div>
   <p id="speechStatus" role="status" class="speech-status">Bấm ▶ để nghe. Cần giọng tiếng Trung trên thiết bị.</p>
   <form id="dictationForm" class="daily-dictation-form"><label for="hanziAnswer" class="sr-only">Chữ Hán bạn nghe được</label><textarea id="hanziAnswer" class="hanzi-answer" lang="zh-CN" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="80" rows="3" placeholder="${session.mode==='sentence'?'Gõ cả câu tiếng Trung bạn nghe được…':'Gõ chữ Hán bạn nghe được…'}" required></textarea><div class="dictation-actions" id="dictationActions"><button class="check-answer" type="submit">Kiểm tra</button><button class="skip-answer" type="button" id="nextWord">Bỏ qua</button><button class="reveal-answer" type="button" id="revealWord">Xem đáp án</button></div></form><div id="dictationFeedback" aria-live="polite"></div><p id="shortcutTips" class="shortcut-tips"></p>${dictationSettingsMarkup()}`;
   app.innerHTML=tabs+dictationChrome()+'<section class="dictation-workspace '+(transcript?'context-transcript':'')+'" id="practicePanel" role="tabpanel" aria-labelledby="'+(transcript?'transcriptTab':'practiceTab')+'">'+body+'</section>';
@@ -81,8 +81,7 @@ function showDictation(){
   if(session.lastResult)showWordFeedback(session.lastResult.correct,session.lastResult.reveal,session.lastResult.parts);
   if(session.passed)document.querySelector('#nextWord').textContent='Tiếp theo →';
   document.querySelector('#listenWord').onclick=toggleWordPlayback;
-  document.querySelector('#wordRate').value=session.rate||'0.85';
-  document.querySelector('#wordRate').onchange=e=>{session.rate=e.target.value;stopWordAudio();};
+  bindVocabularySpeechRate();
   bindDictationSettings();
   document.querySelector('#hanziAnswer').oninput=()=>{document.querySelector('#dictationActions').hidden=false;};
   let composing=false;
@@ -118,7 +117,7 @@ function speakWord(text,options={}){
   const voice=voices.find(v=>/^zh[-_]CN/i.test(v.lang))||voices.find(v=>/^zh/i.test(v.lang));
   if(!voice){status.textContent='Chưa tìm thấy giọng tiếng Trung. Hãy bật hoặc cài giọng tiếng Trung trong thiết bị rồi thử lại. Bạn vẫn có thể dùng “Xem đáp án”.';return false;}
   const utterance=new window.SpeechSynthesisUtterance(text.replace(/[…。，]/g,' ').trim());wordUtterance=utterance;
-  utterance.volume=Number(session.volume===undefined?1:session.volume);utterance.voice=voice;utterance.lang=voice.lang;utterance.rate=Number(document.querySelector('#wordRate')?.value)||0.85;
+  utterance.volume=Number(session.volume===undefined?1:session.volume);utterance.voice=voice;utterance.lang=voice.lang;utterance.rate=Number(document.querySelector('#wordRate')?.value)||Number(vocabularySpeechRate());
   utterance.onstart=()=>{if(epoch!==wordSpeechEpoch)return;status.textContent=options.playlist?'Đang nghe toàn bộ bài · Câu '+(position+1)+' / '+session.queue.length:'Đang đọc…';document.querySelector('#listenWord').textContent='❚❚';};
   utterance.onend=()=>{
     if(epoch!==wordSpeechEpoch)return;wordUtterance=null;document.querySelector('#listenWord').textContent='▶';
