@@ -182,3 +182,16 @@ body.vocabulary-fit{height:100dvh;overflow:hidden}
 .vocabulary-fit #shortcutTips,
 .story-route #speechStatus,
 .story-route #shortcutTips { display:none !important; }
+/* Advanced sentences share the textbook dictation player and feedback layout. */
+.story-route .story-settings{justify-content:flex-end;margin:0;min-height:20px}
+.story-route .dictation-player{width:min(100%,900px);margin:0 0 4px}
+.story-route .speech-player{flex:1;min-width:0}
+.story-route .daily-dictation-form,.story-route #storyFeedback{width:min(100%,900px)}
+.story-route .dictation-result{margin-top:8px}
+.story-route .answer-options{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:10px 0}
+.story-route .answer-options label{display:flex;align-items:center;gap:8px;font-size:13px}
+.story-route .answer-details{font-size:13px;border-top:1px solid #d9dfe5;padding-top:6px}
+.story-route .answer-details p{margin:4px 0}
+.story-route .dictation-actions[hidden]{display:none}
+.story-route .result-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+@media(max-width:650px){.story-route .dictation-player{gap:8px}.story-route .speech-player{padding:5px 8px;gap:8px}.story-route .answer-options label{font-size:11px}.story-route .answer-details{font-size:11px}}
