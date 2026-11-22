@@ -83,7 +83,7 @@ function showDictation(){
   document.querySelector('#listenWord').onclick=toggleWordPlayback;
   bindVocabularySpeechRate();
   bindDictationSettings();
-  document.querySelector('#hanziAnswer').oninput=()=>{document.querySelector('#dictationActions').hidden=false;};
+  document.querySelector('#hanziAnswer').oninput=()=>{document.querySelector('#dictationActions').hidden=false;document.querySelector('#nextWord').textContent='Bỏ qua';};
   let composing=false;
   document.querySelector('#hanziAnswer').oncompositionstart=()=>{composing=true;session.composing=true;};
   document.querySelector('#hanziAnswer').oncompositionend=()=>{composing=false;session.composing=false;};
@@ -173,11 +173,10 @@ function showWordFeedback(correct,reveal,parts=[]){
   const session=dictationSession,word=practiceEntry(session.queue[session.position]),prefs=dictationPrefs();
   session.lastResult={correct,reveal,parts};
   const full=correct||reveal||prefs.showFull;
-  document.querySelector('#dictationFeedback').innerHTML=`<div class="dictation-result ${correct?'is-correct':'is-incorrect'}"><div class="result-heading"><span>${correct?'✓ Chính xác':reveal?'Đáp án':'⚠ Chưa chính xác'}</span><button id="feedbackNext" type="button">${correct?'Tiếp theo →':'Bỏ qua'}</button></div><div class="masked-answer" lang="zh-CN">${full?esc(word[0]):maskedWordFeedback(parts,prefs.showImmediate)}</div>${!full?'<p class="partial-answer-note">Xanh: chữ đúng · Xanh đậm, gạch dưới: chữ gợi ý · ＊: chữ còn ẩn</p>':''}<div class="answer-options"><label><input id="showImmediateAnswer" type="checkbox" ${prefs.showImmediate?'checked':''}> Hiện gợi ý ngay sau khi kiểm tra</label><label><input id="showFullAnswer" type="checkbox" ${prefs.showFull?'checked':''}> Hiện toàn bộ đáp án</label></div>${full?'<div class="answer-details"><p class="pinyin">'+word[1]+'</p><p>'+word[2]+'</p><p class="example">'+word[3]+'</p></div>':''}</div>`;
+  document.querySelector('#dictationFeedback').innerHTML=`<div class="dictation-result ${correct?'is-correct':'is-incorrect'}"><div class="result-heading"><span>${correct?'✓ Chính xác':reveal?'Đáp án':'⚠ Chưa chính xác'}</span></div><div class="masked-answer" lang="zh-CN">${full?esc(word[0]):maskedWordFeedback(parts,prefs.showImmediate)}</div>${!full?'<p class="partial-answer-note">Xanh: chữ đúng · Xanh đậm, gạch dưới: chữ gợi ý · ＊: chữ còn ẩn</p>':''}<div class="answer-options"><label><input id="showImmediateAnswer" type="checkbox" ${prefs.showImmediate?'checked':''}> Hiện gợi ý ngay sau khi kiểm tra</label><label><input id="showFullAnswer" type="checkbox" ${prefs.showFull?'checked':''}> Hiện toàn bộ đáp án</label></div>${full?'<div class="answer-details"><p class="pinyin">'+word[1]+'</p><p>'+word[2]+'</p><p class="example">'+word[3]+'</p></div>':''}</div>`;
   document.querySelector('#showImmediateAnswer').onchange=e=>{updateDictationPreference('showImmediate',e.target.checked);showWordFeedback(correct,reveal,parts);};
   document.querySelector('#showFullAnswer').onchange=e=>{updateDictationPreference('showFull',e.target.checked);if(e.target.checked&&!correct){session.revealed=true;markDictationWrong();}showWordFeedback(correct,reveal,parts);};
-  document.querySelector('#dictationActions').hidden=true;
-  document.querySelector('#feedbackNext').onclick=()=>moveDictation(1);
+  document.querySelector('#dictationActions').hidden=false;
   document.querySelector('#nextWord').textContent=correct?'Tiếp theo →':'Bỏ qua';
   document.querySelector('#reviewWrong').textContent=(dictationMode()==='sentence'?'Ôn câu sai':'Ôn từ sai')+' ('+dictationMistakes().length+')';
 }

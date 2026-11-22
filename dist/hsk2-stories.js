@@ -48,7 +48,7 @@ function showStory(){
  document.querySelector('#listenWord').onclick=toggleWordPlayback;
  bindVocabularySpeechRate();
  document.querySelector('#dictationForm').onsubmit=e=>{e.preventDefault();if(!s.composing&&!e.isComposing)checkStory();};
- input.oncompositionstart=()=>{s.composing=true;};input.oncompositionend=()=>{s.composing=false;};input.oninput=()=>{s.passed=false;document.querySelector('#storyActions').hidden=false;storyCapture();};
+ input.oncompositionstart=()=>{s.composing=true;};input.oncompositionend=()=>{s.composing=false;};input.oninput=()=>{s.passed=false;document.querySelector('#storyActions').hidden=false;document.querySelector('#storySkip').textContent='Bỏ qua';storyCapture();};
  input.onkeydown=e=>{if(e.key!=='Enter'||e.shiftKey||e.ctrlKey||e.altKey||e.metaKey||e.isComposing||s.composing||e.keyCode===229)return;e.preventDefault();if(e.repeat)return;if(s.passed&&compareHanzi(input.value,line[2]).correct)moveStory(1);else checkStory();};
  document.querySelector('#storyReveal').onclick=()=>{storyCapture();s.revealed=true;s.records[s.position].revealed=true;saveStoryProgress();renderStoryFeedback(true);};
  document.querySelector('#storySkip').onclick=()=>moveStory(1);
@@ -58,9 +58,9 @@ function showStory(){
 function checkStory(){stopWordAudio();const input=document.querySelector('#hanziAnswer');if(!normalizeHanzi(input.value)){document.querySelector('#storyFeedback').textContent='Hãy nhập câu bạn nghe được trước nhé.';return;}storyCapture();const r=storySession.records[storySession.position];r.checked=true;r.correct=compareHanzi(input.value,hsk2Story.lines[storySession.position][2]).correct;storySession.passed=r.correct;saveStoryProgress();renderStoryFeedback(false);}
 function renderStoryFeedback(reveal){
  const s=storySession,line=hsk2Story.lines[s.position],r=s.records[s.position]||{},p=dictationPrefs(),full=reveal||r.correct||p.showFull,parts=compareHanzi(r.draft||'',line[2]).parts;
- document.querySelector('#storyFeedback').innerHTML='<div class="dictation-result '+(r.correct?'is-correct':'is-incorrect')+'"><div class="result-heading"><span>'+(r.correct?'✓ Chính xác':reveal?'Đáp án':'⚠ Chưa chính xác')+'</span><button id="storyFeedbackNext" type="button">'+(r.correct?'Tiếp theo →':'Bỏ qua')+'</button></div><div class="masked-answer" lang="zh-CN">'+(full?esc(line[2]):maskedWordFeedback(parts,p.showImmediate))+'</div><div class="answer-options"><label><input type="checkbox" id="storyHint" '+(p.showImmediate?'checked':'')+'> Hiện gợi ý ngay sau khi kiểm tra</label><label><input type="checkbox" id="storyFull" '+(p.showFull?'checked':'')+'> Hiện toàn bộ đáp án</label></div>'+(full?'<div class="answer-details"><p class="pinyin">'+esc(line[3])+'</p><p>'+esc(line[4])+'</p></div>':'')+'</div>';
- document.querySelector('#storyActions').hidden=true;
- document.querySelector('#storyFeedbackNext').onclick=()=>moveStory(1);
+ document.querySelector('#storyFeedback').innerHTML='<div class="dictation-result '+(r.correct?'is-correct':'is-incorrect')+'"><div class="result-heading"><span>'+(r.correct?'✓ Chính xác':reveal?'Đáp án':'⚠ Chưa chính xác')+'</span></div><div class="masked-answer" lang="zh-CN">'+(full?esc(line[2]):maskedWordFeedback(parts,p.showImmediate))+'</div><div class="answer-options"><label><input type="checkbox" id="storyHint" '+(p.showImmediate?'checked':'')+'> Hiện gợi ý ngay sau khi kiểm tra</label><label><input type="checkbox" id="storyFull" '+(p.showFull?'checked':'')+'> Hiện toàn bộ đáp án</label></div>'+(full?'<div class="answer-details"><p class="pinyin">'+esc(line[3])+'</p><p>'+esc(line[4])+'</p></div>':'')+'</div>';
+ document.querySelector('#storyActions').hidden=false;
+ document.querySelector('#storySkip').textContent=r.correct?'Tiếp theo →':'Bỏ qua';
  document.querySelector('#storyHint').onchange=e=>{updateDictationPreference('showImmediate',e.target.checked);renderStoryFeedback(reveal);};document.querySelector('#storyFull').onchange=e=>{updateDictationPreference('showFull',e.target.checked);renderStoryFeedback(reveal);};
 
 }
