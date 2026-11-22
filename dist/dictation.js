@@ -173,7 +173,7 @@ function showWordFeedback(correct,reveal,parts=[]){
   const session=dictationSession,word=practiceEntry(session.queue[session.position]),prefs=dictationPrefs();
   session.lastResult={correct,reveal,parts};
   const full=correct||reveal||prefs.showFull;
-  document.querySelector('#dictationFeedback').innerHTML=`<div class="dictation-result ${correct?'is-correct':'is-incorrect'}"><div class="result-heading"><span>${correct?'✓ Chính xác':reveal?'Đáp án':'⚠ Chưa chính xác'}</span></div><div class="masked-answer" lang="zh-CN">${full?esc(word[0]):maskedWordFeedback(parts,prefs.showImmediate)}</div>${!full?'<p class="partial-answer-note">Xanh: chữ đúng · Xanh đậm, gạch dưới: chữ gợi ý · ＊: chữ còn ẩn</p>':''}<div class="answer-options"><label><input id="showImmediateAnswer" type="checkbox" ${prefs.showImmediate?'checked':''}> Hiện gợi ý ngay sau khi kiểm tra</label><label><input id="showFullAnswer" type="checkbox" ${prefs.showFull?'checked':''}> Hiện toàn bộ đáp án</label></div>${full?'<div class="answer-details"><p class="pinyin">'+word[1]+'</p><p>'+word[2]+'</p><p class="example">'+word[3]+'</p></div>':''}</div>`;
+  document.querySelector('#dictationFeedback').innerHTML=`<div class="dictation-result ${correct?'is-correct':'is-incorrect'}"><div class="result-heading"><span>${correct?'✓ Chính xác':reveal?'Đáp án':'⚠ Chưa chính xác'}</span></div>${!correct&&!reveal?submittedHanziFeedback(parts):''}<div class="masked-answer" lang="zh-CN">${full?esc(word[0]):maskedWordFeedback(parts,prefs.showImmediate)}</div>${!full?'<p class="partial-answer-note">Xanh: chữ đúng · Xanh đậm, gạch dưới: chữ gợi ý · ＊: chữ còn ẩn</p>':''}<div class="answer-options"><label><input id="showImmediateAnswer" type="checkbox" ${prefs.showImmediate?'checked':''}> Hiện gợi ý ngay sau khi kiểm tra</label><label><input id="showFullAnswer" type="checkbox" ${prefs.showFull?'checked':''}> Hiện toàn bộ đáp án</label></div>${full?'<div class="answer-details"><p class="pinyin">'+word[1]+'</p><p>'+word[2]+'</p><p class="example">'+word[3]+'</p></div>':''}</div>`;
   document.querySelector('#showImmediateAnswer').onchange=e=>{updateDictationPreference('showImmediate',e.target.checked);showWordFeedback(correct,reveal,parts);};
   document.querySelector('#showFullAnswer').onchange=e=>{updateDictationPreference('showFull',e.target.checked);if(e.target.checked&&!correct){session.revealed=true;markDictationWrong();}showWordFeedback(correct,reveal,parts);};
   document.querySelector('#dictationActions').hidden=false;
@@ -194,4 +194,18 @@ function preferredMandarinVoice(voices){
   return rank;
  };
  return voices.map((voice,index)=>({voice,index,rank:score(voice)})).filter(item=>item.rank>=0).sort((a,b)=>b.rank-a.rank||a.index-b.index)[0]?.voice;
+}
+
+// Show mistakes in the submitted text without revealing hidden answer characters.
+function submittedHanziFeedback(parts){
+ let html='',i=0;
+ while(i<parts.length){
+  if(parts[i].kind==='correct'){html+='<span>'+esc(parts[i++].text)+'</span>';continue;}
+  const missing=[],extra=[];
+  while(i<parts.length&&parts[i].kind!=='correct'){const part=parts[i++];(part.kind==='extra'?extra:missing).push(part.text);}
+  if(extra.length)html+='<span class="typed-error" aria-label="Chữ sai hoặc thừa">'+esc(extra.join(''))+'</span>';
+  const count=Math.max(0,missing.length-extra.length);
+  if(count)html+='<span class="typed-error typed-missing" aria-label="Thiếu '+count+' chữ">'+'□'.repeat(count)+'</span>';
+ }
+ return '<div class="submitted-feedback"><p>Bạn đã gõ <small>Đỏ: sai hoặc thừa · □: thiếu chữ</small></p><div class="submitted-hanzi" lang="zh-CN">'+html+'</div></div>';
 }

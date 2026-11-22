@@ -54,3 +54,5 @@ body.learning-shell{height:100dvh}
 
 /* Example sentences use normal text; formulas retain sky-blue grammar highlights. */
 #app .grammar-example-han .grammar-zh{color:inherit}
+
+.submitted-feedback{margin:12px 0 16px;padding:10px 12px;background:#fff;border:1px solid #ead4d4;border-radius:8px}.submitted-feedback p{margin:0 0 6px;color:#526664;font-size:14px}.submitted-feedback small{display:inline-block;margin-left:10px;font-size:12px}.submitted-hanzi{font-size:23px;line-height:1.7;overflow-wrap:anywhere;color:#233d37}.typed-error{color:#c62828;background:#fff0f0;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;font-weight:600}.typed-missing{padding:0 2px}
