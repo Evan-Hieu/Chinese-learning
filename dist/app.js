@@ -38,4 +38,13 @@ function formatGrammarHeadings(){
   if(!row.classList.contains('grammar-section-heading')){row=document.createElement('div');row.className='grammar-section-heading';heading.before(row);row.append(heading);}
   pattern.classList.add('grammar-inline-pattern');row.append(pattern);
  });
+ document.querySelector('.grammar-page-heading h1')?.remove();
+ document.querySelectorAll('#app .grammar-section-heading').forEach((row,index)=>{
+  const heading=row.querySelector('h2'),number=heading.textContent.match(/^\s*(\d+)\s*[·.、]/)?.[1]||String(index+1).padStart(2,'0');
+  heading.textContent=number+' ·';
+ });
+ const walker=document.createTreeWalker(app,4),nodes=[];
+ while(walker.nextNode())if(/[\u3400-\u9fff]/.test(walker.currentNode.textContent)&&!walker.currentNode.parentElement.closest('.grammar-zh,script,style,textarea,select'))nodes.push(walker.currentNode);
+ nodes.forEach(node=>{const fragment=document.createDocumentFragment();node.textContent.split(/([\u3400-\u9fff]+)/g).forEach(text=>{if(!text)return;if(/[\u3400-\u9fff]/.test(text)){const span=document.createElement('span');span.className='grammar-zh';span.textContent=text;fragment.append(span);}else fragment.append(document.createTextNode(text));});node.replaceWith(fragment);});
+
 }
