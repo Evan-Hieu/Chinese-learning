@@ -114,7 +114,7 @@ function speakWord(text,options={}){
   if(!window.speechSynthesis||!window.SpeechSynthesisUtterance){status.textContent='Trình duyệt chưa hỗ trợ đọc từ. Bạn vẫn có thể xem đáp án để học từ.';return false;}
   stopWordAudio(!!options.playlist);const epoch=wordSpeechEpoch,session=dictationSession,position=activeSpeechPosition();
   const voices=window.speechSynthesis.getVoices();
-  const voice=voices.find(v=>/^zh[-_]CN/i.test(v.lang))||voices.find(v=>/^zh/i.test(v.lang));
+  const voice=preferredMandarinVoice(voices);
   if(!voice){status.textContent='Chưa tìm thấy giọng tiếng Trung. Hãy bật hoặc cài giọng tiếng Trung trong thiết bị rồi thử lại. Bạn vẫn có thể dùng “Xem đáp án”.';return false;}
   const utterance=new window.SpeechSynthesisUtterance(text.replace(/[…。，]/g,' ').trim());wordUtterance=utterance;
   utterance.volume=Number(session.volume===undefined?1:session.volume);utterance.voice=voice;utterance.lang=voice.lang;utterance.rate=Number(document.querySelector('#wordRate')?.value)||Number(vocabularySpeechRate());
@@ -179,4 +179,19 @@ function showWordFeedback(correct,reveal,parts=[]){
   document.querySelector('#dictationActions').hidden=false;
   document.querySelector('#nextWord').textContent=correct?'Tiếp theo →':'Bỏ qua';
   document.querySelector('#reviewWrong').textContent=(dictationMode()==='sentence'?'Ôn câu sai':'Ôn từ sai')+' ('+dictationMistakes().length+')';
+}
+
+// Prefer mainland Mandarin natural voices without requiring an account or API key.
+function preferredMandarinVoice(voices){
+ const score=voice=>{
+  const lang=String(voice.lang||'').replace(/_/g,'-').toLowerCase(),name=String(voice.name||'');
+  let rank=/^(zh-cn|cmn-cn)(-|$)/.test(lang)?100:/^(zh|cmn)$/.test(lang)?60:/^(zh-tw|cmn-tw)(-|$)/.test(lang)?20:-1;
+  if(rank<0)return rank;
+  if(/xiaoxiao|晓晓/i.test(name))rank+=15;
+  else if(/yunxi|云希/i.test(name))rank+=14;
+  if(/natural|neural|自然|在线/i.test(name))rank+=8;
+  if(voice.default)rank+=1;
+  return rank;
+ };
+ return voices.map((voice,index)=>({voice,index,rank:score(voice)})).filter(item=>item.rank>=0).sort((a,b)=>b.rank-a.rank||a.index-b.index)[0]?.voice;
 }
